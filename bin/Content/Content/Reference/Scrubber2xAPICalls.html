@@ -1,0 +1,60 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Scrubber API Calls">
+  <HEAD>
+    <TITLE>Scrubber GL :: API Calls</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Scrubber GL :: API Calls</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The "API Calls" tab in the Scrubber GL displays the OpenGLES API calls made prior to the 
+          selected draw call..</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="Scrubber2xAPICalls_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i><A HREF="../HowTo/OpenGLES2/CaptureAndScrubFrames_GLES2.html">Capture</A> a frame from the 
+              connected application, and select a render call in the 
+              <A HREF="Scrubber2xCallTrace.html">call trace.</A> The "API Calls" tab will list all API
+              calls made between the selected render call and the previous render call.</i>
+          </P>
+          <P>
+            • <i>Hover the mouse over an API call to show extra information in a tooltip.</i>
+          </P>
+          <P>
+            • <i>Calls highlighted in <FONT COLOR=AA0000><b>red</b></FONT> are considered <b>redundant</b>; 
+              they set state that has already been set by another call.</i>
+          </P>
+          <P>
+            • <i>Calls highlighted in <FONT COLOR=0000AA><b>blue</b></FONT> are considered <b>unused</b>; 
+              they set state that will not be used in the frame, probably because a render feature is 
+              disabled. For instance, the blend function is unused in a frame that does not enable
+              blending.</i>
+          </P>
+          <P>
+            • <i>Calls highlighted in <FONT COLOR=DD7711><b>orange</b></FONT> are <b>query</b> calls, such
+              as glGetString() and glIsTexture().</i>
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

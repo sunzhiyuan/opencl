@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Reflections</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Reflections</H1>
+This sample demonstrates how to create dynamic reflections using a cubemap and framebuffer objects (FBOs).
+<P>
+<IMG src=Reflections.bmp>
+
+<H1>Details</H1>
+Framebuffer objects allow for fast, efficient rendering to offscreen surfaces. These surfaces can be bound as textures, allowing render-to-texture effects without having to copy the framebuffer back into system memory, and then sending the image again as texture data.
+<P>
+This example shows how to create and bind framebuffer objects to a cubemap which is then used to create dynamic reflections.
+<P>
+At initialization, this sample creates an empty cubemap and attaches 6 framebuffer objects to it. Then, at the beginning of each frame, an environment map for the center object is created by rendering the scene 6 times from the object's point of view, once for each direction, using a 90 degree field of view.
+<P>
+The scene is then rendered normally, with the center object using the environment map and texture coordinates dynamically generated in the vertex shader.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

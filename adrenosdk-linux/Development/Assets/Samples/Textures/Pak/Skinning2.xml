@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "blinn1"
+    SrcFileName = "../scorpion01_d.tga"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "blinn2"
+    SrcFileName = "../scorpion01_n.tga"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

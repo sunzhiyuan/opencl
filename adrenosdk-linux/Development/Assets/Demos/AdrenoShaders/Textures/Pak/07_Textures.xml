@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<CubeMap
+    ResourceID    = "BedroomCubeMap"
+    SrcFileNameXP = "..\BedroomCubeMap_blur_RT.png"
+    SrcFileNameXN = "..\BedroomCubeMap_blur_LF.png"
+    SrcFileNameYP = "..\BedroomCubeMap_blur_UP.png"
+    SrcFileNameYN = "..\BedroomCubeMap_blur_DN.png"
+    SrcFileNameZP = "..\BedroomCubeMap_blur_BK.png"
+    SrcFileNameZN = "..\BedroomCubeMap_blur_FR.png"
+    FlipImages    = "TRUE"
+    DstFormat     = "ATC"
+/>

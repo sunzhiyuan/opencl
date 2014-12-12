@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Common</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_adreno_launcher">AdrenoLauncherActivity</string>
+    <string name="title_activity_adreno_native">AdrenoNativeActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+
+</resources>

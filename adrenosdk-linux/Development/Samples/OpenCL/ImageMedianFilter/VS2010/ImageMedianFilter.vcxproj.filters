@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{50d21988-c1ea-4b59-aea3-c0f36befdabf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files">
+      <UniqueIdentifier>{6d7ef4a2-3fc8-43d7-b63f-567c1689d321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files\OpenCL">
+      <UniqueIdentifier>{826ce5cc-891f-4890-b6fc-185f2a97e877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files">
+      <UniqueIdentifier>{93a5cd6f-5bb9-48e2-9510-8c0d021ac047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files\OpenCL">
+      <UniqueIdentifier>{9fa18637-55d9-4a2d-8a14-241ebf6155c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Win32">
+      <UniqueIdentifier>{06e436c8-132c-496d-b92a-9a05986bfaf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{ad8c6102-c5ab-4f6a-9709-62607829a9a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmComputeApplication.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFile.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFont.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmInput.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmMath.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmNoise.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmStdlib.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUserInterface.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenCL\FrmKernel.h">
+      <Filter>Framework\Header Files\OpenCL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h">
+      <Filter>Framework\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Compute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\FrmComputeApplication.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmFont.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmInput.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUserInterface.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenCL\FrmKernel.cpp">
+      <Filter>Framework\Source Files\OpenCL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmComputeApplication_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\win32\FrmNoise_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Compute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\Assets\Samples\Kernels\ImageMedianFilter.cl">
+      <Filter>Assets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\Assets\Samples\Textures\SampleImageUncompressed.tga">
+      <Filter>Assets</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\BandwidthTest\Framework\Win32\Adreno.ico">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl">
+      <Filter>Framework\Win32</Filter>
+    </None>
+  </ItemGroup>
+</Project>

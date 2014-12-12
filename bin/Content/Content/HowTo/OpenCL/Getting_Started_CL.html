@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="Getting Started with OpenCL Profiling">
+    <title>Getting Started with OpenCL Profiling</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">Getting Started with OpenCL Profiling</div>
+    </div>
+    <div id="Content">
+	  <p>
+		This tutorial explains the basics of setting up a OpenCL application for profiling in the Adreno Profiler. 
+	  </p>
+	  <h3>Enabling and Disabling Profiler</h3>
+		<p>
+		It is important to know that in order to be able to profile an OpenCL application the user must have root access to the device in order to be able to set the properties needed. In a command-prompt(Start -> All Programs -> Accessories -> Command Prompt)  type either:
+		</p>
+		<div align="center">
+		<img src="images/adb_root.png"/>
+		<p>Or</p>
+		<img src="images/adb_shell_su.png"/>
+		</div>
+		<br>
+		<p>
+			Once in root mode the following three properties are used in OpenCL profiling. For a more detailed explanation of the property and its values click on the property link.
+		</p>
+		<br>
+		<div align="center">
+		<table border = "1" width = "600">
+			<tr>
+				<td><b>Property</b></td>
+				<td><b>Summary</b></td>
+			</tr>
+			<tr>
+				<td><a href="ADRENO_PROFILER_ENABLE_OPENCL.html">ADRENO_PROFILER_ENABLE_OPENCL</a></td>
+				<td>Enables and disables OpenCL profiling.</td>
+			</tr>
+			<tr>
+				<td><a href="ADRENO_PROFILER_ENABLE_BLOCKING.html">ADRENO_PROFILER_ENABLE_BLOCKING</a></td>
+				<td>Handles blocking of application process until profiler is connected.</td>
+			</tr>
+			<tr>
+				<td><a href="ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD.html">ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD</a></td>
+				<td>Property to modify how long should profiler try to connect after an API it’s called.</td>
+			</tr>
+		</table>
+		</div>
+		<br>
+		<p>
+		In order to be able to profile an OpenCL application the following property needs to be set on an adb shell with root access:
+		</p>
+		<br>
+		<div align="center">
+			<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_OPENCL_1.png"/>
+		</div>
+		<br>
+		<p>And to disable OpenCL profiling:</p>
+		<br>
+		<div align="center">
+			<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_OPENCL_0.png"/>
+		</div>
+		<br>
+		<p>
+			There’s generally two type of use cases for OpenCL applications and can be profiled with a different setup:
+		</p>
+		<br>
+		<ol>
+			<li> <b>For one-shot applications</b><br>
+				<p>These applications usually follow a simple control flow and exits quickly. This makes it hard for the user to connect to the application and profile before it exits. For this kind of applications a property can be set which blocks the execution of application until Adreno Profiler connects and starts recording. This is achieved by setting the following property:</p>
+				<br>
+				<div align="center">
+					<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_BLOCKING_1.png"/>
+				</div>
+				<br>
+				<p>Note: This kind of profiling is limited to command line applications ran through an adb shell and will have unexpected results if stalling the UI thread by setting this property with an APK application. If blocking until profiler is connected is needed on APK applications, some kind of instrumentation by developer will be needed, please look at the description of <a href="ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD.html">ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD</a> for more information on this method.</p></li>
+				<br>
+		
+			<li> <b>For APK and Periodic Applications.</b><br>
+				<p>These applications tend to use OpenCL to compute repetitively potentially with interoperability with OpenGL. Once OpenCL profiling is enabled through <a href="ADRENO_PROFILER_ENABLE_OPENCL.html">ADRENO_PROFILER_ENABLE_OPENCL</a> non-blocking profiling is enabled by default and Adreno Profiler should be able to connect to the target application and record/stop at any point in time.  Please note that if no user instrumented mechanism is implemented to block the application execution the capture most likely won’t contain any creation API’s(such as kernel, etc.) and for the same reason the kernel viewer won’t be populated.</p>
+				<p>Note: OpenCL API’s profiling will fall into sleep mode after 5 seconds passed since the last OpenCL API called so if needed, the threshold can be adjusted as required through the property <a href="ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD.html">ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD</a>.</p>
+
+	</ol>  
+	
+	<p>
+	<h3> What to do next?</h3>
+	</p>
+	<p>
+		Depending on what you want to do with profiler you can look at how to:
+	</p>
+	<br>
+	<p>
+		<ul>
+			<li><a href="CaptureAndScrub_CL.html">Record OpenCL Application</a></li>
+			<br>
+			<li><a href="DevelopAndOptimizeKernel.html">Develop and Optimize Kernels with Adreno Profiler Kernel Analyzer</a></li>
+	</p>
+	  
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

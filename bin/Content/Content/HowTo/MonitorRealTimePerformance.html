@@ -1,0 +1,157 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Monitor">
+<meta name="MS-HKWD" content="Real-Time">
+<meta name="MS-HKWD" content="Monitor Performance">
+  <HEAD>
+    <TITLE>Tutorial: How To Monitor Real-time Performance</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Monitor Real-time Performance</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains how to stream and view real-time performance metrics from your mobile device.
+      </P>
+
+      <BR />
+
+	  <P>
+		There are two types of Graphers that can be used depending on the requirements. 'App Metrics Graph' requires an application
+		running and will display metrics related to that process only. To open an 'App Metrics Graph' you will need to <A HREF="Connect.html">connect</A>
+		to a device. 'Global Metrics Graph' doesn't require an application running as it gathers metrics for the whole device, this button will enable
+		if global metrics are supported by the current device.
+		<DIV CLASS="Indent">
+          <P>
+            <img src="Grapher/GrapherComboBox.png" width="700" />
+          </P>
+        </DIV>
+	  </P
+
+      <BR />
+
+      <P>
+        Note that multiple graphs can be created and viewed side-by-side. To create a new document pane, drag a document
+        tab a short distance, then let go (Note: this only applies to the Windows version of Adreno Profiler). Choose an orientation from the menu that appears. 
+        <DIV CLASS="Indent">
+          <P>
+            <img src="MonitorRealTimePerformance_2.gif" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        Once the <A HREF="../Reference/Grapher.html">Grapher</A> appears, switch to the 
+        <b><A HREF="../Reference/MetricsBrowser.html">Metrics Browser</A></b>. A list of performance metrics is presented.
+      </P>
+
+      <BR />
+
+      <P>
+        The bottom portion of the Metrics Browser displays information about the selected metric.
+        <DIV CLASS="Indent">
+          <P>
+            • <i><u>Read this information carefully!</u> Performance issues can often be quickly identified
+            just by observing real-time metrics.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        <DIV CLASS="Indent">
+          <P>
+            <img src="Grapher/PopulatedGrapher.png" width="800"/>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        To begin capturing an individual metric, drag its label from the Metrics Browser and drop it on to a 
+        Grapher document. A metric line control will be added to the grapher with the chosen metric.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Note that due to concurrency limitations in the embedded CPU and GPU, there are limits to how many
+            metrics can be simultaneously enabled. As a result, turning on a metric may cause others to become
+            unavailable - Adreno Profiler will highlight those unavailable metrics in red.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        To stop capturing a metric, click the close button beside the metric in Metrics Browser or the close button <img src="CloseIcon.png" />
+        within the metric line control shown in Grapher. A list of Grapher documents currently plotting the metric 
+        will appear; select the Grapher you wish to cease plotting the metric.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="Grapher/MetricBrowserClose.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+	  
+	  <P>Each metric line is a separate control and has controls that can affect its appereance, order or layout. 
+		The various operations permitted per metric line are the following:
+		<DIV CLASS="Indent">
+          <P>
+            <img src="Grapher/MetricLine.png" />
+          </P>
+	  </P>
+	  
+	  <P>
+		  <OL>
+			<LI><img src="Grapher/CloseIcon.png" /> Close/Disable this metric.</LI>
+			<LI><img src="Grapher/ColorPicker.png" /> Change color of the metric in graph.</LI>
+			<LI><img src="Grapher/Dock.png" /> Undock this metric from the grapher into its own window or dock back to Grapher.</LI>
+			<LI><img src="Grapher/UpArrow.png" /> Move this metric line up or down within the Grapher layout.</LI>
+		  </OL>
+        </DIV>
+	  </P>
+	  
+	  <BR />
+
+      <P>
+        <b>As real-time metrics are plotting, Adreno Profiler provides ways to override the behavior of the
+        embedded application. Experiment with these overrides to find your app's performance bottlenecks.</b>
+        <DIV CLASS="Indent">
+          <P>
+            <b>1</b> - You can enable and disable basic OpenGLES render state using the 
+            <A HREF="../Reference/OverridesBrowser.html">Overrides Browser.</A>
+          </P>
+          <P>
+            <b>2</b> - For OpenGLES v2.0 applications, the GLSL shaders captured by a
+            <A HREF="OpenGLES2/CaptureAndScrubFrames_GLES2.html">Scrubber</A> can be
+            <A HREF="OpenGLES2/OptimizeShaders_GLES2.html">edited and then overridden</A> on the device while the embedded application
+            is running, giving immediate performance feedback for shader optimizations.
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        On Adreno 200+ series devices, the Grapher metrics report frequency can be changed. To do so, click
+        on the button labeled "Freq" on the toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="Grapher/MetricsViewFrequency.png" />
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

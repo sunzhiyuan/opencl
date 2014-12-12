@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "FontTexture"
+    SrcFileName = "Tuffy16.tga"
+    DstFormat   = "ATC"
+/>
+
+<BinaryData
+    ResourceID  = "FontData"
+    SrcFileName = "Tuffy16.font"
+/>

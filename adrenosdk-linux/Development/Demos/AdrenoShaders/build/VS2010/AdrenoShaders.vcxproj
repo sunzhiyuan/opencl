@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EC5D24B-A2E7-4D24-A0CB-3AA4A1C25967}</ProjectGuid>
+    <RootNamespace>Shaders</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>AdrenoShaders</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\Bin_d\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\Intermediate\Demos\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\Bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\Intermediate\Demos\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_d</TargetName>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\Inc;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>OS_WIN32;_DEBUG;_WIN32;_CRT_SECURE_NO_DEPRECATE;PLATFORM=OPENGLES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\obj\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>libEGL_d.lib;libGLESv2_d.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\$(PlatformName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>0</StackReserveSize>
+      <StackCommitSize>0</StackCommitSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\Inc;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>OS_WIN32;NDEBUG;_WIN32;_CRT_SECURE_NO_DEPRECATE;PLATFORM=OPENGLES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\obj\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;$(PLATFORMDEFINES);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\$(PlatformName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <StackReserveSize>0</StackReserveSize>
+      <StackCommitSize>0</StackCommitSize>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>$(TargetDir)\ResourcePacker.exe ..\..\..\..\Assets\Demos\AdrenoShaders\Fonts\ $(TargetDir)Demos\AdrenoShaders\Fonts\
+
+$(TargetDir)\ResourcePacker.exe ..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak $(TargetDir)\Demos\AdrenoShaders\Textures\
+
+$(TargetDir)\ShaderPreprocessor.exe -nologo -in $(TargetDir)\..\Development\Assets\Demos\AdrenoShaders\Shaders\ -out $(TargetDir)\Demos\AdrenoShaders\Shaders\
+
+xcopy /Y /S ..\..\..\..\Assets\Demos\AdrenoShaders\Meshes\* $(TargetDir)\Demos\AdrenoShaders\Meshes\* &gt; NUL
+
+copy ..\..\..\..\Assets\Demos\AdrenoShaders\CurrentScene.txt $(TargetDir)\Demos\AdrenoShaders\
+
+xcopy /Y /S ..\..\..\..\Assets\Demos\AdrenoShaders\Textures\*Cubemap* $(TargetDir)\Demos\AdrenoShaders\Textures\* &gt; NUL
+
+xcopy /Y /S ..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Noise.tga $(TargetDir)\Demos\AdrenoShaders\Textures\* &gt; NUL</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmApplication.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmFont.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmInput.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmPackedResource.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUserInterface.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUtils.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmApplication_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmFile_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmNoise_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\..\src\application.cpp" />
+    <ClCompile Include="..\..\src\common.cpp" />
+    <ClCompile Include="..\..\src\scene.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene01.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene02.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene03.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene04.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene05.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene06.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene07.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene08.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene09.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene10.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene11.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene12.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene13.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene14.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene14b.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene15.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene16.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene17.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene18.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene19.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene20.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene21.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene22.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene23.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene24.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene25.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene26.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene27.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene28.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene29.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene30.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene31.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene32.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene33.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene34.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene35.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene36.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene37.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene38.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene39.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene40.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene41.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene42.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene43.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene44.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene45.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene46.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene47.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene48.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene49.cpp" />
+    <ClCompile Include="..\..\src\scenes\Scene50.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmApplication.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFile.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFont.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmInput.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmMath.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmNoise.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmPackedResource.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmResource.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmStdLib.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUserInterface.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUtils.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.h" />
+    <ClInclude Include="..\..\src\application.h" />
+    <ClInclude Include="..\..\src\common.h" />
+    <ClInclude Include="..\..\src\scene.h" />
+    <ClInclude Include="..\..\src\scenes\Scene01.h" />
+    <ClInclude Include="..\..\src\scenes\Scene02.h" />
+    <ClInclude Include="..\..\src\scenes\Scene03.h" />
+    <ClInclude Include="..\..\src\scenes\Scene04.h" />
+    <ClInclude Include="..\..\src\scenes\Scene05.h" />
+    <ClInclude Include="..\..\src\scenes\Scene06.h" />
+    <ClInclude Include="..\..\src\scenes\Scene07.h" />
+    <ClInclude Include="..\..\src\scenes\Scene08.h" />
+    <ClInclude Include="..\..\src\scenes\Scene09.h" />
+    <ClInclude Include="..\..\src\scenes\Scene10.h" />
+    <ClInclude Include="..\..\src\scenes\Scene11.h" />
+    <ClInclude Include="..\..\src\scenes\Scene12.h" />
+    <ClInclude Include="..\..\src\scenes\Scene13.h" />
+    <ClInclude Include="..\..\src\scenes\Scene14.h" />
+    <ClInclude Include="..\..\src\scenes\Scene14b.h" />
+    <ClInclude Include="..\..\src\scenes\Scene15.h" />
+    <ClInclude Include="..\..\src\scenes\Scene16.h" />
+    <ClInclude Include="..\..\src\scenes\Scene17.h" />
+    <ClInclude Include="..\..\src\scenes\Scene18.h" />
+    <ClInclude Include="..\..\src\scenes\Scene19.h" />
+    <ClInclude Include="..\..\src\scenes\Scene20.h" />
+    <ClInclude Include="..\..\src\scenes\Scene21.h" />
+    <ClInclude Include="..\..\src\scenes\Scene22.h" />
+    <ClInclude Include="..\..\src\scenes\Scene23.h" />
+    <ClInclude Include="..\..\src\scenes\Scene24.h" />
+    <ClInclude Include="..\..\src\scenes\Scene25.h" />
+    <ClInclude Include="..\..\src\scenes\Scene26.h" />
+    <ClInclude Include="..\..\src\scenes\Scene27.h" />
+    <ClInclude Include="..\..\src\scenes\Scene28.h" />
+    <ClInclude Include="..\..\src\scenes\Scene29.h" />
+    <ClInclude Include="..\..\src\scenes\Scene30.h" />
+    <ClInclude Include="..\..\src\scenes\Scene31.h" />
+    <ClInclude Include="..\..\src\scenes\Scene32.h" />
+    <ClInclude Include="..\..\src\scenes\Scene33.h" />
+    <ClInclude Include="..\..\src\scenes\Scene34.h" />
+    <ClInclude Include="..\..\src\scenes\Scene35.h" />
+    <ClInclude Include="..\..\src\scenes\Scene36.h" />
+    <ClInclude Include="..\..\src\scenes\Scene37.h" />
+    <ClInclude Include="..\..\src\scenes\Scene38.h" />
+    <ClInclude Include="..\..\src\scenes\Scene39.h" />
+    <ClInclude Include="..\..\src\scenes\Scene40.h" />
+    <ClInclude Include="..\..\src\scenes\Scene41.h" />
+    <ClInclude Include="..\..\src\scenes\Scene42.h" />
+    <ClInclude Include="..\..\src\scenes\Scene43.h" />
+    <ClInclude Include="..\..\src\scenes\Scene44.h" />
+    <ClInclude Include="..\..\src\scenes\Scene45.h" />
+    <ClInclude Include="..\..\src\scenes\Scene46.h" />
+    <ClInclude Include="..\..\src\scenes\Scene47.h" />
+    <ClInclude Include="..\..\src\scenes\Scene48.h" />
+    <ClInclude Include="..\..\src\scenes\Scene49.h" />
+    <ClInclude Include="..\..\src\scenes\Scene50.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\CurrentScene.txt" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Fonts\Tuffy12.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Fonts\Tuffy16.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\01_Ambient.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\02_Diffuse.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\03_Specular.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\04_SpecularAniso.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\05_Blinn-Phong.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\06_IllumMap.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\07_CubeMapLighting.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\08_ParallaxMapping.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\09_CookTorrance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\10_BlinnPhongShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\10_OrenNayarShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\11_Ward.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\12_Ashikhmin.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\13_StraussShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14b_ToonShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_NormalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_ToonShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_HatchShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_HatchShaderB.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_NormalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\16_SkinShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\17_ClothShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\18_LeatherShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\19_MetalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\20_BlinnPhongShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\20_WoodShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\21_BlinnPhongShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\21_PlasticShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\22_EyeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\23_MarbleShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\23_PerlinNoise.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\24_FurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\25_FishShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\26_ElephantShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\28_MotionBlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\29_DepthFogShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\29_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\30_HeightFogShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\30_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_CutoutShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_RayExtruderShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_SpriteShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_BackdropShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_GlassShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_AdaptLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_AverageLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_BrightPass.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_CopyRT.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_GenerateLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_AdaptLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_AverageLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_BrightPass.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_CopyRT.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_GenerateLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_AdaptLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_AverageLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_BrightPass.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_CopyRT.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_GenerateLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_AdaptLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_AverageLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_BrightPass.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_CopyRT.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_GenerateLuminance.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_LightStreakShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_DownsizeShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\43_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\43_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_AOShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_NormalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_BlurShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_BounceShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_NormalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\46_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\47_EnvShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_CombineShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_LightShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_NormalShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_PreviewShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\49_MaterialShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_CIE.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_HSV.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_L16Luv.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_PassThroughShader.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_RGB.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_RGBE.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\CommonFS.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\CommonVS.glsl" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\04_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\06_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\07_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\08_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\09_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\10_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\11_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\13_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\14b_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\14_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\15_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\16_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\17_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\18_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\19_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\20_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\21_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\22_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\23_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\24_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\25_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\26_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\27_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\28_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\29_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\30_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\31_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\32_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\33_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\34_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\35_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\36_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\37_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\38_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\39_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\40_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\41_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\42_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\43_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\44_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\45_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\46_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\47_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\48_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\49_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\50_Textures.xml" />
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\Logo.xml" />
+    <None Include="..\..\..\..\Samples\Framework\Win32\Adreno.ico" />
+    <None Include="..\..\..\..\Samples\Framework\Win32\FrmMath_Platform.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

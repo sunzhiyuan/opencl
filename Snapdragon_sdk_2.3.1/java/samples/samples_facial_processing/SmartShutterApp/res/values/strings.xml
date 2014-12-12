@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ======================================================================
+ *  Copyright 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ *  QTI Proprietary and Confidential.
+ *  =====================================================================
+ *
+ */-->
+<resources>
+
+    <string name="app_name">SmartShutterApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_image_confirmation">ImageConfirmation</string>
+    <string name="action_settings">Settings</string>
+    <string name="desc">Description</string>
+
+</resources>

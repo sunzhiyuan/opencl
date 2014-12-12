@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Texcompress</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Texcompress</H1>
+
+The Texcompress library can be used to generate compressed ATC, ETC, and 3DC textures for QUALCOMM's OpenGL ES 2.0 platforms.  The library can be used to create an output file (CTES) that stores the compressed image data along with a header description. 
+<p>
+The purpose of this document is to document the following topics:
+<UL>
+<LI>Description of the Texcompress library interface</LI>
+<LI>Description of the CTES file format</LI>
+</UL>
+
+
+<H1>Texcompress Library</H1>
+The Texcompress library is provided as a binary static library (.lib) that can be linked to by an application.  The interface to Texcompress is given by the functions in the texcompress.h header file and is described in the following section.
+
+<h2>Texcompress Functions</h2>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressDecode</B>( unsigned int <I><B>signature</B></I>,
+                     unsigned int <I><B>width</B></I>,
+                     unsigned int <I><B>height</B></I>,
+                     unsigned int <I><B>flags</B></I>,
+                     unsigned char *<I><B>pEncodedData </B></I>,
+                     int <I><B>level</B></I>,
+                     unsigned int <I><B>colorChannelOrder</B></I>,
+                     unsigned char *<I><B>pDecodedData </B></I>,
+                     unsigned int <I><B>cbOutputBuffer</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This function decompresses a compressed image. 
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>signature</B></I></TD><TD>Texture compression format signature for the compressed image (ATITC_SIGNATURE, ATI1N_SIGNATURE, ATI2N_SIGNATURE, or ETC_SIGNATURE)</TD></TR>
+
+<TR><TD><I><B>width</B></I></TD><TD>Width of the compressed image in pixels</TD></TR>
+<TR><TD><I><B>height</B></I></TD><TD>Height of the compressed image in pixels</TD></TR>
+
+<TR><TD><I><B>flags</B></I></TD><TD>Compression format flags (TXCMPR_RGB, TXCMPR_RGBA, TXCMPR_ALPHA_INTERP) </TD></TR>
+
+<TR><TD><I><B>pEncodedData </B></I></TD><TD>Compressed mip levels (little-endian) (Do not adjust for each level)</TD></TR>
+
+<TR><TD><I><B>level</B></I></TD><TD>Mipmap level or zero if a single level</TD></TR>
+<TR><TD><I><B>colorChannelOrder</B></I></TD><TD>Desired color channel order (TXCMPR_RGB_RGBA_ORDER or TXCMPR_BGR_BGRA_ORDER) </TD></TR>
+
+<TR><TD><I><B>pDecodedData </B></I></TD><TD>Output buffer for decoded image </TD></TR>
+<TR><TD><I><B>cbOutputBuffer</B></I></TD><TD>Size of the output buffer in bytes</TD></TR>
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes .
+
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressDecodeFileData</B>( unsigned char * <I><B>pFileHeader</B></I>,
+                     unsigned char * <I><B>pEncodedData</B></I>,
+                     int <I><B>level</B></I>,
+                     unsigned int <I><B>colorChannelOrder</B></I>,
+                     unsigned char *<I><B>pDecodedData </B></I>,
+                     unsigned int <I><B>cbOutputBuffer</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This function decompresses a compressed image (from a CTES file).
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>pFileHeader</B></I></TD><TD>Pointer to TXCMPR_HEADER for CTES file</TD></TR>
+
+<TR><TD><I><B>pEncodedData</B></I></TD><TD>Pointer to encoded image data (includes all mip levels - do not adjust for each level) </TD></TR>
+
+<TR><TD><I><B>level</B></I></TD><TD>Mipmap level or zero if a single level</TD></TR>
+<TR><TD><I><B>colorChannelOrder</B></I></TD><TD>Desired color channel order (TXCMPR_RGB_RGBA_ORDER or TXCMPR_BGR_BGRA_ORDER) </TD></TR>
+
+<TR><TD><I><B>pDecodedData </B></I></TD><TD>Output buffer for decoded image </TD></TR>
+<TR><TD><I><B>cbOutputBuffer</B></I></TD><TD>Size of the output buffer in bytes</TD></TR>
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes.
+
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressEncode</B>( const unsigned char * <I><B>pPixelDataIn</B></I>,
+                     unsigned int<I><B>maskRed</B></I>,
+                     unsigned int<I><B>maskGreen</B></I>,
+                     unsigned int<I><B>maskBlue</B></I>,
+                     unsigned int<I><B>maskAlpha</B></I>,
+                     int <I><B>width</B></I>,
+                     int <I><B>height</B></I>,
+                     int <I><B>stride</B></I>,
+                     unsigned int <I><B>dstFlags</B></I>,
+                     unsigned int<I><B>signature </B></I>,
+                     unsigned char *<I><B>pOutputBuffer</B></I>,
+                     unsigned int  *<I><B>pcbOutputBuffer</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This function compresses an uncompressed texture image.
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>pPixelDataIn</B></I></TD><TD>Pointer to input pixel data</TD></TR>
+<TR><TD><I><B>maskRed</B></I></TD><TD>Mask for Red bits in source</TD></TR>
+<TR><TD><I><B>maskGreen</B></I></TD><TD>Mask for Green bits in source</TD></TR>
+<TR><TD><I><B>maskBlue</B></I></TD><TD>Mask for Blue bits in source</TD></TR>
+<TR><TD><I><B>maskAlpha</B></I></TD><TD>Mask for Alpha bits in source</TD></TR>
+<TR><TD><I><B>width</B></I></TD><TD>Width of the uncompressed image in pixels </TD></TR>
+<TR><TD><I><B>height</B></I></TD><TD>Height of the uncompressed image in pixels </TD></TR>
+<TR><TD><I><B>stride</B></I></TD><TD>Stride in bytes of the uncompressed image </TD></TR>
+
+<TR><TD><I><B>dstFlags</B></I></TD><TD>Compression format flags (TXCMPR_RGB, TXCMPR_RGBA, TXCMPR_ALPHA_INTERP) </TD></TR>
+
+<TR><TD><I><B>signature</B></I></TD><TD>Texture compression format signature for the compressed image (ATITC_SIGNATURE, ATI1N_SIGNATURE, ATI2N_SIGNATURE, or ETC_SIGNATURE)</TD></TR>
+
+<TR><TD><I><B>pOutputBuffer </B></I></TD><TD>Pointer to where the compressed image texel data is written </TD></TR>
+<TR><TD><I><B>pcbOutputBuffer</B></I></TD><TD>Size of output buffer on input; number of bytes used on output</TD></TR>
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes.
+
+
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressFillHeader</B>( unsigned char * <I><B>pHeaderBuffer</B></I>,
+                     int <I><B>width</B></I>,
+                     int <I><B>height</B></I>,
+                     int <I><B>numLevels</B></I>,
+                     unsigned int <I><B>dstFlags</B></I>,
+                     unsigned int<I><B>signature </B></I>,
+                     unsigned int<I><B>numBytesPrivateData</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This is a function to setup data in the TXCMPR_HEADER struct. 
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>pHeaderBuffer </B></I></TD><TD>Pointer to the TXCMPR_HEADER struct to setup </TD></TR>
+<TR><TD><I><B>width</B></I></TD><TD>Width of the compressed image in pixels </TD></TR>
+<TR><TD><I><B>height</B></I></TD><TD>Height of the compressed image in pixels </TD></TR>
+<TR><TD><I><B>numLevels </B></I></TD><TD>The number of mipmap levels of the compressed image</TD></TR>
+
+<TR><TD><I><B>dstFlags</B></I></TD><TD>Compression format flags (TXCMPR_RGB, TXCMPR_RGBA, TXCMPR_ALPHA_INTERP) </TD></TR>
+
+<TR><TD><I><B>signature</B></I></TD><TD>Texture compression format signature for the compressed image (ATITC_SIGNATURE, ATI1N_SIGNATURE, ATI2N_SIGNATURE, or ETC_SIGNATURE)</TD></TR>
+
+<TR><TD><I><B>numBytesPrivateData</B></I></TD><TD>Number of bytes of data between header and start of compression (usually 0)</TD></TR>
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes.
+
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressQuerryDecodeBufferSize</B>( int <I><B>width</B></I>,
+                     int <I><B>height</B></I>,
+                     unsigned int<I><B>signature </B></I>,
+                     int <I><B>boolHasAlpha</B></I>,
+                     unsigned int *<I><B>pcbOutputBuffer</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This  function determines the size in bytes required to store the decompressed image. 
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>width</B></I></TD><TD>Width of the compressed image in pixels </TD></TR>
+<TR><TD><I><B>height</B></I></TD><TD>Height of the compressed image in pixels </TD></TR>
+
+<TR><TD><I><B>signature</B></I></TD><TD>Texture compression format signature for the compressed image (ATITC_SIGNATURE, ATI1N_SIGNATURE, ATI2N_SIGNATURE, or ETC_SIGNATURE)</TD></TR>
+
+<TR><TD><I><B>boolHasAlpha</B></I></TD><TD>Whether the compressed image has an alpha channel</TD></TR>
+<TR><TD><I><B>pcbOutputBuffer</B></I></TD><TD>Pointer to an unsigned integer which will be assigned the size of the decompressed image in bytes</TD></TR>
+
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes.
+
+
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+unsigned int <B>TxCompressQuerryEncodeBufferSize</B>( int <I><B>width</B></I>,
+                     int <I><B>height</B></I>,
+                     int <I><B>numLevels</B></I>,
+                     unsigned int <I><B>dstFlags</B></I>,
+                     unsigned int<I><B>signature </B></I>,
+                     unsigned int *<I><B>pcbOutputBuffer</B></I>)
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+This  function determines the size in bytes required to store the compressed image. 
+<P>
+<B>Parameters:</B>
+<P>
+<TABLE>
+<TR><TD><I><B>width</B></I></TD><TD>Width of the uncompressed image in pixels </TD></TR>
+<TR><TD><I><B>height</B></I></TD><TD>Height of the uncompressed image in pixels </TD></TR>
+<TR><TD><I><B>numLevels</B></I></TD><TD>The number of levels to calculate space for </TD></TR>
+<TR><TD><I><B>dstFlags</B></I></TD><TD>Compression format flags (TXCMPR_RGB, TXCMPR_RGBA, TXCMPR_ALPHA_INTERP)</TD></TR>
+
+
+<TR><TD><I><B>signature</B></I></TD><TD>Texture compression format signature for the compressed image (ATITC_SIGNATURE, ATI1N_SIGNATURE, ATI2N_SIGNATURE, or ETC_SIGNATURE)</TD></TR>
+
+<TR><TD><I><B>pcbOutputBuffer</B></I></TD><TD>Pointer to an unsigned integer which will be assigned the size of the compressed image data in bytes</TD></TR>
+
+</TABLE>
+<P>
+
+<B>Returns:</B><br>
+TXCMPR_ERROR_NO_ERROR on success, otherwise one of the TXCMPR_ERROR_* error codes.
+
+
+
+<h2>Example Usage</h2>
+The first example code shows how to use the library to read in a CTES file and load the image data to OpenGL ES 2.0 using glCompressedTexImage2D.
+
+<h3>Load a CTES file</h3>
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+TXCMPR_HEADER       header;
+int                 boolHasAlpha;
+unsigned char       *pEncodedData = NULL;
+unsigned int        cbFileHeader, cbEncodedData, cbDecodedData;
+    
+FILE*               fhIn;
+
+//--------------------------------------------------
+// Read the header from the compressed texture file
+//--------------------------------------------------
+if ( (fhIn = fopen( argv[1], "rb" )) == NULL )
+{
+   printf( "Error:  Unable to open file '%s' for input!\n", argv[1] );
+   return -1;
+}
+
+if ( fread( &header, 1, sizeof(header), fhIn ) < sizeof(header) )
+{
+   printf( "Error:  Unable to read file '%s'!\n", argv[1] );
+   return -1;
+}
+
+//-----------------------
+// Verify file signature
+//-----------------------
+    
+if ( header.signature != ATITC_SIGNATURE  &&  header.signature != ETC_SIGNATURE  && 
+     header.signature != ATI2N_SIGNATURE  &&  header.signature != ATI1N_SIGNATURE )
+{
+   printf( "Error:  Signature not recognized in file '%s'!\n", argv[1] );
+   return -1;
+}
+
+boolHasAlpha = header.flags & TXCMPR_RGBA;
+
+//----------------------------------------------------------------------------
+// Allocate memory for the encoded image (this includes all the mipmap levels 
+//      if the "mipmap" flag is set)
+//----------------------------------------------------------------------------
+
+cbFileHeader = sizeof(TXCMPR_HEADER);
+    
+error = TxCompressQueryEncodeBufferSize( 
+                header.width, 
+                header.height, 
+                header.numLevels,
+                header.flags, 
+                header.signature, 
+                &cbEncodedData);    // This is how much to allocate to 
+                                       hold all the mipmap levels together
+
+pEncodedData = malloc( cbEncodedData );
+assert( pEncodedData );
+
+//-----------------------------------------------
+// Read in the encoded image (without the header)
+//-----------------------------------------------
+fseek( fhIn, header.dataOffset, SEEK_SET );
+fread( pEncodedData, cbEncodedData, 1, fhIn );
+
+for ( level = 0;  level < header.numLevels;  level++ )
+{
+   
+   width = max(1, header.width >> level);
+   height = max(1, header.height >> level);
+
+   //------------------------------------------------
+   // Determine the size of the level
+   //------------------------------------------------      
+   TxCompressQueryEncodeBufferSize(width, 
+                                   heigth,
+                                   0,
+                                   header.flags,
+                                   header.signature,
+                                   &cbEncodedData);
+
+   //------------------------------------------------
+   // Load the compressed texture
+   //------------------------------------------------      
+   glCompressedTexImage2D( GL_TEXTURE_2D,
+                            0,
+                            header.internalFormat,
+                            width,
+                            height,
+                            0,
+                            cbEncodedData,
+                            pEncodedData );
+
+   pEncodedData += cbEncodedData;
+}
+
+</PRE>
+</TR></TD>
+</TABLE>
+<P>
+
+The next example code shows how to use the library to output a CTES file.  This code assumes a BMP file exists for each mipmap level in the chain.  The code compresses each level and writes out a full CTES file.
+
+<h3>Write a CTES file</h3>
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+ for ( level = 0;  level < numLevels;  level++ )
+ {
+     // Read mip image from BMP file... (details omitted)
+
+     
+     // Encode the image for the current level
+     boolDstAlpha = (bmp_info.alpha_mask != 0);
+     dstFlags |= (boolDstAlpha ? TXCMPR_RGBA : TXCMPR_RGB);
+
+     if ( level == 0 )
+     {
+         //---------------------------------------------------------
+         // Open output file for header, private data, encoded data
+         //---------------------------------------------------------
+
+         if ( (fhOut = fopen( argv[argc-1], "wb" )) == NULL )
+         {
+             printf( "Error:  Unable to open file '%s' for output!\n", argv[argc-1] );
+             free( bmp_info.pPixels );
+             return -1;
+         }
+
+         //--------------------------------------------------
+         // Write out header and private data on first level
+         //--------------------------------------------------
+
+         // Allocate CTES File Header
+         cbFileHeaderOut = sizeof( TXCMPR_HEADER );
+         pFileHeaderOut = malloc( cbFileHeaderOut );
+         assert( pFileHeaderOut );
+
+         // Private data to store between header & encoded texels
+         pPrivateDataOut = (void*)"[Copyright message could go here]";
+         cbPrivateDataOut = strlen( pPrivateDataOut );
+
+         // Fill in the header
+         TxCompressFillHeader( pFileHeaderOut, bmp_info.width, bmp_info.height, 
+                               numLevels, dstFlags, signature, cbPrivateDataOut );
+
+         // Write out the header and private data
+         fwrite( pFileHeaderOut, cbFileHeaderOut, 1, fhOut );
+         fwrite( pPrivateDataOut, cbPrivateDataOut, 1, fhOut );
+         
+
+         //----------------------------------------------------------------------
+         // Allocate a buffer large enough to hold the largest encoded mip level
+         //----------------------------------------------------------------------
+
+         error = TxCompressQueryEncodeBufferSize( bmp_info.width, bmp_info.height, 1 ,
+                                                  dstFlags, signature, 
+                                                  &cbEncodedDataOut );
+         if ( error )
+         {
+             DisplayError( error );
+             free( bmp_info.pPixels );
+             fclose( fhOut );
+             remove( argv[argc-1] );     // Delete the .ctes output file
+             return -1;
+         }
+         pEncodedDataOut = malloc( cbEncodedDataOut );
+         assert( pEncodedDataOut );
+
+
+         // Keep track of base width & height for error checking on other levels
+
+         base_width = bmp_info.width;
+         base_height = bmp_info.height;
+
+         // Initialize pointer to an individual level inside our buffer of all levels
+         pEncodedLevelDataOut = pEncodedDataOut;
+     }
+
+     // Compress the level
+     error = TxCompressEncode( 
+                 bmp_info.pPixels,
+                 bmp_info.red_mask,
+                 bmp_info.green_mask,
+                 bmp_info.blue_mask,
+                 bmp_info.alpha_mask,
+                 bmp_info.width, 
+                 bmp_info.height, 
+                 bmp_info.stride,
+                 dstFlags,
+                 signature,             // Encoding method
+                 pEncodedDataOut,
+                 &cbEncodedDataOut );
+     if ( error )
+     {
+         DisplayError( error );
+         free( bmp_info.pPixels );
+         free( pEncodedDataOut );
+         fclose( fhOut );
+         remove( argv[argc-1] );     // Delete the .ctes output file
+         return -1;
+     }
+
+
+     //=============================
+     // Write out the encoded image
+     //=============================
+
+     fwrite( pEncodedDataOut, cbEncodedDataOut, 1, fhOut );
+
+  }
+
+</PRE>
+</TR></TD>
+</TABLE>
+<P>
+
+<h1>CTES File Format</h1>
+The CTES file format provides a convenient packaging of a compressed texture produced by Texcompress.  The format contains a header, an area where developers can store private data, and then the compressed image buffer (containing either one level or the whole mipmap chain).
+<p>
+The format is laid out as follows:
+<TABLE>
+<TR><TD class="sampleControl">Offset</TD><TD class="sampleControl">Size</TD><TD class="sampleControl">Description</TD></TR>
+<TR><TD>0</TD><TD>sizeof(TXCMPR_HEADER)</TD><TD>See TXCMPR_HEADER below</TD></TR>
+
+<TR><TD>sizeof(TXCMPR_HEADER)</TD><TD>TXCMPR_HEADER.dataOffset</TD><TD>Private data (can be used by app to store its own data)</TD></TR>
+
+<TR><TD>sizeof(TXCMPR_HEADER) + TXCMPR_HEADER.dataOffset</TD><TD>Determined by calling TxCompressQueryEncodeBufferSize() for the mipmap chain</TD><TD>The image data. Stores the number of levels specified in TXCMPR_HEADER.numLevels</TD></TR>
+
+</TABLE>
+<P>
+
+<p>
+The TXCMPR_HEADER is a structure whose description is given below:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+// CTES file format header
+typedef struct _TXCMPR_HEADER 
+{
+    unsigned int   signature;           // Compression format signature
+    unsigned int   width;               // Width of base level in pixels
+    unsigned int   height;              // Height of base level in pixels
+    unsigned int   flags;               // Flags (TXCMPR_RGB, TXCMPR_RGBA, 
+                                           TXCMPR_ALPHA_INTERP)
+    unsigned int   dataOffset;          // From start of header/file
+    unsigned int   headerVersion;       // Version number of header file
+    unsigned int   numLevels;           // Number of mip levels stored in file
+    unsigned int   internalFormat;      // Internal format to be passed to 
+                                           glCompressedTexImage2D()
+} TXCMPR_HEADER;
+</PRE>
+</TR></TD>
+</TABLE>
+<P>
+
+The examples in the Example Usage section demonstrate how to load and write a CTES file.
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

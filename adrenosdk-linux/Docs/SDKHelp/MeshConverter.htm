@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Mesh Converter</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Mesh Converter</H1>
+This is a tool to convert a variety of 3D mesh file formats to a custom binary mesh file format used by the Adreno&trade; SDK sample code. Source code for the tool is provided so that users may extend the tool to support additional source file formats and/or add additional commands for mesh processing. The destination mesh file format is designed to minimize the load time of meshes, requiring a minimal amount of run-time processing on an embedded device.
+
+<H1>Details</H1>
+Loading a 3D mesh from a file typically involves a fair amount of code and CPU time to navigate the file’s internal contents and build up final structures and GPU resources. To solve this problem, a custom mesh file format was designed to load pre-processed mesh data and structures in a way that requires a minimum amount of run-time processing to load.
+<p>
+Since generic file-format loading and mesh-processing is moved to an offline process, a tool is needed to do the mesh conversion. For the Adreno&trade; SDK, MeshConverter is the tool used to pre-process the mesh data into the final file format. The tool works by loading commonly-used mesh file formats, building internal data structures similar to the destination mesh file format, running optional mesh-processing algorithms, and writing out the mesh data to the destination mesh file format.
+<p>
+While the tool may only support of handful of mesh file formats (such as .OBJ), the tool is designed to be easy to extend by simply adding code for other file formats. The tool can also be extended to add support for additional mesh processing like cache optimization, stripifying, and so on. The tool currently supports options for ensuring that meshes are compatible within an application, such as standardizing meshes on orientation and scale.
+
+<H1>Usage</H1>
+The MeshConverter tool can be invoked from the command line as:
+<p>
+<B><I>MeshConverter [-nologo] InputFile [-o OutputFile] [-s Scale] [-g] [-n]</I></B>
+<UL>
+<LI><B><I>noLogo</B></I> optionally suppresses the printing of the logo.</LI>
+<LI><B><I>InputFile </I></B>is the file name of the source mesh to convert.</LI>
+<LI><B><I>OutputFile </I></B>is the file name of the converted mesh that is output by the tool. The default name is the <B><I>InputFile </I></B>name with .mesh as the file extension.</LI>
+<LI><B><I>Scale </I></B>is an optional height factor to scale the mesh to. For example, specifying a scale value of 3.0 will scale the mesh to be 3.0 units tall in the Y direction. This is useful to ensure that all meshes used by an application are compatible in units (for example, meters).</LI>
+<LI>The <B><I>-g </I></B>option forces the mesh to lay on the ground plane, by translating the mesh vertices relative to the origin on the X-Z plane.</LI>
+<LI>The <B><I>-n </I></B>option adds normals to the vertices of the mesh.</LI>
+</UL>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

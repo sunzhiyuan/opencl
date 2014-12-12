@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="Configure OpenCL App for Profiling">
+    <title>Tutorial: How To Configure an OpenCL App for Profiling</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">Tutorial: How To Configure an OpenCL App for Profiling</div>
+    </div>
+    <div id="Content">
+      <p> This tutorial explains the basics of setting up an OpenCL application
+        for profiling in the Adreno Profiler. </p>
+      <br>
+      Basic rules:<br>
+      <div class="Indent">
+        <p> <b>1) For one-shot applications</b></p>
+        <p> <i>These application usually follows a simple control flow and
+            exits quickly. For these kind of applications, Adreno Profiler needs
+            to capture all API call trace from the very beginning. So it stalls
+            the application at the clGetPlatformIDs and pends on connection to
+            with profiler. After connection being established, user will click
+            record button in profiler to signal application to continue. Call
+            trace will be populated after application exits.<br>
+          </i></p>
+        <p><b>2) For looping applications</b></p>
+        <p> <i>These application uses OpenCL to compute repetitively. For these
+            kind of applications, such as APKs, application listens and connects
+            to Adreno Profiler in a separate thread (not blocking the main/UI
+            thread). After connection established, user will click record button
+            in profiler to start and stop profiling. In this way profiler is
+            able to start and stop profiling at user's will. </i><b><br>
+          </b></p>
+        <p><b>3) Enable and disable profiling<br>
+          </b></p>
+        <p><i>In both above scenarios, user will need to explicitly specify the
+            Android property in the adb shell (after rooting and remounting the
+            device) that the application will connect to profiler or not. <br>
+          </i></p>
+        <div class="Indent">
+          <p><i><i>&#8226;</i> To use profiler, please use setprop
+              ADRENO_PROFILER_ENABLE_OPENCL 1, <br>
+            </i></p>
+          <p><i>&#8226; To not use profiler, please use setprop
+              ADRENO_PROFILER_ENABLE_OPENCL ""</i></p>
+        </div>
+        <br>
+      </div>
+      <p></p>
+      <p></p>
+      Steps:
+      <div class="Indent">
+        <p> <b>1) Root and remount device.</b> </p>
+        <div class="Indent">
+          <p> &#8226; In windows click Start -&gt; All Programs -&gt; Accessories
+            -&gt; Command Prompt. Or you can use shortcut: Win+R, in the run
+            window, type "cmd" and press enter to open up windows command
+            window.</p>
+          <p> &#8226; Type "adb devices", you should find a device id, if not, check
+            your adb device driver and phone setup.</p>
+          <p>&#8226; Type "adb root", it will root your device, please wait a few
+            seconds to a few minutes, for the device to get into the root mode.
+            (You can type "adb devices" to check it is connected after being
+            rooted)</p>
+          <p>&#8226; Type "adb remount", you should see the device being remounted
+            successfully.</p>
+        </div>
+        <p></p>
+        <br>
+        <p> <b>2) Enable profiling in Android system</b> </p>
+        <div class="Indent">
+          <p> &#8226; In cmd, type "adb shell" to enter the android shell. You should
+            see "root@android" if device is rooted successfully.</p>
+          <p> &#8226; Type "<i>setprop ADRENO_PROFILER_ENABLE_OPENCL 1" to enable
+              profiling. (</i><i>setprop ADRENO_PROFILER_ENABLE_OPENCL "" to
+              disable)</i></p>
+          <div class="Indent">
+            <p> <img title="setprop" alt="setprop" src="setprop.png"> </p>
+          </div>
+        </div>
+        <p></p>
+        <br>
+        <p> <b>3)</b> <span style="font-weight: bold;">Now you have enabled
+            profiling and ready to open Adreno Profiler</span></p>
+        <div class="Indent">
+          <p> &#8226; You can verify your application, by executing your application
+            /data/OpenCL/HelloOpenCL for example, and the application will show
+            "Pending profiler connection..."</p>
+          <p> &#8226; Now you can open up Adreno profiler and connect to your
+            application to start profiling. </p>
+        </div>
+        <p></p>
+        <b><br>
+          <br>
+        </b> </div>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

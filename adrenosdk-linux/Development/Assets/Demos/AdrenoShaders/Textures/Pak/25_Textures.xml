@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "Fish1"
+    SrcFileName = "..\Fish1.tga"
+    WrapMode    = "REPEAT"
+    GenMipMaps  = "TRUE"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "FishBump1"
+    SrcFileName = "..\FishBump1.tga"
+    WrapMode    = "REPEAT"
+    DstFormat   = "RGBA"
+/>

@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="Capture DirectX">
+    <title>Tutorial: How To Capture DirectX Frames</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">Tutorial: How To Capture OpenCL APIs</div>
+    </div>
+    <div id="Content">
+		<p> 
+			This tutorial explains the basics of using Adreno Profiler to capture and analyze OpenCL application. 
+		</p>
+		<p> 
+			After <a href="../Connect.html">connecting</a> to a device, create a new Scrubber CL from the main toolbar. 
+		</p>
+		<br>
+		<div align="center">
+			<img title="OpenCL Srcubber" alt="OpenCL Srcubber" src="OpenCL-Scrubber.png">
+		</div>
+		<p>
+			Once the Scrubber loads, click the red (Recording) button on the scrubber's toolbar to start recording. If you are targeting a command-line application with the blocking flag on, this
+			will resume execution of the application in the device and start recording.
+		</p>
+		<br>
+		<div align="center">
+			<img title="Capture" alt="Capture" src="Capture-botton.png"> 
+		</div>
+		<p>
+			A progress bar will be visible at the bottom-right corner of the window while the capture is in progress.
+		</p>
+		<br>
+		<div align="center">
+			<img title="capture bar" alt="capture bar" src="Capture-bar.png">
+		</div>
+		<p>
+			After the application finishes and exits, or user clicks the stop button located in the same place the recording button, data will be processed and populated respectively across all views as shown in the following screenshot:
+		</p>
+		<br>
+		<div align="center">
+			<img title="Capture-frame" alt="Capture-frame" src="images/capture_1_to_9.png" width="60%">
+		</div>
+		<p>
+			The capture view is composed of several components numbered in red above. For a more in-depth description of each view, please refer to the following pages:
+		</p>
+		<p>
+			<div align="center">
+				<table border="1">
+					<tr>
+						<td>#</td>
+						<td>Name</td>
+						<td>Summary of description</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_GanttView.html">Gantt View</a></td>
+						<td>Timeline display of API calls information in relationship with their GPU exectuion.</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_TraceView.html">Trace View</a></td>
+						<td>List of captured calls with parameters, return values and timing information</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_ProgramsView.html">Program View</a></td>
+						<td>List of captured programs, kernels, their parameters and static code analysis.</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_EventsView.html">Events View</a></td>
+						<td>Information regarding event creation, waiting and completion.</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_DeviceView.html">Devices View</a></td>
+						<td>Overview of current device's capabilities and general information.</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_BufferView.html">Buffers View</a></td>
+						<td>Displays information, parameters and data of captured buffers</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_ImageView.html">Images View</a></td>
+						<td>Displays information, parameters and data of captured images</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td><a href="../../Reference/OpenCL/ScrubberCL_Settings.html">Settings</a></td>
+						<td>Configuration that affects the capture mode</td>
+					</tr>
+				</table>
+			</div>
+		</p>
+		<p>
+			<strong>Important note on performance metrics:</strong> In order to get accurate values when adding metrics to the trace view the SLEEP/SLUMBER state needs to be disabled.<br>
+			This can be accomplished by executing the following command on a command prompt assuming the device has root access:
+		</p>
+		<p>
+			<div align="center"><em>adb shell echo 1000000 > /sys/class/kgsl/kgsl-3d0/idle_timer</em></div>
+		</p>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

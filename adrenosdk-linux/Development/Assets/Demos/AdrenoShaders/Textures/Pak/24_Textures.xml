@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Fur1"
+    SrcFileName = "..\Fur1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>

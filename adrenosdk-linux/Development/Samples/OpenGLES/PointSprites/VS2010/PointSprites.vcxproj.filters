@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{a9a30c1f-8e8f-46c1-8c39-7acbc9e6eb3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files">
+      <UniqueIdentifier>{cac72013-11c5-40b0-9773-7f3a708a1025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files\OpenGLES">
+      <UniqueIdentifier>{445ab9db-6be4-49ca-a0f4-cc7d72455955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Win32">
+      <UniqueIdentifier>{d0b402e1-00e0-4612-b8b3-f724a8c97ab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files">
+      <UniqueIdentifier>{701612d9-0055-441e-80d5-c24d5c40db6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files\OpenGLES">
+      <UniqueIdentifier>{56d70c82-279c-4cb5-be69-c22c29e0d86e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{bd50691c-bfa4-49df-a328-68061a0de6d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Resources">
+      <UniqueIdentifier>{763e03f1-2579-4d1a-ac3e-76ab1bdbca93}</UniqueIdentifier>
+      <Extensions>.xml</Extensions>
+    </Filter>
+    <Filter Include="Assets\Fonts">
+      <UniqueIdentifier>{4fafffe4-ea36-4ef7-be6e-705f57487495}</UniqueIdentifier>
+      <Extensions>.xml</Extensions>
+    </Filter>
+    <Filter Include="Assets\Meshes">
+      <UniqueIdentifier>{862193e9-3dab-468b-b662-ce377f7881da}</UniqueIdentifier>
+      <Extensions>.mesh;</Extensions>
+    </Filter>
+    <Filter Include="Assets\Shaders">
+      <UniqueIdentifier>{3c9309e2-57c7-4563-874c-e3e6245bcb3d}</UniqueIdentifier>
+      <Extensions>.shd;.glsl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmApplication.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFile.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFont.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmInput.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmMath.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmNoise.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmStdlib.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUserInterface.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmFontGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmMesh.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmShader.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h">
+      <Filter>Framework\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmApplication_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\win32\FrmNoise_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmApplication.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmFont.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmInput.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUserInterface.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmFontGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmMesh.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmShader.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Framework\Win32\Adreno.ico">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Fonts\Tuffy12.xml">
+      <Filter>Assets\Fonts</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Shaders\PointSprites.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Textures\Pak\PointSprites.xml">
+      <Filter>Assets\Resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>

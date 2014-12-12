@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="ABC7B0DE-56D8-43B5-AE71-0283CDB15BFC" Publisher="CN=Test" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>ShadowMap</DisplayName>
+    <PublisherDisplayName>Test</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>ShadowMap</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ShadowMap.App">
+      <VisualElements DisplayName="ShadowMap" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ShadowMap" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

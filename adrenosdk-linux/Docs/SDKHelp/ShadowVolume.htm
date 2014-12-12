@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>ShadowVolume</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>ShadowVolume</H1>
+This sample demonstrates how to create shadows with the use of vertex shader shadow volume extrusion and a stencil buffer.
+<p>
+<IMG src =ShadowVolume.bmp >
+
+<H1>Details</H1>
+This sample focuses on depth-fail shadow volumes, also known as Carmack's reverse.  In order to understand how this technique works, one must first understand what a shadow volume is, and how to go about constructing one on the GPU with vertex shader shadow volume extrusion.
+<p>
+A shadow volume is constructed out of silhouette edges as viewed from a light source's perspective.  Given an edge that is part of two distinct polygons, the edge is considered to be a silhouette edge if the dot product between the light vector and one of the polygon normals is positive and the other one is negative.  Once these edges have been found, a shadow volume is creating by creating a quad for each edge such that two of the vertices of this quad share the silhouette edge's vertices, and the remaining two vertices are the locations of these same vertices projected in the direction of the light vector some large or infinite distance.
+<p>
+<IMG src =ShadowVolume2.bmp >
+<p>
+Now that we know what a shadow volume is we need to discuss how to go about creating one.  The obvious way would be to iterate over our edges each frame on the CPU to determine which edges are considered silhouette edges, and to then generate shadow volume quads from each of these edges.  There is however a faster solution to this problem that can be implemented with a simple vertex shader.  The idea is to create quads that consists of two copies of the same edge, but that have differing normals, each normal being from one of the two polygons the edge is connected to.  Then we can use a vertex shader to extrude the vertices that have normals that are back facing from the light source using a dot product of the vertex normals with the light vector.  This way we do not have to create quads on the fly, and can utilize the GPU to create our shadow volume.
+<p>
+Now that we know how to create our shadow volume, the next step is to learn how to use the stencil buffer for the depth fail shadow volume algorithm.  The basic steps involved in the depth-fail algorithm are as follows:
+<OL>
+<LI>Disable the depth / color buffers</LI>
+<LI>Turn on front-face culling</LI>
+<LI>Set the stencil operation to increment on depth failure</LI>
+<LI>Render your shadow volume</LI>
+<LI>Use back-face culling</LI>
+<LI>Set the stencil operation to decrement on depth failure</LI>
+<LI>Render your shadow volume a second time</LI>
+</OL>
+
+Fortunately OpenGL ES 2.0 supports a two-sided stencil operation which actually allows us to simplify the above procedure by assigning front and back face polygons their own stencil operations.  As a result the above procedure can be simplifies to:
+<OL>
+<LI>Disable depth / color buffers</LI>
+<LI>Set the two-sided stencil back face mode to increment on depth failure</LI>
+<LI>Set the two-sided stencil front face mode to decrement on depth failure</LI>
+<LI>Render your shadow volume</LI>
+</OL>
+The results of running the above depth-fail steps will result in zero being written to the stencil buffer when objects are not in shadow, and non-zero values when objects should be in shadow.  The results stored in the stencil buffer can then be used to render the scene to the color buffer with shadows
+<p>
+<IMG src =ShadowVolume3.bmp >
+<p>
+Now that we know the steps that make up the depth-fail algorithm, let's take a look at an example of the algorithm in action.  In the diagram above we have a light source that is creating a shadow volume based upon the silhouette of the object closest to it (light blue).  The upper line of this shadow volume (in green) represents the back face of the shadow volume and the bottom line of the shadow volume (in red) represents the front face.  We then have a camera that has 3 rays coming out of it.  The first ray intersects the near plane before hitting an object so the stencil buffer is unaffected, but hits an object before reaching the back face of the shadow volume so the stencil buffer is incremented.  The total is non-zero so the first ray hits part of an object that is in shadow.  The second ray doesn't hit an object before the near or far planes, so the stencil buffer is not incremented or decremented at all which means that the ray does not hit an object that is in shadow.  The final ray hits an object before the front facing portion of the shadow volume, so the stencil buffer is decremented, but then it also hits an object before the back facing portion of the shadow volume so is incremented.  This results once again in a total of 0 which means that the ray is not in shadow.
+
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Move the shadow to the left (light to the right)</TD></TR>
+<TR><TD><B>2</B></TD><TD>Move the shadow to the right (light to the left)</TD></TR>
+<TR><TD><B>3</B></TD><TD>Change to a previous mesh</TD></TR>
+<TR><TD><B>4</B></TD><TD>Change to the next mesh</TD></TR>
+<TR><TD><B>5</B></TD><TD>Visualize shadow volume</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,140 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Analyze GLES">
+<meta name="MS-HKWD" content="Capture GLES">
+  <HEAD>
+    <TITLE>Tutorial: How To Capture OpenGLES Frames</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Capture OpenGLES Frames</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains the basics of using Adreno Profiler to capture and analyze OpenGLES frames
+        from a mobile application.
+      </P>
+
+      <BR />
+
+      <P>
+        After <A HREF="../Connect.html">connecting</A> to a device, create a new Scrubber GL document from the main toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_GLES2_1.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        Once the Scrubber appears, click the <b>"Capture Frame"</b> button on the scrubber's toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_GLES2_2.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        A progress bar will be visible at the bottom-right corner of the window while the capture is in progress.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_GLES2_3.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        After the frame's call trace and associated vertex, texture, and shader data has finished downloading,
+        the frame is recreated in an OpenGLES emulator window.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_GLES2_6.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        <b>At this point, a number of analysis features are made available:</b>
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        First, check the <A HREF="../../Reference/Scrubber2xComments.html">Comments</A> tab to the right of the call
+        trace for performance problems detected by Adreno Profiler.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        Important statistics about the captured frame are displayed in the 
+        <A HREF="../../Reference/Scrubber2xFrameStats.html">Frame Stats</A> tab to the right of the call trace.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The captured frame's <A HREF="../../Reference/Scrubber2xCallTrace.html">OpenGLES render calls</A> are listed at the
+        bottom of the scrubber. Inspecting this flattened call trace often makes it easier to debug rendering
+        and performance issues.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        OpenGLES context state, as of any (selected) draw call, can be viewed and modified in the
+        <A HREF="../../Reference/Scrubber2xGLState.html">context state browser</A>, at the bottom of the Scrubber.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The scrubber's <A HREF="../../Reference/Scrubber2xMainWindow.html">OpenGLES emulator</A> can visualize
+        the captured frame in several ways, including wireframe, Z overdraw, and binning overlay modes.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        If the button <b>"Sync On Capture"</b> was enabled in the 
+        <A HREF="../../Reference/TexturesBrowser.html">Textures Browser</A>
+        upon capturing, all of the textures in the embedded OpenGLES context will be downloaded. They are used
+        when emulating the frame, and can also be viewed in the 
+        <A HREF="../../Reference/MipmapsViewer.html">Mipmaps Viewer</A>.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>If the embedded application does not dynamically update any textures,
+            <b>"Sync On Capture"</b> should be toggled off after the first capture to save time on
+            subsequent captures.</i>
+          </P>
+          <P>
+            <img src="CaptureAndScrubFrames_GLES2_4.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        If any <A HREF="CaptureRendercallMetrics_GLES2.html">scrubber metrics</A> were enabled upon capturing,
+        performance data will be measured for each individual mesh rendered by the embedded application
+        (each call to glDrawArrays and glDrawElements), and then displayed in additional columns alongside
+        the call trace.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The captured GLSL shaders can be <A HREF="OptimizeShaders_GLES2.html">edited and overridden</A>
+        at runtime using the <A HREF="../../Reference/ShadersViewer.html">Shaders Viewer</A>, while at the same time monitoring the
+        embedded application's <A HREF="../MonitorRealTimePerformance.html">real-time performance</A>.
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

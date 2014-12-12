@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<CubeMap
+    ResourceID    = "BedroomCubeMap"
+    SrcFileNameXP = "../BedroomCubeMap_RT.png"
+    SrcFileNameXN = "../BedroomCubeMap_LF.png"
+    SrcFileNameYP = "../BedroomCubeMap_UP.png"
+    SrcFileNameYN = "../BedroomCubeMap_DN.png"
+    SrcFileNameZP = "../BedroomCubeMap_BK.png"
+    SrcFileNameZN = "../BedroomCubeMap_FR.png"
+    FlipImages    = "TRUE"
+    DstFormat     = "ATC" 
+/>
+
+<Texture
+    ResourceID  = "Trophy_Plaque"
+    SrcFileName = "../trophy_plaque.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture
+    ResourceID  = "TennisBall"
+    SrcFileName = "../tennisBall.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

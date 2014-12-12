@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Logo"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\Logo.tga"
+    DstFormat   = "S3TC_DXT1_RGBA"
+/>
+
+<Texture
+    ResourceID  = "Ambient"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\TextureSynthesis\ambient.jpg"
+    DstFormat   = "LUMINANCE"
+/>
+
+<Texture
+    ResourceID  = "Displacement"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\TextureSynthesis\displace16.jpg"
+    DstFormat   = "LUMINANCE"
+    WrapMode	= "MIRRORED_REPEAT"
+/>
+
+<Texture
+    ResourceID  = "Noise"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\TextureSynthesis\noise16.jpg"
+    DstFormat   = "LUMINANCE"
+    WrapMode	= "MIRRORED_REPEAT"
+/>
+
+<Texture
+    ResourceID  = "Shadow"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\TextureSynthesis\shadow.jpg"
+    DstFormat   = "LUMINANCE"
+/>

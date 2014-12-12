@@ -1,0 +1,64 @@
+    
+    Troubleshooting OSX Browser problems
+--------------------------------------------------------------------------------
+NOTE: You can find this README file in:
+<SDK>/Development/Tools/Browser/Documentation
+
+The Browser is built using Gtk#. Gtk# is a Graphical User Interface Toolkit
+for mono and .Net. The project binds the Gtk+ toolkit and assorted GNOME 
+libraries, enabling fully native graphical Gnome application development
+using Mono and the .Net development frameworks. 
+
+You can read more about GtkSharp here:
+www.mono-project.com/GtkSharp
+
+There are several relevant Mono tools for the Browser:
+
+MRE - Mono Runtime Environment
+www.mono-project.com/Mono:Runtime
+
+MDK - Mono Development Kit
+
+MonoDevelop - A cross-platform IDE primarily designed for C#/.Net
+www.monodevelop.com
+
+
+In order to run the Browser, only the MRE and the MDK are required. The 
+Browser was developed with MonoDevelop but you will not need that package
+to use the Browser. 
+
+--------------------------------------------------------------------------------
+Steps for running the Browser on OSX
+NOTE: This was tested on the following OSX versions:
+- Mavericks 10.9.2
+
+1) Install Mono MRE and Mono MDK
+www.go-mono.com/mono-downloads/download.html
+
+2) After intallation, you should be able to run the 'mono' command in your
+Terminal and receive the mono usage prompt. 
+
+3) There is a known issue with Mono on OSX. If you try to run the Browser
+without applying this workaround, you will get the following message or 
+something similar:
+System.Dllnotfoundexception: gtksharpglue-2
+
+
+The standard installation creates an incomplete dllmap. Therefore, you will 
+have to make a slight modification to Mono's dllmap file so it can find the 
+correct libraries. 
+
+In the file: 
+/Library/Frameworks/Mono.framework/Versions/Current/etc/mono/config
+
+Add the following lines:
+<dllmap os="osx" dll="glibsharpglue-2" target="/Library/Frameworks/Mono.framework/Versions/Current/lib/libglibsharpglue-2.so" />
+<dllmap os="osx" dll="gdksharpglue-2" target="/Library/Frameworks/Mono.framework/Versions/Current/lib/libgdksharpglue-2.so" />
+<dllmap os="osx" dll="gtksharpglue-2" target="/Library/Frameworks/Mono.framework/Versions/Current/lib/libgtksharpglue-2.so" />
+<dllmap os="osx" dll="libpango-1.0-0.dll" target="/Library/Frameworks/Mono.framework/Versions/Current/lib/libpango-1.0.0.dylib" />
+
+NOTE: You can find this README file here - This will allow you to copy and paste:
+<SDK>/Development/Tools/Browser/Documentation
+
+
+4) In the 'Bin' directory of the Adreno SDK, you can run Run_Browser_OSX.sh

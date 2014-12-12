@@ -1,0 +1,131 @@
+----------------------------------------------------------------
+Adreno SDK 3.7 Release Notes
+June 17, 2014
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+* Adreno SDK Emulator now supports OpenGL ES 3 and OpenGL ES 3.1 API on OSX.
+* With this release OpenGL ES 3 samples and tutorials are now avaialable on OSX. These samples use GLFW for context creating and window management.
+* The Adreno SDK includes a more robust OpenGL ES 3.1 Emulator. The Emulator is 90% conformant with OpenGL ES 3.1 tests from Khronos.
+* Demos and Tutorials are now available on Linux and OSX.
+* This release also includes optimizations to various OpenCL samples as well as addition of a new Image Histogram sample.
+
+----------------------------------------------------------------
+Adreno SDK 3.6 Release Notes
+March 17, 2014
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+* Adreno SDK Emulator now supports OpenGL ES 3.1 and the Adreno SDK also includes a few OpenGL ES 3.1 samples.
+* The Adreno SDK can now be installed on OSX, thus, making it available on all three platforms, Windows, Linux and OSX.
+* This release includes 64 bit versions of the Emulator and Texture Converter libraries on all platforms.
+* The Texture Converter library is now a compiler independent dll.							
+* The Adreno Texture Tool supports all ASTC options and is now avaiable on Linux and OSX.
+* The OpenGL ES 3.0 Quick Reference Guide for Adreno GPUs has been updated to include details about Deferred Lighting in Unity.
+* Fixed various fixes in OpenGL ES samples that were not rendering properly in the Emulator or on device														
+							
+
+----------------------------------------------------------------
+Adreno SDK 3.5 Release Notes
+December 30, 2013
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+
+* ASTC Texture support
+* Fixed "AdrenoShaders" Demo. Some of the scenes were missing due to shader compilation errors
+* Added support for OpenGL ES 3 texture formats to the Texture Converter library
+	* RGBA32I
+	* RGBA32UI
+	* RGBA16I
+	* RGBA8UI
+	* RGBA8_SNORM
+	* SRGB8_ALPHA8
+	* RGB10_A2
+	* RGB10_A2UI
+	* RGB5_A1
+	* RGB32I
+	* RGB32UI
+	* RGB16I
+	* RGB8_SNORM
+	* RGB8UI
+	* R11F_G11F_B10F
+	* RGB9_E5	
+	* RG32I
+	* RG32UI
+	* RG8UI
+	* RG8_SNORM
+	* R32I
+	* R32UI
+	* R16I
+	* R8UI
+	* R16F
+	* R8_SNORM
+	* R2GBA10UI
+* Integrated IFH mode driver with Emulator so that Emulator uses the driver to do GLES shader compilation checks before parsing and passing the shader to desktop
+* Added Visual Studio 2012 Texture Converter libraries
+* Fixed various OpenGL ES Emulator and Samples bugs 
+* Updated the SDK license to include the ARM's ASTC license
+* Added a new and improved Snapdragon OpenCL General Programming Guidelines document that contains details about Snapdragon OpenCL CPU and GPU extensions as well as Android SDK/NDK Installation guide.
+
+----------------------------------------------------------------
+Adreno SDK 3.4 Release Notes
+September 30, 2013
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+
+* Support for Linux (Ubuntu), including the OpenGL ES Emulator, Adreno Texture Tool, Texture Converter Library, and Samples
+* OpenGL ES 3 Quick Reference Guide
+* Documentation updates for building Android samples
+* Fixed various OpenGL ES Emulator bugs
+* Fixed Adreno Texture Tool swapping the red/blue channels when displaying textures
+
+----------------------------------------------------------------
+Adreno SDK 3.3.3 Release Notes
+August 5, 2013
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+
+* New Texture Converter binaries provided
+	* Android (libTextureConverter.a)
+	* VC++ runtime statically linked (TextureConverter_static.lib)
+* Adreno Texture Tool now loads a KTX file specified on the command line - useful for KTX file association with ATT in Windows
+* Updated OpenGL ES Adreno Developer Guide
+* Fixed problem where the Tools_Common.vsprops file was missing after installation - users could not load or build the SDK solution
+* Fixed memory leak in Texture Converter library when converting ETC2 textures
+* Fixed memory leak in Adreno Texture Tool
+* Fixed various OpenGL ES Emulator bugs
+
+
+----------------------------------------------------------------
+Adreno SDK 3.3 Release Notes
+June 21, 2013
+Qualcomm Technologies, Inc.
+----------------------------------------------------------------
+
+* New Adreno SDK Browser
+* Added Snapdragon OpenCL Developer Guide to documentation
+* Added support for DirectX formats to the Texture Converter library
+	* FORMAT_R32G32_FLOAT
+	* FORMAT_R16G16_FLOAT
+	* FORMAT_R16G16_UNORM
+	* FORMAT_R16G16_SNORM
+	* FORMAT_R32_FLOAT
+	* FORMAT_R8G8_SNORM
+	* FORMAT_R16_UNORM
+	* FORMAT_R8_UNORM
+	* FORMAT_B5G6R5_UNORM
+	* FORMAT_B5G5R5A1_UNORM
+	* FORMAT_B8G8R8X8_UNORM
+	* FORMAT_B8G8R8X8_UNORM_SRGB
+	* FORMAT_B4G4R4A4_UNORM
+* Reorganized SDK folder structure - see the Browser for more information
+* Added Visual Studio 2010 solution files for the SDK
+* Updated Android build documentation and scripts to simplify the process to get samples on device
+* Bug Fixes
+	* Emulator allows float pixel format and gl_depth_component in glReadPixels
+	* Emulator crash in eglCreateContext if attribute list is NULL
+	* Emulator error with glBindFrameBuffer
+	* Adreno Texture Tool: Red channel changed to Blue channel when compressing textures to KTX or DDS
+	* Shaders demo - scenes rendering brighter than they should
+	* OpenGL ES 2 ShadowMap sample not showing correctly on device
+	* NPR OpenGL ES 3 sample not working correctly
+	* Problems building OpenCL Samples (missing Android/src folder)
+	* Most OpenGL ES 3 Samples will not run on device

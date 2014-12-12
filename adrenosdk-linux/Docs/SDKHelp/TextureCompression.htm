@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Texture Compression</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<h1>Introduction</h1>
+<p>Compressed textures provide many advantages when developing for handheld platforms. In addition to requiring less storage space, they have a smaller memory footprint and require less internal bandwidth, which can improve performance.
+<p>The purpose of this document is to provide vital information for texture compression on QUALCOMM's Adreno&trade; OpenGL ES 2.0 platforms. The following topics are covered:
+<ul>
+  <li>Descriptions of the supported texture compression formats
+  <li>How to generate compressed textures
+  <li>How to use compressed textures in your application
+  <li>Choosing the right compressed texture format
+</ul>
+
+<h1>Compressed Texture Formats</h1>
+QUALCOMM's Adreno&trade; platforms currently support the ETC, ATC, and 3Dc compression formats. OpenGL ES 1.0’s compressed paletted textures are also supported, but this format is not covered here.
+
+<h2>Ericsson Texture Compression (ETC)</h2>
+<p>The ETC format (which was originally introduced by Ericsson as iPACKMAN) is the primary texture compression format for OpenGL ES. It is used for compressing 8-bit per component RGB images. Alpha values are not supported.
+<p>ETC textures are described using 4x4 pixel blocks. Each of these blocks takes 8 bytes. Therefore, ETC provides up to an 8:1 compression ratio.
+<p>Further details of the ETC compression algorithm can be obtained by reading the extension specification available at:
+<p><a href="http://www.khronos.org/registry/gles/extensions/OES/OES_compressed_ETC1_RGB8_texture.txt">http://www.khronos.org/registry/gles/extensions/OES/OES_compressed_ETC1_RGB8_texture.txt</a>
+
+<h2>AMD Texture Compression (ATC)</h2>
+<p>ATC (formerly ATI_TC) is AMD’s texture compression algorithm designed specifically for handheld devices. It provides support for RGB textures, as well as two options for RGBA textures. Like ETC, it offers up to 8:1 compression for RGB textures, or 4:1 for RGBA textures.
+<p><i>ATC RGB</i> should be used when you are not using an alpha value, since it provides the best quality and only uses 4 bits per texel. <i>ATC RGBA Explicit Alpha</i> is generally best for use when the transitions between alpha values in your image are sharp. <i>ATC RGBA Interpolated Alpha</i> is best for use when alpha transitions are gradient.
+<p>More information about ATC and its usage can be found in the extension specification at:
+<p><a href="http://www.khronos.org/registry/gles/extensions/AMD/AMD_compressed_ATC_texture.txt">http://www.khronos.org/registry/gles/extensions/AMD/AMD_compressed_ATC_texture.txt</a>
+
+<h2>3DC</h2>
+<p>The ETC and ATC texture compression formats provide excellent results for RGB and RGBA images, but are often not ideal when storing other types of data in texture maps. 3DC introduces two compression formats to address this:
+<ul>
+  <li>3DC XY offers 8-bits per texel compression for two component textures. The primary use for this is to store normal maps (two values are stored, and the third is derived).
+  <li>3D X offers 4-bits per texel compression for one component textures. It is typically used for luminance or alpha maps.
+</ul>
+<p>The 3DC format is more completely described in:
+<p><a href="http://www.khronos.org/registry/gles/extensions/AMD/AMD_compressed_3DC_texture.txt">http://www.khronos.org/registry/gles/extensions/AMD/AMD_compressed_3DC_texture.txt</a>
+
+<h1>Generating Compressed Textures</h1>
+QUALCOMM provides support for compressed textures via the <a href="TextureConverter.htm">Texture Converter</a> library.
+
+
+<h1>Using Compressed Textures</h1>
+<p>All of the compressed texture formats listed in this document can be loaded into your OpenGL ES application using the following API:
+
+<pre>
+void glCompressedTexImage2D(GLenum target, GLint level,
+GLint internalformat, GLsizei width, GLsizei height,
+GLint border, GLsizei imageSize, const GLvoid * data);
+</pre><ul><li>target will always be GL_TEXTURE_2D.
+  <li>level is the mip level.
+  <li>internalformat is used to indicate the compressed texture format. The values associated with the formats described in this document are shown in the following table:
+<table bgcolor=grey borderwidth=1 cellpadding=0 cellspacing=0>
+  <tr>
+    <td><pre>GL_ETC1_RGB8_OES</pre></td>
+    <td>ETC compressed RGB textures</td>
+  </tr>
+  <tr>
+    <td><pre>GL_ATC_RGB_AMD</td>
+    <td>ATC compressed RGB textures</td>
+  </tr>
+  <tr>
+    <td><pre>GL_ATC_RGBA_EXPLICIT_ALPHA_AMD</td>
+    <td>ATC compressed RGBA textures with explicit alpha</td>
+  </tr>
+  <tr>
+    <td><pre>GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD</td>
+    <td>ATC compressed RGBA textures with interpolated alpha</td>
+  </tr>
+  <tr>
+    <td><pre>GL_3DC_X_AMD</td>
+    <td>3DC compressed one component textures</td>
+  </tr>
+  <tr>
+    <td><pre>GL_3DC_XY_AMD</td>
+    <td>3DC compressed two component textures</td>
+  </tr>
+</table>
+  <li>width and height are the dimensions of the texture, in texels.
+  <li>border will always be 0.
+  <li>imageSize is the size of the texture image data, in bytes.
+  <li>data is a pointer to the texture data.
+</ul>
+
+<p>The Adreno&trade; SDK includes tutorials and samples that show how to use texture compression.
+
+<h1>Choosing the Right Compression Form<at</h1>
+<p>Because all of the compression formats listed are lossy, it’s important to understand the strengths and weaknesses of each in order to chose the correct format. All of the supported formats were designed to attain good compression ratios with high quality results for their intended use. They all also allow for fast decompression at runtime with dedicated hardware.
+<h2>RGB Images</h2>
+<p>ATC and ETC were both designed for RGB image data. Both can achieve the same compression ratio (up to 8:1), and have minimal loss. In most cases, which you use is largely a matter of personal preference. However, for specific images, one may work better than the other. Using a tool like The Compressonator can help to visually determine the results of using either compression technique on a given image.
+<h2>RGBA Images</h2>
+<p>If your images also include alpha values, you will need to use one of the two ATC alpha formats, which offer a 4:1 compression ratio. Which you choose depends on the nature of the alpha values. Explicit alpha should be used when the alpha values vary sharply. Interpolated alpha works best when alpha values gradually change.
+<h2>Non-Image Data</h2>
+<p>ATC and ETC were both designed primarily for use with image data. For non-image data sets, the compression algorithms used may not produce acceptable results. In some cases, the loss of information may prevent you from using compressed textures.
+<p>For one component textures, such as alpha maps or luminance maps (such those used in light mapping), 3DC X will generally provide the best results at a 2:1 compression ratio.
+<p>When applied to normal maps, ETC and ATC both result in data loss which leads to very visible artifacts. 3DC XY was developed to address this. It produces results that are indistinguishable from the uncompressed version. In addition, only the x- and y- components of each normal are stored, allowing up a 4:1 compression ratio.
+<p>Because the z-component is not stored in the 3DC texture, it must be calculated in the fragment shader using the relationship:
+<p align="center">z = sqrt(1 – (x<sup>2</sup> + y<sup>2</sup>))</p>
+
+<p>Or, in GLSL:
+<pre>
+   vec3 vNormal = vec3( 2.0, 2.0, 0.0) *
+                  texture2D( g_NormalMap, vTexCoord0 ).xyz –
+                  vec3( 1.0, 1.0, 0.0 );
+   vNormal.z = sqrt( 1.0 - dot( vNormal, vNormal ) );
+</pre>
+<p>The first line is a typical normal map lookup with scale and bias, except that we’re zeroing out the z component so the dot operation can be used in the next line (i.e. dot( vNormal, vNormal) becomes x<sup>2</sup> + y<sup>2</sup> + 0<sup>2</sup>).
+<p>Extracting the z-component in this way can add 2-4 instructions to your fragment shader versus just using an uncompressed or ATC/ETC normal map (the variation depends on whether or not the shader compiler can pair the scalar operations with other vector operations). You will want to profile your application carefully to evaluate whether the advantages of using 3DC compressed normal maps outweigh a minor decrease in performance.
+<br><br><br>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

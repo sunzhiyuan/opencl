@@ -1,0 +1,18 @@
+How to get the Browser up and Running on Linux. 
+	
+Note: This browser was tested with Ubuntu 12.04
+
+The browser is now written in C# using Windows Forms and distributed as a Windows .exe binary. In order to run the binary on Linux, you will need Mono installed. There are installation instructions at http://www.mono-project.com.
+Some Linux distros come with Mono preinstalled. The Latest version is recommended. 
+
+In addition to the regular mono package, the following packages need to be downloaded. 
+sudo apt-get install libmono-winforms2.0-cil
+sudo apt-get install libmono-system-windows-forms-datavisualization4.0-cil
+sudo apt-get install libmono-system-windows-forms4.0-cil
+
+Once those packages are installed, you can ensure that .NET applications works on your Linux box by following the sample instructions at http://www.mono-project.com/Mono_Basics#Winforms_Hello_World
+
+If the "Hello, World" example works it is time to test the Browser.
+
+To Launch the Browser, go to the /Bin folder and run the following command:
+$>mono Browser.exe

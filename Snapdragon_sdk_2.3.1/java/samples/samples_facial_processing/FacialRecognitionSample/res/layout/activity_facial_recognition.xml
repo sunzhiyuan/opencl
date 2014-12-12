@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/* ======================================================================
+ *  Copyright 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ *  QTI Proprietary and Confidential.
+ *  =====================================================================
+ * @file    activity_facial_recognition.xml
+ *
+ */-->
+    
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridview"
+    android:background="@drawable/new_background"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:numColumns="2"
+    android:verticalSpacing="10dp"
+    android:horizontalSpacing="10dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+/>

@@ -1,0 +1,191 @@
+//--------------------------------------------------------------------------------------
+//
+// Author:      QUALCOMM, Advanced Content Group - Adreno SDK
+//
+//               Copyright (c) 2013 QUALCOMM Technologies, Inc. 
+//                         All Rights Reserved. 
+//                      QUALCOMM Proprietary/GTDR
+//--------------------------------------------------------------------------------------
+
+#include "FrmPlatform.h"
+#include "FrmMath.h"
+#include "StaticTerrain.hpp"
+#include "HeightField.hpp"
+
+#include <OpenGLES/FrmGLES3.h>  // OpenGL ES 3 headers here
+
+
+//*************************************************************************************************
+//*************************************************************************************************
+//**    Public methods
+//*************************************************************************************************
+//*************************************************************************************************
+
+//-----------------------------------------------------------------------------
+//  Default constructor
+//-----------------------------------------------------------------------------
+StaticTerrain::StaticTerrain()
+: m_totalWidth( 0.0 ), m_totalHeight( 0.0 )
+{}
+
+//-----------------------------------------------------------------------------
+//  Destructor
+//-----------------------------------------------------------------------------
+StaticTerrain::~StaticTerrain()
+{
+    destroy();
+}
+
+//-----------------------------------------------------------------------------
+//  create
+//-----------------------------------------------------------------------------
+void StaticTerrain::create( const HeightField& a_heightField )
+{
+    // Destroy current instance
+
+    destroy();
+
+    // Init vertex and normal data container
+
+    unsigned int vertexCount = a_heightField.getFieldWidth() * a_heightField.getFieldHeight();
+
+    m_vertices .reserve( vertexCount );
+    m_texCoords.reserve( vertexCount );
+
+    // Fill vertex and texcoord data container
+
+    for( unsigned int y = 0; y < a_heightField.getFieldHeight(); ++y )
+    {
+        for( unsigned int x = 0; x < a_heightField.getFieldWidth(); ++x )
+        {
+            m_vertices.push_back( FRMVECTOR3  ( static_cast< float >( x * a_heightField.getGridSpacing() )
+										    , static_cast< float >( a_heightField.getHeight( x, y ) ) 
+											, static_cast< float >( y * a_heightField.getGridSpacing() )));
+                                           // , static_cast< float >( y * a_heightField.getGridSpacing() )
+                                           // , static_cast< float >( a_heightField.getHeight( x, y ) ) ) );
+
+            m_texCoords.push_back( FRMVECTOR3 ( static_cast< float >( x ) / a_heightField.getFieldWidth()
+                                            , static_cast< float >( y ) / a_heightField.getFieldHeight()
+                                            , 0.0 ) );
+        }
+    }
+
+    // Init index container
+
+    m_indices.reserve( (a_heightField.getFieldHeight() - 1) * a_heightField.getFieldWidth() * 2 );
+
+    // Fill index container
+
+    bool leftToRight = true;
+
+    for(unsigned int y = 0; y < a_heightField.getFieldHeight() - 1; ++y )
+    {
+        if( true == leftToRight )
+        {
+            for( unsigned int x = 0; x < a_heightField.getFieldWidth(); ++x )
+            {
+                m_indices.push_back( (y + 1) * a_heightField.getFieldWidth() + x );
+                m_indices.push_back(  y      * a_heightField.getFieldWidth() + x );
+            }
+        }
+        else
+        {
+            for( int x = a_heightField.getFieldWidth() - 1; x >= 0; --x )
+            {
+                m_indices.push_back(  y      * a_heightField.getFieldWidth() + x );
+                m_indices.push_back( (y + 1) * a_heightField.getFieldWidth() + x );
+            }
+        }
+
+        leftToRight = !leftToRight;
+    }
+
+    // Set terrain dimensions
+
+    m_totalWidth  = a_heightField.getFieldWidth() * a_heightField.getGridSpacing();
+    m_totalHeight = a_heightField.getFieldHeight() * a_heightField.getGridSpacing();
+}
+void StaticTerrain::GenTerrainAndNormalTextures( const unsigned char* a_terrainMap
+												, const int a_terrainMapWidth
+												, const int a_terrainMapHeight
+												, const unsigned char* a_normalMap
+												, const int a_normalMapWidth
+												, const int a_normalMapHeight)
+
+{
+    // Create terrain textures
+
+    glGenTextures   ( 1, &m_terrainMap );
+    glBindTexture   ( GL_TEXTURE_2D, m_terrainMap );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexImage2D    ( GL_TEXTURE_2D, 0, GL_RGB, a_terrainMapWidth, a_terrainMapHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, a_terrainMap );
+
+    glGenTextures   ( 1, &m_normalMap );
+    glBindTexture   ( GL_TEXTURE_2D, m_normalMap );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexImage2D    ( GL_TEXTURE_2D, 0, GL_RGB, a_normalMapWidth, a_normalMapHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, a_normalMap );
+}
+//-----------------------------------------------------------------------------
+//  destroy
+//-----------------------------------------------------------------------------
+void StaticTerrain::destroy()
+{
+    // Reset members
+
+    m_vertices .clear();
+    m_texCoords.clear();
+    m_indices  .clear();
+
+    m_totalWidth  = 0.0;
+    m_totalHeight = 0.0;
+}
+
+//-----------------------------------------------------------------------------
+//  getVertices
+//-----------------------------------------------------------------------------
+const FRMVECTOR3* StaticTerrain::getVertices() const
+{
+    return &m_vertices.front();
+}
+
+//-----------------------------------------------------------------------------
+//  getTexCoords
+//-----------------------------------------------------------------------------
+const FRMVECTOR3* StaticTerrain::getTexCoords() const
+{
+    return &m_texCoords.front();
+}
+
+//-----------------------------------------------------------------------------
+//  getIndices
+//-----------------------------------------------------------------------------
+const unsigned int* StaticTerrain::getIndices() const
+{
+    return &m_indices.front();
+}
+
+//-----------------------------------------------------------------------------
+//  getIndexCount
+//-----------------------------------------------------------------------------
+const size_t StaticTerrain::getIndexCount() const
+{
+    return m_indices.size();
+}
+
+//-----------------------------------------------------------------------------
+//  getTotalWidth
+//-----------------------------------------------------------------------------
+const double StaticTerrain::getTotalWidth() const
+{
+    return m_totalWidth;
+}
+
+//-----------------------------------------------------------------------------
+//  getTotalHeight
+//-----------------------------------------------------------------------------
+const double StaticTerrain::getTotalHeight() const
+{
+    return m_totalHeight;
+}

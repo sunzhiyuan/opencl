@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Accel</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Welcome to the Adreno SDK Browser</H1>
+
+This is version 1.0 of the new Adreno SDK Browser. Please read this document in order to become familiar with it's usage. 
+<p>
+<p>
+The Browser is built using Gtk#. Gtk# is a Graphical User Interface Toolkit
+for mono and .Net. The project binds the Gtk+ toolkit and assorted GNOME 
+libraries, enabling fully native graphical Gnome application development
+using Mono and the .Net development frameworks. You can read more about GtkSharp here:
+www.mono-project.com/GtkSharp
+</br></br>
+There are several relevant Mono tools for the Browser:</br>
+MRE - Mono Runtime Environment: www.mono-project.com/Mono:Runtime</br>
+MDK - Mono Development Kit
+MonoDevelop - A cross-platform IDE primarily designed for C#/.Net: www.monodevelop.com
+</br></br>
+In order to run the Browser, only the MRE and the MDK are required. The 
+Browser was developed with MonoDevelop but you will not need that package
+to use the Browser. 
+</p>
+<H1>Usage</H1>
+<p>
+The Browser interface was redesigned with simplicity in mind. The Tree structure on the left hand side will allow you to navigate through all the 
+included Samples, Tutorials, Tools, Libraries, and Documentation. As shown below, many items will have an image along with a short description in the right hand
+pane. 
+</p>
+<IMG src =BrowserScreenshot.bmp width="100%">
+</br><br>
+<h3>Toolbar</h3>
+The Toolbar buttons at the top provide the various features of the Browser. Features exist depending on the item selected. From left to right, the button's functionality is:
+</br></br>
+<TABLE>
+<TR><TD class="sampleControl">Name</TD><TD class="sampleControl">Image</TD><TD class="sampleControl">Description</TD></TR>
+<TR><TD>Description</TD><TD align="center"><IMG src=toolbar_settings_fff.png ></TD><TD>Show the default screen which is generally a description of the item.</TD></TR>
+<TR><TD>Run</TD><TD align="center"><IMG src=toolbar_run_fff.png ></TD><TD>Run the executable of the item selected.</TD></TR>
+<TR><TD>Code</TD><TD align="center"><IMG src=toolbar_open_fff.png ></TD><TD>Show the code directory of the item selected.</TD></TR>
+<TR><TD>Docs</TD><TD align="center"><IMG src=toolbar_read-acdb_fff.png ></TD><TD>Show some detailed documentation of the item.</TD></TR>
+<TR><TD>Build Android</TD><TD align="center"><IMG src=toolbar_group_fff.png ></TD><TD>Build the selection for Android devices.</TD></TR>
+<TR><TD>Install Android</TD><TD align="center"><IMG src=toolbar_run_fff.png ></TD><TD>Build the selection for Android devices and install it over ADB.</TD></TR>
+</TABLE>
+</br>
+The Toolbar buttons will only be available if the selection has the corresponding feature. For example, if an item from the Documentation
+section is selected, you will not be able to click the "Install To Android" button because documentation doesn't have that ability. Some options 
+may be unavailable on certain Operating Systems. 
+</br></br>
+In addition to the Toolbar Buttons, the commands have "hotkeys". The mappings are as follows:
+<br></br>
+<TABLE>
+<TR><TD class="sampleControl">Name</TD><TD class="sampleControl">Image</TD><TD class="sampleControl">Key</TD></TR>
+<TR><TD>Description</TD><TD align="center"><IMG src=toolbar_settings_fff.png ></TD><TD align="center">h</TD></TR>
+<TR><TD>Run</TD><TD align="center"><IMG src=toolbar_run_fff.png ></TD><TD align="center">r</TD></TR>
+<TR><TD>Code</TD><TD align="center"><IMG src=toolbar_open_fff.png ></TD><TD align="center">c</TD></TR>
+<TR><TD>Docs</TD><TD align="center"><IMG src=toolbar_read-acdb_fff.png ></TD><TD align="center">d</TD></TR>
+<TR><TD>Build Android</TD><TD align="center"><IMG src=toolbar_group_fff.png ></TD><TD align="center">b</TD></TR>
+<TR><TD>Install Android</TD><TD align="center"><IMG src=toolbar_run_fff.png ></TD><TD align="center">a</TD></TR>
+</TABLE>
+
+<h3>Other</h3>
+You can find instructions for setting up the browser on different platforms in the Documentation->Installation And Usage Section. 
+</br></br>
+Android build information for a set of items can be found in the "Build Instructions" item. 
+
+
+
+
+
+</BODY>
+</HTML>

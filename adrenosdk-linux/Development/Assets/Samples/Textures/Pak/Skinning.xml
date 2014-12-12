@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Boy03.bmp"
+    SrcFileName = "../Boy03.bmp"
+    DstFormat   = "ATC" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "DMan_DiffuseSpec.tga"
+    SrcFileName = "../DMan_DiffuseSpec.tga"
+    DstFormat   = "ATC" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "DMan_NormalGloss.tga"
+    SrcFileName = "../DMan_NormalGloss.tga"
+    DstFormat   = "ATC" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Floor"
+    SrcFileName = "../ParqFloorBase.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

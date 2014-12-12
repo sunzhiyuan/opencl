@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Qstrip</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Qstrip</H1>
+
+<p>Qstrip is a simple library for the application level optimization of vertex index data. The resulting index information may be used in calls to glDrawElements.
+
+<p>Qstrip comes with two header files exposing two data structs: 
+
+<ul>
+<li>Qsplit - takes sets of triangle indices as input and return multiple triangle sets with a restricted number of vertices indexed by each contiguous set of triangles
+<li>Qstrip - takes indexed triangles as input (3 indices per triangle) and return a single index list of triangle strips representing a vertex compression of the previous index data. The strip may be optimized for degenerates or for cache coherency to make the functionality more useful on a broader range of platforms.
+</ul>
+
+<p>The objective of the Qsplit functionality is to split complex sets of triangle data into smaller contiguous subsets that will remain resident on DSP data FIFOs during the transformation and lighting process.
+
+<p>The objective of Qstrip is to minimize the vertex transformation and lighting overhead by sharing vertices between triangles through indexed triangle strip reuse and reissuing those indices where possible while they are still resident in hardware vertex cache.
+
+<p>For more information about Qstrip, please consult the documentation included in the tool's directory.
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Mesh File Format</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Mesh File Format</H1>
+The mesh format is laid out in a tree structure as a hierarchy of frames with pointers to siblings and children. Each frame contains both a transformation matrix determining the frame's orientation relative to its parent frame and a pointer to optional mesh data. This allows for very general capabilities. For example, the first frame might hold the mesh of an airplane with a child frame holding the mesh for the propeller. The matrix for the first frame orients the airplane in world space, while using a simple rotation matrix for the child frame can be used to spin the propeller relative to the airplane body. This tree structure also supports fully-animated, skinned characters, in which an external animation system writes resulting transformation matrices into the appropriate frames.
+<P>
+The mesh file format was designed for fast loading. Each file is broken apart into three sections: a file header, memory-resident system data for the Frames, and temporary buffer initialization data for vertex and index buffer data. Thus, an entire mesh file can be read in just three file reads and two memory allocations. After loading the system data, various file offsets will need to be trivially "fixed up" to be turned into valid memory pointers. The buffer data, which contains all the necessary data to initialize vertex and index buffers, can be discarded after the buffers are created and populated.
+<P>
+The first structure in the mesh file is its header:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH_FILE_HEADER
+{
+    UINT32 nMagic;
+    UINT32 nSystemDataSize;
+    UINT32 nBufferDataSize;
+    UINT32 nNumFrames;
+};</PRE>
+</TD></TR>
+</TABLE>
+<P>
+<B>nMagic </B>is a magic number indicating that the file is a valid SDK mesh file.<br>
+<B>nSystemDataSize </B>is the byte size of the system data portion of the file.<br>
+<B>nBufferDataSize </B>is the byte size of the buffer data portion of the file.<br>
+<B>nNumFrames </B>is the number of hierarchical frames in the file.
+<P>
+After reading the file header, the mesh loading code allocates two memory buffers, for the system data and the buffer data. After two more file reads to fill these buffers, the file handle can be closed.
+<P>
+The system data is comprised of an array of nNumFrames number of frames. Frames hold the structural information that allows the data to be stored as a tree structure.
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH_FRAME
+{
+    CHAR            m_strName[32];
+
+    FRMMATRIX4X4    m_matTransform;
+    FRMMATRIX4X4    m_matBoneOffset;
+    FRMMATRIX4X4    m_matCombined;
+
+    FRM_MESH*       m_pMesh;
+    FRM_ANIMATION*  m_pAnimation;
+
+    FRM_MESH_FRAME* m_pChild;
+    FRM_MESH_FRAME* m_pNext;
+
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+Since the frames are used to describe a tree hierarchy, each frame contains pointers to child and sibling frames. During rendering or other processing, the hierarchy is traversed exclusively through these pointers.
+<p>
+Each frame has an ASCII name, which is needed to mate each frame with optional animation data, which is stored in a separate file. If animations are used, frames with animation data use the <b>m_pAnimation</b> field to link to the appropriate data.
+<p>
+Each frame contains a primary matrix transformation, as well as two other matrices used for skeletal animations: a bone offset matrix, and a combined matrix that holds the combination of the primary transform and the output transform from the animation system.
+<p>
+Finally, each frame contains an optional pointer to a mesh structure, which holds actual data used for rendering geometry. Mesh data is stored in the structure FRM_MESH. 
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH
+{
+    FRM_VERTEX_ELEMENT m_VertexLayout[8];
+    UINT32             m_Reserved;
+
+    UINT32             m_nNumVertices;
+    UINT16             m_nVertexSize;
+    UINT32             m_hVertexBuffer;
+
+    UINT32             m_nNumIndices;
+    UINT16             m_nIndexSize;
+    UINT32             m_hIndexBuffer;
+
+    UINT32             m_nNumBonesPerVertex;
+    UINT32             m_nNumBoneMatrices;
+    UINT32             m_nNumBones;
+    FRM_MESH_BONE*     m_pBones;
+
+    UINT32             m_nNumSubsets;
+    FRM_MESH_SUBSET    m_pSubsets[m_nNumSubsets];
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+The mesh structure holds all the information to describe mesh vertices and indices, but defers more specific attributes to an array of mesh subsets. The main components of a mesh are its vertex and index buffers, along with necessary descriptors, like vertex size, vertex, number of indices, and so on. The vertex layout describes the individual vertex components like position, normals, and texture coordinates, which comprise a single vertex.
+<p>
+Skinned meshes are rigged to skeleton “bones” that are used for animation. Such meshes will contain information about the bones, including a pointer to an array of bones used for each mesh. The bones simply link a mesh frame to a transformation matrix, as needed for the skeletal animation system:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH_BONE
+{
+    FRM_MESH_FRAME* m_pFrame;
+    FRMMATRIX4X4    m_matBoneOffset;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+The last part of the mesh structure is the array of mesh subsets. A mesh subset provides a material and a texture to the mesh. There must be at least one mesh subset, but the design allows for a larger number. In the airplane example above, the entire model might use a single vertex buffer, as described in the FRM_MESH structure, but require several subsets to have the wings, tail, and fuselage colored and/or textured differently. Each mesh subset will typically result in some state setting followed by a single draw call.
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH_SUBSET
+{
+    UINT32             m_nPrimType;
+    UINT32             m_nNumIndices;
+    UINT32             m_nIndexOffset;
+
+    UINT32*            m_pBoneIds;
+
+    FRMVECTOR4         m_vDiffuseColor;
+    FRMVECTOR4         m_vSpecularColor;
+    FRMVECTOR3         m_vAmbientColor;
+    FRMVECTOR3         m_vEmissiveColor;
+
+    UINT32             m_nNumTextures;
+    FRM_MESH_TEXTURE*  m_pTextures;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+The first part of a mesh subset describes which portion (subset) of the mesh’s indexed vertex data to use for rendering. Likewise, skinned meshes will use some portion of the mesh’s array of bones.
+<p>
+The remaining part of a mesh describes rendering attributes, like material colors and textures. For flexibility, multiple textures are allowed, so the textures are described by as array:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_MESH_TEXTURE
+{
+    CHAR         m_strTexture[32];
+    CFrmTexture* m_pTexture;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+During the load process, the ASCII name of the texture can be used to load an actual texture object, using the provided pointer in the structure.
+<P>
+In addition to the actual mesh structures above, the mesh file format makes use of the following structures:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRMMATRIX4X4
+{
+    FLOAT32 m[4][4];
+};
+
+struct FRMVECTOR3
+{
+     FLOAT32 v[3];
+};
+
+struct FRMVECTOR4
+{
+     FLOAT32 v[4];
+};
+
+enum FRM_VERTEX_USAGE
+{
+    FRM_VERTEX_POSITION,
+    FRM_VERTEX_BONEINDICES,
+    FRM_VERTEX_BONEWEIGHTS,
+    FRM_VERTEX_NORMAL,
+    FRM_VERTEX_TANGENT,
+    FRM_VERTEX_BINORMAL,
+    FRM_VERTEX_TEXCOORD0,
+    FRM_VERTEX_TEXCOORD1,
+    FRM_VERTEX_TEXCOORD2,
+    FRM_VERTEX_TEXCOORD3,
+    FRM_VERTEX_TEXCOORD4,
+    FRM_VERTEX_TEXCOORD5,
+    FRM_VERTEX_COLOR0,
+    FRM_VERTEX_COLOR1,
+    FRM_VERTEX_COLOR2,
+    FRM_VERTEX_COLOR3,
+};
+
+struct FRM_VERTEX_ELEMENT
+{
+    UINT16   nUsage;
+    UINT8    nSize;
+    UINT16   nType;
+    UINT8    bNormalized;
+    UINT16   nStride;
+};</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+
+<H1><a name="AnimationData">Animation Data</a></H1>
+The mesh file format supported animated meshes. Since many animations (walk, run, jump, etc.) are typically associated with a single mesh, the animation data is stored separate from the mesh data.
+<p>
+Animation data usually has a 1:1 relationship with the frames in a mesh file. After loading both a mesh and the animation data, the loading code will traverse both sets of data trying to match ASCII frame names to similarly-named animation structures.
+<p>
+The data layout for mesh animations is an array of the following structures, corresponding to the mesh frame hierarchy:
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_ANIMATION
+{
+    CHAR               m_strFrameName[64];
+    FRM_MESH_FRAME*    m_pMeshFrame; 
+
+    FRMVECTOR3         m_vCurrentScale;
+    FRMVECTOR4         m_vCurrentRotate;
+    FRMVECTOR3         m_vCurrentTranslate;
+
+    UINT32             m_nNumKeys;
+    UINT32*            m_pKeyTimes;
+    FRM_ANIMATION_KEY* m_pKeyValues;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+Each frame will (optionally) point to one of these structures, and each of these structures points pack to the single frame that it animates.
+<p>
+The next three fields hold the results of the animation data. During the animation process, these fields hold the scale, rotation, and translation values that are then used to compute the actual matrix transformation for the animated frame.
+<p>
+The core of the animation structure is the set of key frames. Each key frame is a snapshot of the animation scale, rotate, and translate values at a specific time. This set of key frames is created by the artist and used as inputs for the animation algorithm. Each key value is described as:
+<p>
+<TABLE>
+<TR><TD>
+<PRE>
+struct FRM_ANIMATION_KEY
+{
+    FRMVECTOR3         m_vScale;
+    FRMVECTOR4         m_vRotate;
+    FRMVECTOR3         m_vTranslate;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+During runtime, the animation routine is fed a time value which is uses to find the most appropriate key frame. Since the time value will likely fall between two fixed key frames, the animation routine interpolates the results, storing them for convenient access inside the animation structure. Finally, those values are used to construct a transformation matrix that is mirrored back into the mesh frame structure, where it can be used for rendering.
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

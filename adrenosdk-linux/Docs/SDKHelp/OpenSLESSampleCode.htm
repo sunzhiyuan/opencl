@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>OpenSLES Sample Code</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>OpenSL ES&trade; Samples</H1>
+The VS2010 sample code provided in the SDK for OpenSL ES™ covers 4 basic topics that are the fundemental building blocks of creating a full-featured middleware audio API. 
+<p>
+Wrapping the OpenSLES.dll (provided with the sample code) is <b>sample_framework.c/h</b>, which simplifies the use of OpenSL ES™ calls to a set of standardized functions.
+<p>
+<b>samples.c</b> provides the main code that shows how to use the API. <b>int main()</b> contains 4 return functions, and each function gives an overview of a common requirement found in most audio engines today.
+
+<H2>SimpleSample()</H2>
+SimpleSample loads a sample into memory and plays it. The sound is looped and will play for one second before it fades out. When the fade is complete, the sample will be stopped. This is a good example of how to load an audio sample into an application and play it. Useful for playing 2D U.I. type sounds.
+<H2>Sample3D()</H2>
+Sample3D loads a sample and plays it positionally in a circle around a listener position (at 0,0,0). This is a good example of how to make 3D audio content in an application.
+<H2>SampleEffects()</H2>
+SampleEffects loads a sample and assigns it to be played with virtualization on (i.e. reverberation). This is a good example of how one might place procedural effects on a sound within an application to add realism and detail to a sound.
+<H2>SampleStream()</H2>
+SampleStream opens a file handle to a sound and plays the sound in via a buffering system. This is a good example of how one might want to play audio that is too large to fit into memory (i.e. music, ambient noises, dialog etc.).
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

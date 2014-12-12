@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="How To Edit and Optimize OpenCL Kernels">
+    <title>Tutorial: How To Edit and Optimize OpenCL Kernels</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">Tutorial: How To Edit and Optimize OpenCL Kernels</div>
+    </div>
+    <div id="Content">
+      <p> This tutorial explains how to use Adreno Profiler Kernel Analyzer to
+        develop and optimize OpenCL kernels. </p>
+      <br>
+      <p> First: </p>
+      <div class="Indent">
+        <p> <img src="../../Images/Arrow.bmp" />
+          <a HREF="../Connect.html">Connect</a>
+          to an OpenCL application running on your mobile device. </p>
+        <p> <img src="../../Images/Arrow.bmp" />
+          Open up a Kernel Analyzer window in Adreno Profiler</p>
+        <p><img title="KA-button" alt="KA-button" src="./KA-button.png"></p>
+        <div class="Indent">
+          <p> &#8226; <i><b>If you want to optimize a kernel and compare it at the
+                same time you can open up another kernel analyzer and Right click
+                on the tab-&gt;New Vertical Tab Group</b></i></p>
+          <br>
+          <p><img title="KA-2" alt="KA-2" src="KA2.png"></p>
+        </div>
+        <p></p>
+        <p></p>
+      </div>
+      <p></p>
+      <br>
+      <p> Second, write kernel in the source window, click compile to compile
+        your kernel.&nbsp;</p>
+      <div class="Indent">
+        <p> &#8226; <i></i>see the compiler stats in the bottom window<i></i></p>
+        <p> &#8226; <i>You can open build option tab in the bottom window, select the option, for example,
+            -cl-opt-disable, to set the build options</i></p>
+        <p><img title="KA-BuildOptions" alt="KA-BuildOptions" src="./KA-buildOptions.png"></p>
+        <p></p>
+        <br>
+        <p>&#8226; <span style="font-style: italic;">Below shows comparing source
+            code and <a href="../../Reference/OpenCL/ScrubberCL_StaticAnalysis.html">compiler stats</a> in two kernel analyzer instances</span><i></i></p>
+        <p><img title="KA-2-compile" alt="KA-2-compile" src="KA-2-compile.png"></p>
+        <p></p>
+      </div>
+      <br>
+      Third, if your kernel source is compiled correctly, one or more entry will
+      show up in the history box. If not it will suggest you the compilation
+      error in the Compiler Stat tab.
+      <p><img title="KA-BuildError" alt="KA-BuildError" src="./KA-buildError.png"></p>
+      <i></i>
+      <p>&#8226; <span style="font-style: italic;">You can click on any of your </span><i>historical
+          items in the history tab to load the source code, extension used and compiler stats
+          for an instant replay.</i></p>
+      <p><i></i>&#8226; <span style="font-style: italic;">You can base you next optimization
+          on any of historical states by clicking that item -&gt; edit you
+          kernel code -&gt; compile</span><i></i></p>
+      <p>&#8226; <span style="font-style: italic;">If you would like to erase too many
+          historical items, click the Clean above. <br>
+        </span></p>
+      <p><span style="font-style: italic;"></span><i></i></p>
+      <br>
+      <p></p>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

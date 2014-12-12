@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Shallow Water Simulation</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Shallow Water</H1>
+
+This sample demonstrates a simple water simulation.
+<p>
+<IMG src =swe.bmp >
+
+<H1>Details</H1>
+
+<p>
+This sample implements a liquid simulation as described in the 'Shallow Water Equations' chapter of the ACM Siggraph 2008 'Real Time Physics Class Notes' written by Nils Thuerey and Peter Hess.  The liquid is modeled by three 2d arrays containing the height and x and y velocity values.  The simulation operates entirely on the cpu.  Once a frame needs to be generated, the program constructs a field of normals from the height values.  From the normal field a texture is created that contains uv coordinates for lookup into a refraction and reflection image.  The fragment shader simply uses these coordinates to read from the two image textures and combines the results.
+<p>
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Reset Simulation</TD></TR>
+</TABLE>
+<P>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

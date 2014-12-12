@@ -1,0 +1,104 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Shaders Viewer">
+  <HEAD>
+    <TITLE>Shaders Viewer</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Shaders Viewer</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Shaders Viewer displays shaders belonging to the currently selected program from the 
+          <A HREF="ProgramsBrowser.html">Programs Browser</A>.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="ShadersViewer_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i><b>See the tutorial on <A HREF="../HowTo/OpenGLES2/OptimizeShaders_GLES2.html">optimizing GLSL shaders</A>.</b></i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+
+      <DIV CLASS="Indent">
+        <P>
+          <img src="ShadersViewer_2a.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Drop-down for selecting which vertex or fragment shader to edit.
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="ShadersViewer_2b.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Sends the modified shaders to the connected device, overriding the original GPU program loaded by the mobile application.
+              <DIV CLASS="Indent">
+                <P>
+                  • <i>If the modified shader still compiles and links correctly, and overrides are globally enabled in the 
+                    <A HREF="ProgramsBrowser.html">Programs Browser</A>, then clicking "Send" will cause the mobile application 
+                    to begin executing using the modified shader.</i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="ShadersViewer_2c.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Reverts all changes to this program.
+              <DIV CLASS="Indent">
+                <P>
+                  • <i>Clicking this button will <b>discard all modifications</b> made to <b>all</b> shaders attached
+                    to the program being displayed. The mobile application will also stop overriding the program and return 
+                    to using its original shaders.</i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="ShadersViewer_2d.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Exports the selected shader's text to a file.
+            </P>
+          </DIV>
+        </P>
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

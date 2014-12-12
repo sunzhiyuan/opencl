@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>DepthOfField</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>DepthOfField</H1>
+
+This sample demonstrates how to create a depth of field effect.  Depth of field being defined as the distance in front and behind a subject that is in focus.
+<p>
+<IMG src =DepthOfField.bmp >
+
+<H1>Details</H1>
+This sample creates two images, one sharp image, and one blurred image.  The sharp image also stores in its alpha value how far away the current fragment is in world space from the viewer (call this <b>D<sub>p</sub></b>). The sample also takes as input some focal distance <b>F</b> from the viewer in which objects are in focus, and some value <b>R</b> which specifies how quickly objects become out of focus as they move away from <b>F</b>.
+<p>
+The overall focus at a given pixel is then given by:
+<p>
+<b>Focus = clamp(R * abs(F - D<sub>p</sub>), 0.0, 1.0)</b>
+<p>
+This <b>Focus</b> value is then used to linearly interpolate between the sharp and blurred images to achieve the desired depth of field effect.  So as an example, if one of the fragments that makes up one of the back pins was 0.9 units away (<b>D<sub>p</sub></b>) from the viewer, and all objects that are 0.5 units from the viewer are considered to be in focus (<b>F</b>), and our rate of focus falloff is 1 (<b>R</b>), then:
+<p>
+<b>Focus = clamp(1 * abs(0.9 - 0.5), 0.0, 1.0) = 0.4,</b>
+<p>
+so our result would consist of 0.4 * the sharp image + 0.6 * the blurred image at that particular fragment.
+
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Decrease the focus falloff</TD></TR>
+<TR><TD><B>2</B></TD><TD>Increase the focus falloff</TD></TR>
+<TR><TD><B>3</B></TD><TD>Move the focal plane towards the viewer</TD></TR>
+<TR><TD><B>4</B></TD><TD>Move the focal plane away from the viewer</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

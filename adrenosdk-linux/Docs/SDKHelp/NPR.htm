@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>NPR</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>NPR</H1>
+This sample demonstrates how to apply two non-photorealistic rendering techniques: cel-shading and edge detection.
+<p>
+<IMG src =NPR.bmp >
+
+<H1>Details</H1>
+Cel-shading is a technique that can be applied to content to give it a cartoon feel.  It can be applied by simply taking the dot product between a light vector and the surface normal and using the result as a lookup into a 1D texture map, such as the one depicted below:
+<p>
+<IMG src =NPR2.bmp >
+<p>
+
+The dot product between the light vector and surface normal returns the cosine of the angle between the two vectors.  We clamp all of the negative results to zero as they are from surfaces that are facing away from our light source.  We could furthermore take the arccosine of the dot product to get an exact angle if we wanted to, but since we already have a result between zero and one, we can simply use this result as our lookup into our 1D texture map.
+<p>
+Edge detection is a technique that effectively compliments cel-shading.  This sample achieves this effect by applying a sobel edge detection filter to depth and normal passes.   The result of this filter is then multiplied by the results of the cel-shading pass.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Decrease outline width</TD></TR>
+<TR><TD><B>2</B></TD><TD>Increase outline width</TD></TR>
+<TR><TD><B>3</B></TD><TD>Decrease the ambient light</TD></TR>
+<TR><TD><B>4</B></TD><TD>Increase the ambient light</TD></TR>
+<TR><TD><B>5</B></TD><TD>Toggle rotation on/off</TD></TR>
+<TR><TD><B><IMG src="dpad.bmp"></B></TD><TD>Move the light</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

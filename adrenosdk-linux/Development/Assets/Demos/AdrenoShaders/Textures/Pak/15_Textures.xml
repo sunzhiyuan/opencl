@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Hatch1"
+    SrcFileName = "..\HatchPattern1.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Hatch2"
+    SrcFileName = "..\HatchPattern2.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Hatch3"
+    SrcFileName = "..\HatchPattern3.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Hatch4"
+    SrcFileName = "..\HatchPattern4.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "RayGunLuminance"
+    SrcFileName = "..\RayGunLuminance.tga"
+    DstFormat   = "ATC" 
+/>

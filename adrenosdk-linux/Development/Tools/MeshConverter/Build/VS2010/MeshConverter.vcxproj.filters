@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{5f4ecc35-4ee7-4fdd-9a68-68f9abd8b12f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exporters">
+      <UniqueIdentifier>{4679b709-218b-4605-9cab-ecfaa6329ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Importers">
+      <UniqueIdentifier>{64e1e613-8758-48ce-ab8a-900445d09cda}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\WriteMsh1.cpp">
+      <Filter>Exporters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ReadMsh0.cpp">
+      <Filter>Importers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ReadMsh1.cpp">
+      <Filter>Importers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ReadObj.cpp">
+      <Filter>Importers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FrmExtendedMesh.cpp" />
+    <ClCompile Include="..\..\main.cpp" />
+    <ClCompile Include="..\..\TriStripper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\FrmBasicTypes.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\FrmMath.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ReadMsh0.h">
+      <Filter>Importers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ReadMsh1.h">
+      <Filter>Importers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ReadObj.h">
+      <Filter>Importers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\FrmExtendedMesh.h" />
+    <ClInclude Include="..\..\TriStripper.h" />
+  </ItemGroup>
+</Project>

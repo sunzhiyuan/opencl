@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<STYLE TYPE="text/css">
+<!--
+A: link { 
+	color: black; 
+	text-decoration: underline;
+              }
+a:hover { color: green; }
+
+BODY
+	{
+	background-image: url(SDK_HelpBanner_v4B.png);
+	background-repeat: repeat-x;
+	padding-top: 120px;
+	font-family: Calibri, Arial;
+	}
+img.HeaderImage
+	{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	}
+h1
+	{
+	font-family: Calibri, Arial;
+	font-weight: bold;
+	color: darkblue;
+	font-size: 200%;
+	}
+h2
+	{
+	font-family: Calibri, Arial;
+	font-weight: bold;
+	font-size: 150%;
+	}
+
+DIV.footer
+	{
+	BACKGROUND-COLOR: #cfcfcf;
+	font-family: "Times New Roman";
+	font-size: 75%;
+	}
+TABLE
+	{
+	BACKGROUND-COLOR: #cfcfcf;
+	font-family: "Times New Roman";
+	cellpadding: 0;
+	}
+TD	{
+	border: 1px solid white;
+	padding: 5;
+	}
+TD.sampleControl
+	{
+	BACKGROUND-COLOR: #111111;
+	font-size: 20;
+	font-weight: bold;
+	font-style: italic;
+	color: #ffffff;
+	}
+TH.header1
+	{
+	BACKGROUND-COLOR: #88aabb;
+	padding: 5;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 20;
+	border: 1px solid white;
+	}
+TH.header2
+	{
+	padding: 5;
+	font-weight: bold;
+	border: 1px solid white;
+	}
+TABLE.ourVision
+	{
+	BACKGROUND-COLOR: #115511;
+	font-size: 20;
+	font-weight: bold;
+	font-style: italic;
+	color: #ffffff;
+	}
+-->
+</STYLE>
+
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>SDKStyleSheet</Title>
+</HEAD>
+<BODY>
+
+
+</BODY>
+</HTML>

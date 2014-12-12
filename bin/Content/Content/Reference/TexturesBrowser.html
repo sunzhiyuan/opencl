@@ -1,0 +1,100 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Textures Browser">
+  <HEAD>
+    <TITLE>Textures Browser</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Textures Browser</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Textures Browser lists the textures that have been
+        <A HREF="../HowTo/CaptureAndScrubFrames.html">captured</A> from the connected device.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="TexturesBrowser_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Expand a texture's tree node to view details about the texture.</i>
+          </P>
+          <P>
+            • <i>Selecting a texture will cause the Scrubber's emulator view to highlight all
+            meshes using that texture in <FONT COLOR=00AA00><b>green</b></FONT>.</i>
+          </P>
+          <P>
+            • <i>Selecting a texture will also cause it to be displayed in the
+            <A HREF="MipmapsViewer.html">Mipmaps Viewer</A>.</i>
+          </P>
+          <P>
+            • <i>When a texture is overridden (see <A HREF="MipmapsViewer.html">Mipmaps Viewer</A>), the 
+            Textures Browser will indicate so with an icon </i>[<img src="TexturesBrowser_2.png" />]<i> next to 
+            the texture. Clicking on that icon will revert to the originally captured texture.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+      
+      <DIV CLASS="Indent">
+        <P>
+          <img src="TexturesBrowser_3a.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Expands or collapses all items in the texture list.
+            </P>
+          </DIV>
+        </P>
+    
+        <BR />
+
+        <P>
+          <img src="TexturesBrowser_3b.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Immediately clears and redownloads all textures from the connected device.
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="TexturesBrowser_3c.png" />
+          <DIV CLASS="Indent">
+            <P>
+              When toggled <b>on</b>, textures will be resynchronized upon all subsequent
+              <A HREF="../HowTo/CaptureAndScrubFrames.html">Scrubber frame captures</A>.
+              <DIV CLASS="Indent">
+                <P>
+                  • <i>Assuming textures have been synchronized at least once, switching this option off
+                    can save time for subsequent captures, provided it is known that the connected application 
+                    has not altered any texture data.</i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

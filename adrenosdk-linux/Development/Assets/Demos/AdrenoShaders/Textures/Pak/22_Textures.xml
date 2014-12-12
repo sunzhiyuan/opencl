@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Eye1"
+    SrcFileName = "..\Eye1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Eye2"
+    SrcFileName = "..\Eye2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Eye3"
+    SrcFileName = "..\Eye3.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "EyeBump1"
+    SrcFileName = "..\EyeBump1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+/>

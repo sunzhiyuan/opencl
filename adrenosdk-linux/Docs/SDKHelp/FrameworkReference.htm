@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Framework Reference</Title>
+</HEAD>
+<BODY>
+
+<H1>Framework Reference</H1>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="appCreationRef">Application Creation</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> FrmApplication.h
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="fbConfigRef">Framebuffer Configuration</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> FrmRenderContext.h
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="osRef">OS Abstraction</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+
+<TR><TD>BOOL   <B>FrmFile_Open</B>( const CHAR* <I>strFileName</I>, UINT32 <I>nDirection</I>, FRM_FILE** <I>ppFile </I>)</TD><TD>Open a file given by file name  <I>strFileName </I>for the given direction <I>nDirection </I>and return the file handle <I>pFile</I>. Direction can be any of: Read, Write, or ReadWrite.<br>
+</TD></TR>
+
+<TR><TD>VOID   <B>FrmFile_Close</B>( FRM_FILE* <I>pFile </I>)</TD><TD>Closes the file given by file handle <I>pFile</I>.
+</TD></TR>
+
+<TR><TD>UINT32 <B>FrmFile_Read</B>( FRM_FILE* <I>pFile</I>, VOID* <I>ptr</I>, UINT32 <I>size </I>)</TD><TD>Reads from stream <I>pFile </I>into the array <I>ptr</I>, 1 object of size <I>size</I>. It returns the number of objects read.
+</TD></TR>
+
+<TR><TD>UINT32 <B>FrmFile_Write</B>( FRM_FILE* <I>pFile</I>, VOID* <I>ptr</I>, UINT32 <I>size </I>)</TD><TD>Writes from the array <I>ptr</I>, 1 object of size <I>size </I>on the stream <I>pFile</I>.
+</TD></TR>
+
+<TR><TD>UINT32 <B>FrmFile_GetSize</B>( FRM_FILE* <I>pFile </I>)</TD><TD>Returns size of a file <I>pFile </I>in bytes.</TD></TR>
+</TABLE>
+<B>File:</B> FrmFile.h
+<p>
+
+
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="cstdlibRef">C Standard Library Abstraction</a></TH></TR>
+<TR><TH class="header2">Stdlib API</TH><TH class="header2">Framework API</TH></TR>
+<TR><TD>malloc</TD><TD>VOID*       <B>FrmMalloc</B>( UINT32 <I>nSize </I>)</TD></TR>
+<TR><TD>realloc</TD><TD>VOID*       <B>FrmRealloc</B>( VOID* <I>iptr</I>, UINT32 <I>nSize </I>)</TD></TR>
+<TR><TD>free</TD><TD>VOID        <B>FrmFree</B>( VOID* <I>ptr </I>)</TD></TR>
+<TR><TD>memcpy</TD><TD>VOID*       <B>FrmMemcpy</B>( VOID* <I>s</I>, const VOID* <I>ct</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>memmove</TD><TD>VOID*       <B>FrmMemmove</B>( VOID* <I>s</I>, const VOID* <I>ct</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>memcmp</TD><TD>INT32       <B>FrmMemcmp</B>( const VOID* <I>cs</I>, const VOID* <I>ct</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>memchr</TD><TD>const VOID* <B>FrmMemchr</B>( const VOID* <I>cs</I>, BYTE <I>c</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>memset</TD><TD>const VOID* <B>FrmMemset</B>( VOID* <I>s</I>, BYTE <I>c</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>strcpy</TD><TD>CHAR*       <B>FrmStrcpy</B>( CHAR* <I>s</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strncpy</TD><TD>CHAR*       <B>FrmStrncpy</B>( CHAR* <I>s</I>, const CHAR* <I>ct</I>, UINT32 <I>n</I> )</TD></TR>
+<TR><TD>strcat</TD><TD>CHAR*       <B>FrmStrcat</B>( CHAR* <I>s</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strncat</TD><TD>CHAR*       <B>FrmStrncat</B>( CHAR* <I>s</I>, const CHAR* <I>ct</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>strcmp</TD><TD>INT32       <B>FrmStrcmp</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>stricmp</TD><TD>INT32       <B>FrmStricmp</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strncmp</TD><TD>INT32       <B>FrmStrncmp</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct</I>, UINT32 <I>n </I>)</TD></TR>
+<TR><TD>strchr</TD><TD>const CHAR* <B>FrmStrchr</B>( const CHAR* <I>cs</I>, CHAR <I>c </I>)</TD></TR>
+<TR><TD>strrchr</TD><TD>const CHAR* <B>FrmStrrchr</B>( const CHAR* <I>cs</I>, CHAR <I>c </I>)</TD></TR>
+<TR><TD>strspn</TD><TD>UINT32      <B>FrmStrspn</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strcspn</TD><TD>UINT32      <B>FrmStrcspn</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strpbrk</TD><TD>const CHAR* <B>FrmStrpbrk</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strstr</TD><TD>const CHAR* <B>FrmStrstr</B>( const CHAR* <I>cs</I>, const CHAR* <I>ct </I>)</TD></TR>
+<TR><TD>strlen</TD><TD>UINT32      <B>FrmStrlen</B>( const CHAR* <I>cs </I>)</TD></TR>
+<TR><TD>strerror</TD><TD>CHAR*       <B>FrmStrerror</B>( INT32 <I>n </I>)</TD></TR>
+<TR><TD>strtok</TD><TD>CHAR*       <B>FrmStrtok</B>( CHAR* <I>s</I>, const CHAR* <I>ct </I>)</TD></TR>
+</TABLE>
+<B>File:</B> FrmStdlib.h
+<P>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="ioRef">Input Handling</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B>
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="mathRef">2D/3D Math Support</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> FrmMath.h
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="textRenderingRef">Text Rendering</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B>
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="shaderRef">GLSL Shader Support</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> 
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="meshRef">Geometry Meshes</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> 
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="resourcesRef">Runtime Resource Handling</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B> 
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="guiRef">Graphical User Interface Components</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B>
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="logoRenderingRef">AMD Logo Rendering</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B>
+<p>
+
+<TABLE>
+<TR><TH class="header1"colspan=2><a name="miscUtilsRef">Miscellaneous Utilities</a></TH></TR>
+<TR><TH class="header2">Framework API</TH><TH class="header2">Description</TH></TR>
+</TABLE>
+<B>File:</B>
+<p>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

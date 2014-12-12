@@ -1,0 +1,138 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Metrics Browser">
+  <HEAD>
+    <TITLE>Metrics Browser</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Metrics Browser</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Metrics Browser lists the <A HREF="../HowTo/MonitorRealTimePerformance.html">Grapher (real-time) performance metrics</A>
+          and <A HREF="../HowTo/OpenGLES2/CaptureRendercallMetrics_GLES2.html">Scrubber (per-rendercall) performance metrics</A> supported by the 
+          connected device.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="MetricsBrowser_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Selecting a metric will display information about it in the documentation panel, below the metrics listing.</i>
+          </P>
+          <P>
+            • <i>To <b>add a real-time metric to a Grapher</b>, use the left mouse button to drag a metric from the 
+              <b>Grapher Metrics</b> tab, and drop it on a Grapher.</i>
+            <DIV CLASS="Indent">
+              <P>
+                <i>- If the metric does not begin plotting immediately, make sure an application is currently 
+                  connected, and that the Grapher has not been paused.</i>
+              </P>
+            </DIV>
+          </P>
+          <P>
+            • <i>To <b>add a per-rendercall metric to a Scrubber v2.x</b>, use the left mouse button to drag a metric from the 
+              <b>Scrubber Metrics</b> tab, and drop it on a Scrubber v2.x.</i>
+            <DIV CLASS="Indent">
+              <P>
+                <i>- To collect data for the newly added metric, <A HREF="../HowTo/OpenGLES2/CaptureAndScrubFrames_GLES2.html">capture</A>
+                  a new frame from the device.</i>
+              </P>
+              <P>
+                <i>- Enabled metrics will be measured for each glDraw call; explore the data using the 
+                  <A HREF="Scrubber2xCallTrace.html">call trace list</A>. Also see the tutorial on
+                  <A HREF="../HowTo/OpenGLES2/CaptureRendercallMetrics_GLES2.html">capturing per-rendercall metrics</A>.</i>
+              </P>
+            </DIV>
+          </P>
+          <P>
+            • <i>To <b>remove a metric</b> from either a Grapher or Scrubber, click on the metric's status icon </i>
+              [<img src="MetricsBrowser_2a.png" />, <img src="MetricsBrowser_2b.png" />]<i> in the browser, then select the 
+              Grapher or Scrubber you wish to detach in the menu that appears.</i>
+            <DIV CLASS="Indent">
+              <P>
+                <i>- For Grapher metrics, you may also disable a metric by clicking on its
+                  label below the graph axes.</i>
+              </P>
+            </DIV>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+      
+      <DIV CLASS="Indent">
+        <P>
+          <img src="MetricsBrowser_3a.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Expands or collapses all items in the texture list.
+            </P>
+          </DIV>
+        </P>
+    
+        <BR />
+
+        <P>
+          <img src="MetricsBrowser_3b.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Toggles global monitoring for real-time metrics.
+              <DIV CLASS="Indent">
+                <P>
+                  • <i>When <b>off</b>, real-time metrics report activity only for the connected GLES context or thread. Any work done by other processes/applications, or by other threads within your application, are not reflected in the values plotted by Grapher documents.</i>
+                </P>
+                <P>
+                  • <i>When <b>on</b>, real-time metrics report total GPU activity across all processes/applications.</i>
+                </P>
+                <P>
+                  • <i>Note that <u>some metrics do not support this setting</u> - any metric that does not support global monitoring will clearly state the limitation in the documentation panel.</i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="MetricsBrowser_3c.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Stops all metrics.
+            </P>
+          </DIV>
+        </P>
+
+        <BR />
+  
+        <P>
+          <img src="MetricsBrowser_3d.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Selects the report frequency of real-time metrics.
+            </P>
+          </DIV>
+        </P>
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

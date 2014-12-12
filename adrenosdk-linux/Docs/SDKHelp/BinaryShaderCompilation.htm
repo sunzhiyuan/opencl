@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Binary Shader Compilation</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Binary Shader Compilation</H1>
+
+This document discusses how to use OpenGL ES 2.0 binary shaders with QUALCOMM's OpenGL ES 2.0 Emulator.
+<p>Adreno&trade; supports binary shaders via the <a href="OES_get_program_binary.htm">OES_get_program_binary</a> extension. This extension is not currently suppored by the Unified Emulator, so currently binary shaders can only be used on target.
+
+<p>Binary shaders can be compiled on target with glCompileShader and glGetProgramBinaryOES, saved to disk and reused in subsequent executions so that the compilation overhead will only be incurred during installation or intial access.  An example of this method is illustrated in the <a href="OES_get_program_binary.htm">OES_get_program_binary</a> documentation.  Previous versions of the Adreno SDK included an offline binary shader compiler, but use of this has been deprecated to avoid possible compatibility issues with future binary shader formats.
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

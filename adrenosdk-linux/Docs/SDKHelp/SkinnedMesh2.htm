@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>SkinnedMesh2</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>SkinnedMesh2</H1>
+This sample demonstrates how to render skinned meshes using a vertex shader with a matrix palette. The sample quite naturally also shows playing back an artist-created animation on the mesh.
+<p>NOTE: This skinned mesh example uses a new data pipeline in the framework that allows for easy exporting of mesh and animation from Filmbox (FBX) files. 
+<p>
+<IMG src =SkinnedMesh2.bmp >
+
+<H1>Details</H1>
+<H2>Skinned Meshes</H2>
+Skinned meshes are commonly used when rendering animated characters. In the technique, the animation system is rigged to a system of “bones”, which are essentially mathematical control points. Actual vertices are weighted to one or more bones, which gives a smoother, more organic appearance to the rendered character. For example, vertices around the elbow are partially weighted both the forearm and upper arm in a way that avoids having a hard edge right at the elbow.
+<p>
+Skinned meshes are created in any content creation package capable of animating characters. The meshes and accompanying animation data are exported to some intermediate file format, such as .X or Collada. Then, a custom mesh conversion tool is use to convert the data into a final mesh format that is optimized for fast loading and rendering with the OpenGL ES 2.0 API.
+
+<H2>Matrix Palette Skinning</H2>
+The technique to render skinned meshes is often called “matrix palette skinning.” In contrast to traditional rendering, a skinning-enabled draw call is submitted with a palette of matrix transforms. That is, where traditional rendering uses a single model transformation matrix shared globally by all vertices in the mesh, the skinning draw call uses a palette of matrices, containing one matrix for each bone. This array of matrices is assembled at run-time just prior to the draw call. The matrices themselves are computed by the animation system.
+<p>
+Skinned vertices have a position, normal, and texture coordinates just like regular vertices. Additionally, they sport a 4-float component for bone weights and a 4-byte component for bone indices. The weights and indices are used to control how much each bone influences each vertex. Using 4-component values implies that each vertex can be influenced by up to 4 bones. More bones could be supported, but, in reality, most bones are influenced by just one or two bones. 
+<p>
+The vertex layout for skinned vertices will typically look something like this:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+struct SKINNED_VERTEX
+{
+    FRMVECTOR3    vPosition;
+    BYTE          BoneIndices[4];
+    FLOAT32       BoneWeights[4];
+    FRMVECTOR3    vNormal;
+    FRMVECTOR3    vTexCoord;
+};
+</PRE>
+</TD></TR>
+</TABLE>
+<p>
+
+Note that the bone weights and bone indices are fixed attributes of the vertices which are computed during authoring within the content creation package. Once a binary mesh is loaded, the application does not need to meddle with individual vertex components. Rather, the vertices are passed down to the vertex shader where the real work happens.
+<p>
+Inside the vertex shader, the vertex position and vertex normal are transformed multiple times, once for each bone. Since most skinned vertices use just two bones, a design decision was made to limit the number of supported bones to just two. This needs to be enforced in the mesh exporter or the mesh conversion tool so that vertex data is appropriately matched to how the vertex shader uses the bone indices and bone weights. (In short, the bone weights need to sum up to 1.0, so it's not mathematically correct to have more per-vertex bone influences than the vertex shader is willing to accommodate.)
+<p>
+Inside the shader, the per-vertex bone indices are used to index into the array of global bone matrices. The position and normal are then transformed by the appropriate matrix, followed by weighting it with the per-vertex bone weight. The sum of the transformed, weighted positions and normals then become the final position and normal used for the remainder of the vertex shader.
+<p>
+Note that the array of matrices consumes a large amount of shader uniforms. In order to conserve space, 4x3 matrices are used, despite the fact that GLSL only supports 3x3 matrices (mat3) and 4x4 matrices (mat4). To implement 4x3 matrices, they are decomposed into three vec4 rows, resulting in a large array of vec4 types. This array of vec4's is the matrix palette supplied by the application's animation system.
+<p>
+Even when using 4x3 matrices to conserve uniforms, complex meshes can still exceed the physical limits of the hardware. In this case, the mesh conversion tool will need to break up the mesh into multiple draw calls. This is common practice, as developers are willing to accept the slight overhead for the gain in flexibility.
+
+<H2>Animation</H2>
+Mesh data and animation data are separated for obvious reasons. A mesh a single representation of an object, but that object may have several animations played back on it: run cycle, walk cycle, jump motion, etc.. The animation system is not concerned with individual vertices, but rather just implements the underlying “skeleton” of bones. Artists will say that the mesh is then “rigged” to the skeleton. Since meshes contain a hierarchical set of frames, the animation data and mesh data are tied together through a set of ASCII names. During loading, these references are resolved. Interestingly, one set of animation data can apply to any number of different meshes, as long as the ASCII names match up.
+The animation data is a set of key-framed data containing a time-based array of rotation, translation, and scale values for each bone. During the game, the animation system is supplied a time value, with which it can return an interpolated set of rotations, translations, and scale values for each bone in the skeleton. These values are then used to build the matrix transforms, which are later assembled into a linear array that becomes the matrix palette.
+In practice, meshes will have multiple animations playing back on them, as they need to transition from one animation to another. For example, trying to smoothly transition from a walk cycle to a run cycle will require some sort of animation blending system. The SkinnedMesh sample does not support this. Another important, yet unsupported, feature of an animation system is IK support. As should be evident, full-featured animation systems become quite complex and are often candidates for middleware.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Speed up animation</TD></TR>
+<TR><TD><B>2</B></TD><TD>Slow down animation</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

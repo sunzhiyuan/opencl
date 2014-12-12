@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="2E981E17-9D73-44C1-B78E-51D096535FAC" Publisher="CN=Test" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>BumpedReflectionMapping</DisplayName>
+    <PublisherDisplayName>Test</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>BumpedReflectionMapping</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BumpedReflectionMapping.App">
+      <VisualElements DisplayName="BumpedReflectionMapping" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="BumpedReflectionMapping" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>FbxModelConverter</ProjectName>
+    <ProjectGuid>{69633E83-8BDB-42F8-AFD1-48AEFB84FE06}</ProjectGuid>
+    <RootNamespace>FbxModelConverter</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Common.props" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Bin_Win32_Debug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Common.props" />
+    <Import Project="..\..\..\Build\VS2010\Tools_Bin_Win32_Debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\External\AMD_Tootle_2.3\include;..\..\..\..\External\FBX\include;..\..\..\..\Inc\;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GS_DESKTOP_GL;WIN32;_DEBUG;OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>fbxsdk-2012.2-mdd.lib;libEGL_d.lib;libGLESv2_d.lib;TootleDLL_d.lib;wininet.lib;winmm.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\External\AMD_Tootle_2.3\lib;..\..\..\..\External\FBX\lib\vs2010\x86;..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>del /Q $(TargetDir)\$(ProjectName).lib 
+del /Q $(TargetDir)\$(ProjectName).exp
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\External\AMD_Tootle_2.3\include;..\..\..\..\External\FBX\include;..\..\..\..\Inc\;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GS_DESKTOP_GL;WIN32;_DEBUG;OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:x64 /DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>fbxsdk-2012.2-mdd.lib;libEGL_d.lib;libGLESv2_d.lib;TootleDLL_d.lib;wininet.lib;winmm.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\External\AMD_Tootle_2.3\lib;..\..\..\..\External\FBX\lib\vs2010\x64;..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>del /Q $(TargetDir)\$(ProjectName).lib 
+del /Q $(TargetDir)\$(ProjectName).exp
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\..\External\AMD_Tootle_2.3\include;..\..\..\..\External\FBX\include;..\..\..\..\Inc\;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GS_DESKTOP_GL;NDEBUG;WIN32;OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>fbxsdk-2012.2-md.lib;libEGL.lib;libGLESv2.lib;TootleDLL.lib;wininet.lib;winmm.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\External\AMD_Tootle_2.3\lib;..\..\..\..\External\FBX\lib\vs2010\x86;..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>del /Q $(TargetDir)\FbxModelConverter.lib
+ del /Q $(TargetDir)\FbxModelConverter.exp
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\..\..\External\AMD_Tootle_2.3\include;..\..\..\..\External\FBX\include;..\..\..\..\Inc\;..\..\..\..\Samples\Framework;..\..\..\..\Samples\Framework\Win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GS_DESKTOP_GL;NDEBUG;WIN32;OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:x64 /DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>fbxsdk-2012.2-md.lib;libEGL.lib;libGLESv2.lib;TootleDLL.lib;wininet.lib;winmm.lib;DelayImp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\External\AMD_Tootle_2.3\lib;..\..\..\..\External\FBX\lib\vs2010\x64;..\..\..\..\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>del /Q $(TargetDir)\FbxModelConverter.lib
+ del /Q $(TargetDir)\FbxModelConverter.exp
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmApplication.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmFont.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmInput.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmPackedResource.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUserInterface.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUtils.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmApplication_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmFile_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmNoise_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmAnimation.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmAnimationTrack.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmIndexBuffer.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmJoint.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMaterial.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMemoryBuffer.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurfaceArray.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModel.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModelIO.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModelMesh.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmNamedId.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexBuffer.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexFormat.cpp" />
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexProperty.cpp" />
+    <ClCompile Include="..\..\Animation.cpp" />
+    <ClCompile Include="..\..\Base.cpp" />
+    <ClCompile Include="..\..\Bone.cpp" />
+    <ClCompile Include="..\..\Camera.cpp" />
+    <ClCompile Include="..\..\FbxModelConverter.cpp" />
+    <ClCompile Include="..\..\FbxUtils.cpp" />
+    <ClCompile Include="..\..\FilmboxManager.cpp" />
+    <ClCompile Include="..\..\FilmboxNode.cpp" />
+    <ClCompile Include="..\..\Mesh.cpp" />
+    <ClCompile Include="..\..\QuaternionAnimation.cpp" />
+    <ClCompile Include="..\..\Scene.cpp" />
+    <ClCompile Include="..\..\SceneNode.cpp" />
+    <ClCompile Include="..\..\SceneObject.cpp" />
+    <ClCompile Include="..\..\SceneSerializer.cpp" />
+    <ClCompile Include="..\..\ShaderParameter.cpp" />
+    <ClCompile Include="..\..\Vector3Animation.cpp" />
+    <ClCompile Include="..\..\VertexArray.cpp" />
+    <ClCompile Include="..\..\VertexFormat.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmApplication.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFile.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFont.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmInput.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmMath.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmNoise.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmPackedResource.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmResource.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmStdlib.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUserInterface.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUtils.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmAnimation.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmAnimationTrack.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmIndexBuffer.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmJoint.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMaterial.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMemoryBuffer.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurface.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurfaceArray.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModel.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModelIO.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModelMesh.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmNamedId.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmPointerTable.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmTransform.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexBuffer.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexFormat.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexProperty.h" />
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexPropertyType.h" />
+    <ClInclude Include="..\..\Animation.h" />
+    <ClInclude Include="..\..\AnimationType.h" />
+    <ClInclude Include="..\..\Base.h" />
+    <ClInclude Include="..\..\Bone.h" />
+    <ClInclude Include="..\..\Camera.h" />
+    <ClInclude Include="..\..\Color.h" />
+    <ClInclude Include="..\..\FbxTypeConverters.h" />
+    <ClInclude Include="..\..\FbxTypes.h" />
+    <ClInclude Include="..\..\FbxUtils.h" />
+    <ClInclude Include="..\..\FilmboxBone.h" />
+    <ClInclude Include="..\..\FilmboxManager.h" />
+    <ClInclude Include="..\..\FilmboxMaterialInfo.h" />
+    <ClInclude Include="..\..\FilmboxNode.h" />
+    <ClInclude Include="..\..\FilmboxSceneInfo.h" />
+    <ClInclude Include="..\..\FilmboxSkinInfo.h" />
+    <ClInclude Include="..\..\FilmboxSkinWeight.h" />
+    <ClInclude Include="..\..\Material.h" />
+    <ClInclude Include="..\..\Mesh.h" />
+    <ClInclude Include="..\..\Quaternion.h" />
+    <ClInclude Include="..\..\QuaternionAnimation.h" />
+    <ClInclude Include="..\..\Scene.h" />
+    <ClInclude Include="..\..\SceneNode.h" />
+    <ClInclude Include="..\..\SceneObject.h" />
+    <ClInclude Include="..\..\SceneObjectType.h" />
+    <ClInclude Include="..\..\SceneSerializer.h" />
+    <ClInclude Include="..\..\ShaderParameter.h" />
+    <ClInclude Include="..\..\ShaderParameters.h" />
+    <ClInclude Include="..\..\ShaderParameterTypes.h" />
+    <ClInclude Include="..\..\SkinWeight.h" />
+    <ClInclude Include="..\..\Surface.h" />
+    <ClInclude Include="..\..\TimeRange.h" />
+    <ClInclude Include="..\..\Transform.h" />
+    <ClInclude Include="..\..\Triangle.h" />
+    <ClInclude Include="..\..\Vector2.h" />
+    <ClInclude Include="..\..\Vector3.h" />
+    <ClInclude Include="..\..\Vector3Animation.h" />
+    <ClInclude Include="..\..\Vector4.h" />
+    <ClInclude Include="..\..\VertexArray.h" />
+    <ClInclude Include="..\..\VertexFormat.h" />
+    <ClInclude Include="..\..\VertexProperty.h" />
+    <ClInclude Include="..\..\VertexPropertyUsage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Samples\Framework\Win32\FrmMath_Platform.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

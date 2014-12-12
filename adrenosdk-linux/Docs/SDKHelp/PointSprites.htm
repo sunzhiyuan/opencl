@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>PointSprites</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>PointSprites</H1>
+This sample demonstrates how to use point sprites.
+<P>
+<IMG src=PointSprites.bmp>
+
+<H1>Details</H1>
+Particle systems play a key role in increasing both realism and visual appeal of 3D applications.  This application makes use of point sprites to create a simple particle system that can be easily extended to create a range of interesting particle effects.
+<P>
+Traditionally, particle systems have been created with the use of billboards, which are simply texture mapped quads that are aligned to face the viewer.  Point sprites can be thought of as a more efficient form of billboard.  For starters, point sprites are automatically aligned to face the viewer without having to implement a software-based solution for aligning quads with the viewer.  Furthermore, billboards require the user to pass 4 vertices downstream, while point sprites can be represented by a single position and point size.  This helps to further reduce the overhead associated with them.
+<P>
+Through the use of shaders, this sample is able to offload a lot of the point sprite manipulation work to the graphics card.  Essentially, the application continually passes an array of point sprites off to the graphics card that are assigned initial particle values.  These values include: initial velocity, color, size, and lifespan.  The shader is then responsible for moving the particles over time, manipulating their size based upon both distance and particle age, as well as changing the particle's opacity based upon the particle's age.
+<P>
+There are three key components to the OpenGL ES 2.0 point sprites in this sample:
+<OL>
+<LI>The application level commands that generate the point sprites</LI>
+<LI>The vertex shader which manipulates the point sprite positions and passes needed information off to the fragment shader</LI>
+<LI>The fragment shader that textures the point sprites, and adjusts their transparency</LI>
+</OL>
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Decrease the frequency of the x direction sin curve</TD></TR>
+<TR><TD><B>2</B></TD><TD>Increase the frequency of the x direction sin curve</TD></TR>
+<TR><TD><B>3</B></TD><TD>Decrease the frequency of the z direction cos curve</TD></TR>
+<TR><TD><B>4</B></TD><TD>Increase the frequency of the z direction cos curve</TD></TR>
+<TR><TD><B>5</B></TD><TD>Decrease the particle speed</TD></TR>
+<TR><TD><B>6</B></TD><TD>Increase the particle speed</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

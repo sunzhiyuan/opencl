@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* ======================================================================
+ *  Copyright 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ *  QTI Proprietary and Confidential.
+ *  =====================================================================
+ *
+ */-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Snap Recognition</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_photo">AddPhoto</string>
+    <string name="title_activity_image_confirmation">ImageConfirmation</string>
+    <string name="title_activity_choose_user">ChooseUser</string>
+    <string name="title_activity_live_recognition">LiveRecognition</string>
+    <string name="description">Description</string>
+
+</resources>

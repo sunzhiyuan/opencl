@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "fieldstoneBump"
+    SrcFileName = "..\fieldstoneBump2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "FlatBump"
+    SrcFileName = "..\FlatBump.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>

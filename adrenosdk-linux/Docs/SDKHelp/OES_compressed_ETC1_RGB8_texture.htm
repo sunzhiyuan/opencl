@@ -1,0 +1,986 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Name</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoPlainText style='text-indent:.5in'><b><span style='font-size:20.0pt'>OES
+Compressed ETC1_RGB8_Texture</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Name</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    OES_compressed_ETC1_RGB8_texture:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Name
+Strings</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    GL_OES_compressed_ETC1_RGB8_texture</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Contact</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Jacob Strom (jacob.strom 'at' ericsson.com)</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>IP Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    See Ericsson's &quot;IP Statement&quot;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Ratified by the Khronos BOP, July 22, 2005.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Version</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Last Modified Date: Oct 25, 2006</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Number</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    -</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Dependencies</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Written based on the wording of the OpenGL ES 1.0
+specification</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Overview</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The goal of this extension is to allow direct support
+of</p>
+
+<p class=MsoPlainText>    compressed textures in the Ericsson Texture
+Compression (ETC)</p>
+
+<p class=MsoPlainText>    formats in OpenGL ES.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ETC-compressed textures are handled in OpenGL ES
+using the</p>
+
+<p class=MsoPlainText>    CompressedTexImage2D call.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The definition of the &quot;internalformat&quot;
+parameter in the</p>
+
+<p class=MsoPlainText>    CompressedTexImage2D call has been extended to
+support</p>
+
+<p class=MsoPlainText>    ETC-compressed textures. </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Issues</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>New
+Procedures and Functions</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>New
+Tokens</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Accepted by the &lt;internalformat&gt; parameter of
+CompressedTexImage2D</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ETC1_RGB8_OES           0x8D64</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 2 of the OpenGL 1.3 Specification (OpenGL</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Operation)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 3 of the OpenGL 1.3 Specification (Rasterization)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add to Table 3.17: Specific Compressed Internal
+Formats</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>       Compressed Internal Formats           Base
+Internal Format</p>
+
+<p class=MsoPlainText>       ===========================          
+====================</p>
+
+<p class=MsoPlainText>       ETC1_RGB8_OES                         RGB</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add to Section 3.8.3, Alternate Image Specification</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ETC1_RGB8_OES:</p>
+
+<p class=MsoPlainText>    ==============</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText>    If &lt;internalformat&gt; is ETC1_RGB8_OES, the
+compressed texture is an</p>
+
+<p class=MsoPlainText>    ETC1 compressed texture. </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The texture is described as a number of 4x4 pixel
+blocks. If the</p>
+
+<p class=MsoPlainText>    texture (or a particular mip-level) is smaller than 4
+pixels in</p>
+
+<p class=MsoPlainText>    any dimension (such as a 2x2 or a 8x1 texture), the
+texture is</p>
+
+<p class=MsoPlainText>    found in the upper left part of the block(s), and the
+rest of the</p>
+
+<p class=MsoPlainText>    pixels are not used. For instance, a texture of size
+4x2 will be</p>
+
+<p class=MsoPlainText>    placed in the upper half of a 4x4 block, and the
+lower half of the</p>
+
+<p class=MsoPlainText>    pixels in the block will not be accessed.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The first block in the memory will represent the top
+left block of</p>
+
+<p class=MsoPlainText>    the texture, the second block will represent the
+block to the</p>
+
+<p class=MsoPlainText>    immediate right of that, and so on. Thus the format
+is a top left</p>
+
+<p class=MsoPlainText>    oriented format.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The number of bits that represent a 4x4 texel block
+is 64 bits if</p>
+
+<p class=MsoPlainText>    &lt;internalformat&gt; is given by ETC1_RGB8_OES.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The data for a block is a number of bytes, </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    {a0, a1, a2, a3, a4, a5, a6, a7} </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    where byte a0 is located at the lowest memory address
+and a7 at</p>
+
+<p class=MsoPlainText>    the highest. The 64 bits specifying the block is then
+represented</p>
+
+<p class=MsoPlainText>    by the following 64 bit integer:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    int64bit =
+256*(256*(256*(256*(256*(256*(256*a0+a1)+a2)+a3)+a4)+a5)+a6)+a7;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Each 64-bit word contains information about a 4x4
+pixel block as</p>
+
+<p class=MsoPlainText>    shown in Figure 3.9.1. There are two modes in ETC1;
+the</p>
+
+<p class=MsoPlainText>    'individual' mode and the 'differential' mode. Which
+mode is</p>
+
+<p class=MsoPlainText>    active for a particular 4x4 block is controlled by
+bit 33, which</p>
+
+<p class=MsoPlainText>    we call 'diffbit'. If diffbit = 0, the 'individual'
+mode is</p>
+
+<p class=MsoPlainText>    chosen, and if diffbit = 1, then the 'differential'
+mode is</p>
+
+<p class=MsoPlainText>    chosen. The bit layout for the two modes are
+different: The bit</p>
+
+<p class=MsoPlainText>    layout for the individual mode is shown in Tables
+3.17.1a and</p>
+
+<p class=MsoPlainText>    3.17.1c, and the bit lay out for the differential mode
+is laid out</p>
+
+<p class=MsoPlainText>    in Tables 3.17.1b and 3.17.1c.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    In both modes, the 4x4 block is divided into two
+subblocks of</p>
+
+<p class=MsoPlainText>    either size 2x4 or 4x2. This is controlled by bit 32,
+which we</p>
+
+<p class=MsoPlainText>    call 'flipbit'. If flipbit=0, the block is divided
+into two 2x4</p>
+
+<p class=MsoPlainText>    subblocks side-by-side, as shown in Figure 3.9.2. If
+flipbit=1,</p>
+
+<p class=MsoPlainText>    the block is divided into two 4x2 subblocks on top of
+each other,</p>
+
+<p class=MsoPlainText>    as shown in Figure 3.9.3. </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    In both individual and differential mode, a 'base
+color' for each</p>
+
+<p class=MsoPlainText>    subblock is stored, but the way they are stored is
+different in</p>
+
+<p class=MsoPlainText>    the two modes:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    In the 'individual' mode (diffbit = 0), the base
+color for</p>
+
+<p class=MsoPlainText>    subblock 1 is derived from the codewords R1 (bit
+63-60), G1 (bit</p>
+
+<p class=MsoPlainText>    55-52) and B1 (bit 47-44), see Table 3.17.1a. These
+four bit</p>
+
+<p class=MsoPlainText>    values are extended to RGB888 by replicating the four
+higher order</p>
+
+<p class=MsoPlainText>    bits in the four lower order bits. For instance, if
+R1 = 14 =</p>
+
+<p class=MsoPlainText>    1110b, G1 = 3 = 0011b and B1 = 8 = 1000b, then the
+red component</p>
+
+<p class=MsoPlainText>    of the base color of subblock 1 becomes 11101110b =
+238, and the</p>
+
+<p class=MsoPlainText>    green and blue components become 00110011b = 51 and
+10001000b =</p>
+
+<p class=MsoPlainText>    136. The base color for subblock 2 is decoded the
+same way, but</p>
+
+<p class=MsoPlainText>    using the 4-bit codewords R2 (bit 59-56), G2 (bit
+51-48)and B2</p>
+
+<p class=MsoPlainText>    (bit 43-40) instead. In summary, the base colors for
+the subblocks</p>
+
+<p class=MsoPlainText>    in the individual mode are:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    base col subblock1 = extend_4to8bits(R1, G1, B1)</p>
+
+<p class=MsoPlainText>    base col subblock2 = extend_4to8bits(R2, G2, B2) </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    In the 'differential' mode (diffbit = 1), the base
+color for</p>
+
+<p class=MsoPlainText>    subblock 1 is derived from the five-bit codewords
+R1', G1' and</p>
+
+<p class=MsoPlainText>    B1'. These five-bit codewords are extended to eight
+bits by</p>
+
+<p class=MsoPlainText>    replicating the top three highest order bits to the
+three lowest</p>
+
+<p class=MsoPlainText>    order bits. For instance, if R1' = 28 = 11100b, the
+resulting</p>
+
+<p class=MsoPlainText>    eight-bit red color component becomes 11100111b =
+231. Likewise,</p>
+
+<p class=MsoPlainText>    if G1' = 4 = 00100b and B1' = 3 = 00011b, the green
+and blue</p>
+
+<p class=MsoPlainText>    components become 00100001b = 33 and 00011000b = 24</p>
+
+<p class=MsoPlainText>    respectively. Thus, in this example, the base color
+for subblock 1</p>
+
+<p class=MsoPlainText>    is (231, 33, 24). The five bit representation for the
+base color</p>
+
+<p class=MsoPlainText>    of subblock 2 is obtained by modifying the 5-bit
+codewords R1' G1'</p>
+
+<p class=MsoPlainText>    and B1' by the codewords dR2, dG2 and dB2. Each of
+dR2, dG2 and</p>
+
+<p class=MsoPlainText>    dB2 is a 3-bit two-complement number that can hold
+values between</p>
+
+<p class=MsoPlainText>    -4 and +3. For instance, if R1' = 28 as above, and
+dR2 = 100b =</p>
+
+<p class=MsoPlainText>    -4, then the five bit representation for the red
+color component</p>
+
+<p class=MsoPlainText>    is 28+(-4)=24 = 11000b, which is then extended to
+eight bits to</p>
+
+<p class=MsoPlainText>    11000110b = 198. Likewise, if G1' = 4, dG2 = 2, B1' =
+3 and dB2 =</p>
+
+<p class=MsoPlainText>    0, the base color of subblock 2 will be RGB = (198,
+49, 24). In</p>
+
+<p class=MsoPlainText>    summary, the base colors for the subblocks in the
+differential</p>
+
+<p class=MsoPlainText>    mode are:</p>
+
+<p class=MsoPlainText> </p>
+
+<p class=MsoPlainText>    base col subblock1 = extend_5to8bits(R1', G1', B1')</p>
+
+<p class=MsoPlainText>    base col subblock2 = extend_5to8bits(R1'+dR2,
+G1'+dG2, B1'+dG2)</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Note that these additions are not allowed to under-
+or overflow</p>
+
+<p class=MsoPlainText>    (go below zero or above 31). (The compression scheme
+can easily</p>
+
+<p class=MsoPlainText>    make sure they don't.) For over- or underflowing
+values, the</p>
+
+<p class=MsoPlainText>    behavior is undefined for all pixels in the 4x4
+block. Note also</p>
+
+<p class=MsoPlainText>    that the extension to eight bits is performed _after_
+the</p>
+
+<p class=MsoPlainText>    addition.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    After obtaining the base color, the operations are
+the same for</p>
+
+<p class=MsoPlainText>    the two modes 'individual' and 'differential'. First
+a table is</p>
+
+<p class=MsoPlainText>    chosen using the table codewords: For subblock 1,
+table codeword 1</p>
+
+<p class=MsoPlainText>    is used (bits 39-37), and for subblock 2, table codeword
+2 is used</p>
+
+<p class=MsoPlainText>    (bits 36-34), see Table 3.17.1. The table codeword is
+used to</p>
+
+<p class=MsoPlainText>    select one of eight modifier tables, see Table
+3.17.2. For</p>
+
+<p class=MsoPlainText>    instance, if the table code word is 010b = 2, then
+the modifier</p>
+
+<p class=MsoPlainText>    table [-29, -9, 9 29] is selected. Note that the
+values in Table</p>
+
+<p class=MsoPlainText>    3.17.2 are valid for all textures and can therefore
+be hardcoded</p>
+
+<p class=MsoPlainText>    into the decompression unit.</p>
+
+<p class=MsoPlainText>     </p>
+
+<p class=MsoPlainText>    Next, we identify which modifier value to use from
+the modifier</p>
+
+<p class=MsoPlainText>    table using the two 'pixel index' bits. The pixel index
+bits are</p>
+
+<p class=MsoPlainText>    unique for each pixel. For instance, the pixel index
+for pixel d</p>
+
+<p class=MsoPlainText>    (see Figure 3.9.1) can be found in bits 19 (most
+significant bit,</p>
+
+<p class=MsoPlainText>    MSB), and 3 (least significant bit, LSB), see Table
+3.17.1c. Note</p>
+
+<p class=MsoPlainText>    that the pixel index for a particular texel is always
+stored in</p>
+
+<p class=MsoPlainText>    the same bit position, irrespectively of bits
+'diffbit' and</p>
+
+<p class=MsoPlainText>    'flipbit'. The pixel index bits are decoded using
+table</p>
+
+<p class=MsoPlainText>    3.17.3. If, for instance, if the pixel index bits are
+01b = 1, and</p>
+
+<p class=MsoPlainText>    the modifier table [-29, -9, 9, 29] is used, then the
+modifier</p>
+
+<p class=MsoPlainText>    value selected for that pixel is 29 (see table
+3.17.3). This</p>
+
+<p class=MsoPlainText>    modifier value is now used to additively modify the
+base</p>
+
+<p class=MsoPlainText>    color. For example, if we have the base color (231, 8,
+16), we</p>
+
+<p class=MsoPlainText>    should add the modifier value 29 to all three
+components: (231+29,</p>
+
+<p class=MsoPlainText>    8+29, 16+29) resulting in (260, 37, 45). These values
+are then</p>
+
+<p class=MsoPlainText>    clamped to [0, 255], resulting in the color (255, 37,
+45), and we</p>
+
+<p class=MsoPlainText>    are finished decoding the texel.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ETC1 compressed textures support only 2D images
+without</p>
+
+<p class=MsoPlainText>    borders. CompressedTexture2D will produce an
+INVALID_OPERATION if</p>
+
+<p class=MsoPlainText>    &lt;border&gt; is non-zero.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add table 3.17.1: Texel Data format for ETC1
+compressed</p>
+
+<p class=MsoPlainText>    textures:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ETC1_RGB8_OES:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    a) bit layout in bits 63 through 32 if diffbit = 0</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48</p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>    | base col1 | base col2 | base col1 | base col2 |</p>
+
+<p class=MsoPlainText>    | R1 (4bits)| R2 (4bits)| G1 (4bits)| G2 (4bits)|</p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     47 46 45 44 43 42 41 40 39 38 37 36 35 34  33  32</p>
+
+<p class=MsoPlainText>     ---------------------------------------------------</p>
+
+<p class=MsoPlainText>    | base col1 | base col2 | table  | table  |diff|flip|</p>
+
+<p class=MsoPlainText>    | B1 (4bits)| B2 (4bits)| cw 1   | cw 2   |bit |bit |</p>
+
+<p class=MsoPlainText>     ---------------------------------------------------</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText>     </p>
+
+<p class=MsoPlainText>    b) bit layout in bits 63 through 32 if diffbit = 1</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     63 62 61 60 59 58 57 56 55 54 53 52 51 50 49 48 </p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>    | base col1    | dcol 2 | base col1    | dcol 2 |</p>
+
+<p class=MsoPlainText>    | R1' (5 bits) | dR2    | G1' (5 bits) | dG2    |</p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText>     47 46 45 44 43 42 41 40 39 38 37 36 35 34  33  32 </p>
+
+<p class=MsoPlainText>     ---------------------------------------------------</p>
+
+<p class=MsoPlainText>    | base col 1   | dcol 2 | table  | table  |diff|flip|</p>
+
+<p class=MsoPlainText>    | B1' (5 bits) | dB2    | cw 1   | cw 2   |bit |bit |</p>
+
+<p class=MsoPlainText>     ---------------------------------------------------</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     </p>
+
+<p class=MsoPlainText>    c) bit layout in bits 31 through 0 (in both cases)</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16</p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>    |       most significant pixel index bits       |</p>
+
+<p class=MsoPlainText>    | p| o| n| m| l| k| j| i| h| g| f| e| d| c| b| a|</p>
+
+<p class=MsoPlainText>     -----------------------------------------------</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     15 14 13 12 11 10  9  8  7  6  5  4  3   2   1  0</p>
+
+<p class=MsoPlainText>     --------------------------------------------------</p>
+
+<p class=MsoPlainText>    |         least significant pixel index bits       | 
+</p>
+
+<p class=MsoPlainText>    | p| o| n| m| l| k| j| i| h| g| f| e| d| c | b | a |</p>
+
+<p class=MsoPlainText>    
+--------------------------------------------------      </p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add table 3.17.2: Intensity modifyer sets for ETC1
+compressed textures:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    table codeword                modifier table</p>
+
+<p class=MsoPlainText>    ------------------        ----------------------</p>
+
+<p class=MsoPlainText>            0                     -8  -2  2   8 </p>
+
+<p class=MsoPlainText>            1                    -17  -5  5  17</p>
+
+<p class=MsoPlainText>            2                    -29  -9  9  29 </p>
+
+<p class=MsoPlainText>            3                    -42 -13 13  42 </p>
+
+<p class=MsoPlainText>            4                    -60 -18 18  60 </p>
+
+<p class=MsoPlainText>            5                    -80 -24 24  80</p>
+
+<p class=MsoPlainText>            6                   -106 -33 33 106 </p>
+
+<p class=MsoPlainText>            7                   -183 -47 47 183</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add table 3.17.3 Mapping from pixel index values to
+modifyer values for</p>
+
+<p class=MsoPlainText>    ETC1 compressed textures:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    pixel index value</p>
+
+<p class=MsoPlainText>    ---------------</p>
+
+<p class=MsoPlainText>     msb     lsb           resulting modifyer value</p>
+
+<p class=MsoPlainText>    -----   -----          -------------------------</p>
+
+<p class=MsoPlainText>      1       1            -b (large negative value)</p>
+
+<p class=MsoPlainText>      1       0            -a (small negative value)</p>
+
+<p class=MsoPlainText>      0       0             a (small positive value)</p>
+
+<p class=MsoPlainText>      0       1             b (large positive value)</p>
+
+<p class=MsoPlainText>     </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add figure 3.9.1: Pixel layout for a ETC1 compressed
+block:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |a   |e   |i   |m   |</p>
+
+<p class=MsoPlainText>    |    |    |    |    |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |b   |f   |j   |n   |</p>
+
+<p class=MsoPlainText>    |    |    |    |    |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |c   |g   |k   |o   |</p>
+
+<p class=MsoPlainText>    |    |    |    |    |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |d   |h   |l   |p   |</p>
+
+<p class=MsoPlainText>    |    |    |    |    |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add figure 3.9.2: Two 2x4-pixel subblocks
+side-by-side:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    subblock 1  subblock 2</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |a    e   |i    m   |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |b    f   |j    n   |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |c    g   |k    o   |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>    |d    h   |l    p   |</p>
+
+<p class=MsoPlainText>    |         |         |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add figure 3.9.3: Two 4x2-pixel subblocks on top of
+each other:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>    |a    e    i    m   |</p>
+
+<p class=MsoPlainText>    |                   |</p>
+
+<p class=MsoPlainText>    |                   | subblock 1</p>
+
+<p class=MsoPlainText>    |b    f    j    n   |</p>
+
+<p class=MsoPlainText>    |                   |</p>
+
+<p class=MsoPlainText>     -------------------</p>
+
+<p class=MsoPlainText>    |c    g    k    o   |</p>
+
+<p class=MsoPlainText>    |                   |</p>
+
+<p class=MsoPlainText>    |                   | subblock 2</p>
+
+<p class=MsoPlainText>    |d    h    l    p   |</p>
+
+<p class=MsoPlainText>    |                   |</p>
+
+<p class=MsoPlainText>     ---- ---- ---- ----</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 4 of the OpenGL 1.3 Specification (Per-Fragment</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Operations
+and the Frame Buffer)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 5 of the OpenGL 1.3 Specification (Special</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Functions)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 6 of the OpenGL 1.3 Specification (State and</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>State
+Requests)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Appendix A of the OpenGL 1.3 Specification (Invariance)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to the AGL/GLX/WGL Specification</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>GLX
+Protocol</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Errors</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    INVALID_OPERATION is generated by TexImage2D,
+CompressedTexSubImage2D,</p>
+
+<p class=MsoPlainText>    CopyTexSubImage2D if &lt;internalformat&gt; is
+ETC1_RGB8_OES.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    INVALID VALUE is generated by CompressedTexImage2D if</p>
+
+<p class=MsoPlainText>    &lt;internalformat&gt; is ETC1_RGB8_OES and
+&lt;level&gt; value is neither</p>
+
+<p class=MsoPlainText>    zero or a negative value.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>New State</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The queries for NUM_COMPRESSED_TEXTURE_FORMATS and</p>
+
+<p class=MsoPlainText>    COMPRESSED_TEXTURE_FORMATS include ETC1_RGB8_OES.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Revision
+History</span></b></p>
+
+<p class=MsoPlainText>    04/20/2005    0.1    (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Original draft.</p>
+
+<p class=MsoPlainText>    04/26/2005    0.2    (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Minor bugfixes.</p>
+
+<p class=MsoPlainText>    05/10/2005    0.3    (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Minor bugfixes.</p>
+
+<p class=MsoPlainText>    06/30/2005    0.9    (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Merged iPACKMAN and iPACKMANalpha.</p>
+
+<p class=MsoPlainText>    07/04/2005    0.92   (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Changed name from iPACKMAN to Ericsson Texture
+Compression</p>
+
+<p class=MsoPlainText>    07/07/2005    0.98   (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Removed alpha formats</p>
+
+<p class=MsoPlainText>    07/27/2005    1.00   (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Added token value for ETC1_RGB8_OES</p>
+
+<p class=MsoPlainText>    07/28/2005    1.001  (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Changed typos found by Eric Fausett</p>
+
+<p class=MsoPlainText>    10/25/2006    1.1    (Jacob Strom)</p>
+
+<p class=MsoPlainText>         - Added clarification on small textures and
+endianess</p>
+
+</div>
+
+</body>
+
+</html>

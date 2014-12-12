@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BEGIN_INCLUDE(manifest) -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.qualcomm.MatrixTranspose"
+      android:versionCode="412"
+      android:versionName="4.12">
+
+  <uses-sdk android:minSdkVersion="8" />
+  <uses-feature android:glEsVersion="0x00020000"/>
+  <supports-screens android:smallScreens="true"
+    				android:normalScreens="true"
+   					android:largeScreens="true"
+  					android:anyDensity="true"/>
+  <uses-permission android:name="android.permission.INTERNET"   />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+   <application
+        android:label="MatrixTranspose"
+		android:icon="@drawable/ic_launcher">
+
+        <!-- AdrenoLauncherActivity to present GUI -->
+        <activity
+            android:name="com.qualcomm.common.AdrenoLauncherActivity"
+            android:label="CL Matrix Transpose" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="adreno_package" android:value="com.qualcomm.MatrixTranspose" />
+            <meta-data android:name="adreno_activity" android:value="android.app.NativeActivity" />
+        </activity>
+
+        <!-- AdrenoNativeActivity to run OpenCL code -->
+        <activity android:name="com.qualcomm.common.AdrenoNativeActivity"
+               android:launchMode="singleInstance"
+               android:label="MatrixTranspose">
+               <meta-data android:name="android.app.lib_name"
+                    android:value="MatrixTranspose" />
+               <intent-filter>
+                   <action android:name="adreno.intent.action.Launch" />
+                   <category android:name="android.intent.category.DEFAULT" />
+               </intent-filter>
+      </activity>
+  </application>
+</manifest>
+<!-- END_INCLUDE(manifest) -->

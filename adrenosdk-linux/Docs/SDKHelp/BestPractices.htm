@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>BestPractices</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Best Practices</H1>
+This document presents best practices for using OpenGL ES 2.0 to develop 3D applications on Adreno&trade;, QUALCOMM's next-generation mobile graphics processors. These recommendations are intended to be applied in every application to avoid potential performance pitfalls and other issues. They are not intended as a comprehensive list of optimizations needed to attain maximum performance.
+<p>
+The following sections highlight some of the key areas you should consider when designing applications for Adreno&trade;-enabled platforms.
+
+<H2>Vertex Buffer Objects</H2>
+Vertex Buffer Objects (VBOs) allow you to store vertex data in memory that is managed by the driver. They potentially offer many advantages, including possibly avoiding expensive copies and bandwidth-consuming transfers of data to the GPU. Especially in cases when vertex data is not changing from frame to frame, VBOs should be taken advantage of.
+<p>
+Attribute data stored in VBOs should be stored interleaved, since this is how the hardware will access the data. Attributes should never be stored in separate VBOs, nor should they be grouped together (i.e. don't store all positions together, followed by all texture coordinates, etc.) as this will cause the hardware to have to perform multiple memory fetches for every vertex.
+
+<H2>Sorting Data</H2>
+The order in which you draw objects can have an impact on performance in a couple of ways.
+<p>
+Most graphics hardware actually performs the depth test before the fragment shader is executed. If the depth test fails, the fragment shader isn't executed, since the fragment isn't visible anyway. You can take advantage of this by drawing non-transparent objects in a rough front-to-back order. Simply drawing the main character, then the rest of the scene, then the background is sufficient to take advantage of early depth culling. Beyond this course level of sorting, the cost of more detailed sorting may begin to offset any performance advantage you might gain.
+<p>
+State changes (shaders, textures, etc.) are generally inexpensive, so you shouldn't use uber-shaders (long shaders that use conditional branching to handle many different things) to avoid state changes. On the contrary, uber-shaders can have a dramatically negative impact on performance due to their increased register usage, which reduces the number of shader threads that the GPU can create.
+
+
+<H2>Framebuffer Usage</H2>
+Because of the generally limited memory resources on handheld devices, the amount of video memory available to Adreno&trade; is not large enough to hold the entire display, which is instead stored in system memory. Instead of writing data out to system memory for every pixel, Adreno&trade; uses an algorithm which divides the display into sub-regions (referred to as bins), and then processes one bin at a time using video memory, which is then resolved out to system memory when the bin is complete. The most important thing for applications to be aware of in regards to binning is that anything that causes the driver to have to save or restore the main framebuffer can severely hurt performance. There are several main rules applications should follow:
+
+<OL>
+<LI>Clear whatever buffers (color, depth, stencil) you're using as soon as you bind the framebuffer. Otherwise the driver must assume that the previous contents are still needed, which requires a slow copy from external memory.</LI>
+<LI>Never use a framebuffer object (including the main backbuffer) more than once in a single frame. In other words, once you switch to an FBO, don't switch back to it again.</LI>
+</OL>
+
+<H2>Compressed Textures and Mipmap</H2>
+QUALCOMM GPUs provide hardware support for several compressed texture formats, including ETC, ATC, and normal map compression. Using compressed textures can save considerable storage space, as well as bandwidth at runtime, since they are as little as one-fourth the size of an uncompressed texture. In addition, because compressed textures are smaller, texture cache misses in the fragment shader are reduced. Decompression is done at no cost by the graphics driver, so unless you are dynamically updating textures at runtime (e.g. using live video textures), you should always take advantage of texture compression.
+<p>
+Mipmaps can and should be used in conjunction with compressed textures, since they will further improve texture cache efficiency.
+<p>
+The Adreno&trade; SDK contains tools and samples to easily enable the use of texture compression and mipmaps in your applications.
+
+<H2>Triangle Organization</H2>
+Every time you make a draw call, there is a certain overhead cost that must be paid that is independent of the number of triangles that you are drawing. When drawing small batches of triangles, this overhead can have a significant impact on performance. Therefore, you should try to make your triangle batches as large as possible.
+<p>
+Triangle strips provide the most efficient method of representing batches of triangle data, since they allow you to represent a triangle with as little as one vertex. Numerous tools exist to enable you to convert your data into triangle strips, including Qstrip, which will create strips that are optimized for QUALCOMM Adreno&trade; graphics hardware.
+<p>
+Larger batches of triangles can be facilitated when using triangle strips by making use of degenerate triangles. These are zero area triangles that allow you to stitch together otherwise unconnected triangle strips, and they can be used whenever two strips share common state settings. Adreno&trade; hardware processes degenerate triangles virtually for free, so you should never break triangle strips into multiple draw calls when you can combine them into a single draw call by using degenerate triangles.
+
+
+<H2>Memory Usage</H2>
+Memory, including both system and graphics memory, tends to be a very limited resource on handheld platforms. In addition to the previously mentioned compressed textures, there are several things you can do to easily reduce memory usage.
+<p>
+OpenGL ES allows you to use a wide range of data types when specifying vertex attributes. Rather than using floats for all attributes, smaller data types may offer adequate precision. Position data is usually represented as 32-bit floating point values, but in many cases 16-bit values may be uses. Texture coordinates can almost always be represented as 16-bit unsigned shorts. Vertex normals and tangent space basis vectors can be stored using 10:10:10:2 or 11:11:10 compressed formats via extensions, saving up to 12 bytes per vertex. There is no additional cost for the GPU to use these smaller data types, so using them can lead to a substantial savings in memory and bandwidth usage.
+<p>
+When you pass image data to a texture object, pass vertex data to a VBO, or even when you load a shader, the OpenGL ES driver stores that data in graphics memory. Unless your application needs to continue to have access to that data, you can discard the data in your application, freeing up system memory for other uses.
+
+
+<H2>Power Consumption</H2>
+On many platforms games and some other applications run at the highest possible framerate. On handheld devices, doing so may unnecessarily consume excessive power and shorten the battery life. You should consider determining what your ideal framerate is, and then throttling your application such that it doesn't exceed that.
+
+
+<H2>Resolution</H2>
+The range in resolutions on handheld devices can be dramatic (e.g. WVGA has more than 5 times as many pixels as QVGA), while the physical display size tends to be similar. For many applications, running at the maximum resolution may not provide a significant improvement in visual quality. In such cases, running at a lower resolution can greatly improve performance, since the number of pixels that need to be processed will be considerably lower.
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

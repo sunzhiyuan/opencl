@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "ColorPic"
+    SrcFileName = "..\ColorSpaces2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>

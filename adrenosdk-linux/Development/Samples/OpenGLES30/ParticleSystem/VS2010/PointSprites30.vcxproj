@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7EDAF732-2DA8-4A9B-8A89-E575A959D09C}</ProjectGuid>
+    <RootNamespace>PointSprites</RootNamespace>
+    <ProjectName>ParticleSystem</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Samples_Common.props" />
+    <Import Project="..\..\..\Build\VS2010\Samples_Release.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Build\VS2010\Samples_Common.props" />
+    <Import Project="..\..\..\Build\VS2010\Samples_Debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WIN32;PLATFORM=OPENGLES;_CRT_SECURE_NO_DEPRECATE;_OGLES3;CORE_GL_CONTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>_WIN32;PLATFORM=OPENGLES;_CRT_SECURE_NO_DEPRECATE;_OGLES3;CORE_GL_CONTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/DelayLoad:LibEGL.dll
+/DelayLoad:LibGLESv2.dll %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmApplication.h" />
+    <ClInclude Include="..\..\..\Framework\FrmFile.h" />
+    <ClInclude Include="..\..\..\Framework\FrmFont.h" />
+    <ClInclude Include="..\..\..\Framework\FrmInput.h" />
+    <ClInclude Include="..\..\..\Framework\FrmMath.h" />
+    <ClInclude Include="..\..\..\Framework\FrmNoise.h" />
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmStdlib.h" />
+    <ClInclude Include="..\..\..\Framework\FrmUserInterface.h" />
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmFontGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmGLES3.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmMesh.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmShader.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.h" />
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h" />
+    <ClInclude Include="..\Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\FrmApplication.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmFont.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmInput.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmUserInterface.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmFontGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmGLES3.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmMesh.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmShader.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmApplication_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\win32\FrmNoise_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\Scene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\Framework\Win32\Adreno.ico">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy "%(FullPath)" "$(OutDir)" &gt; NUL
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Copying %(Filename)%(Extension)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">copy "%(FullPath)" "$(OutDir)" &gt; NUL
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\..\..\..\Assets\Samples\Fonts\Tuffy12.xml" />
+    <None Include="..\..\..\..\Assets\Samples\Shaders\EmitParticles30.glsl" />
+    <None Include="..\..\..\..\Assets\Samples\Shaders\PointSprites30.glsl" />
+    <None Include="..\..\..\..\Assets\Samples\Textures\Pak\ParticleSystem.xml" />
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

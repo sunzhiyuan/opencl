@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Texture 
+    ResourceID  = "Particle"
+    SrcFileName = "../Particle.tga"
+    DstFormat   = "ATC" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

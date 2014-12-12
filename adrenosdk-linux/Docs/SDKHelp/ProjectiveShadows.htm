@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>ProjectiveShadows</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>ProjectiveShadows</H1>
+This sample demonstrates how to create projective shadows.
+<p>
+<IMG src =ProjectiveShadows.bmp >
+
+<H1>Details</H1>
+Projective shadows are a relatively inexpensive approach to generating shadows. Essentially all that they do is project geometry onto planes.  Given some equation of a plane P = [N<sub>x</sub>, N<sub>y</sub>, N<sub>z</sub>, D], as well as an equation of some light source L = [L<sub>x</sub>, L<sub>y</sub>, L<sub>z</sub>, L<sub>w</sub>], the following matrix can be created to project geometry onto the plane:
+<p>
+<IMG src =ProjectiveShadows2.bmp >
+<p>
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Move the shadow to the left (light to the right)</TD></TR><TR><TD><B>2</B></TD><TD>Move the shadow to the right (light to the left)</TD></TR><TR><TD><B>3</B></TD><TD>Change to a previous mesh</TD></TR>
+<TR><TD><B>4</B></TD><TD>Change to the next mesh</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,218 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Scrubber Emulator View GL">
+  <HEAD>
+    <TITLE>Scrubber GL :: Emulator View</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Scrubber GL :: Emulator View</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Scrubber GL interface encapsulates a set of powerful tools for 
+        <A HREF="../HowTo/OpenGLES2/CaptureAndScrubFrames_GLES2.html">capturing and analyzing rendered frames</A>
+        from the connected graphics application.</b>
+      </P>
+
+      <P>
+        To open a new Scrubber GL, click on its button on the main application toolbar.
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Scrubber metrics usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Please see the tutorial on <A HREF="../HowTo/OpenGLES2/CaptureRendercallMetrics_GLES2.html">capturing per-rendercall metrics</A>.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Mouse controls:
+        <DIV CLASS="Indent">
+          <P>
+            • <i>To <b>pan</b> the scene, drag with the left mouse button.</i>
+          </P>
+          <P>
+            • <i>To <b>pick a mesh</b> in the scene, click on it with the left mouse button; the call trace will then seek to the selected mesh.</i>
+          </P>
+          <P>
+            • <i>To <b>seek to the end of the frame</b>, click anywhere in the black border around the scene.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+      
+      <DIV CLASS="Indent">
+        <P>
+          <img src="Scrubber2xMainWindow_1.png" />
+          <DIV CLASS="Indent">
+            <P>
+              <A HREF="../HowTo/OpenGLES2/CaptureAndScrubFrames_GLES2.html">Capture</A> a new frame of animation from the device.
+              <DIV CLASS="Indent">
+                <P>
+                  • <i>Upon a capture, Adreno Profiler will download the OpenGLES call trace of the mobile 
+                   application’s next frame of animation, along with associated VBO, vertex attribute, uniform, 
+                   shader, and program data. The frame is then rendered within Adreno Profiler through an 
+                   OpenGLES emulation environment.</i>
+                </P>
+                <P>
+                  • <i>If the texture browser’s “Sync On Capture” option is enabled, the embedded driver’s current 
+                   texture store will also be downloaded and applied to the scene.</i>
+                </P>
+                <P>
+                  • <i><u>Note that any edits made to shaders from a previously captured frame will be destroyed upon 
+                   a new capture.</u></i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_2.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Choose which framebuffer surface to display: color, depth, or stencil.
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_3.png" />
+          <DIV CLASS="Indent">
+            <P>
+              View the current device FBO.
+              <DIV CLASS="Indent">
+               <P>
+                 • <i>If toggled on, the currently bound framebuffer object, as of the selected draw
+                 call, is displayed in the emulator view.</i>
+               </P>
+               <P>
+                 • <i>If toggled off, the primary EGL surface will always be displayed, even if the
+                 device has bound a framebuffer object.</i>
+               </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_4.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Display the current device binning configuration.
+              <DIV CLASS="Indent">
+               <P>
+                 • <i>When enabled, the emulator view will overlay a grid of lines representing the device's
+                 framebuffer bin configuration.</i>
+               </P>
+               <P>
+                 • <i><b>The number of bins required for your rendering surfaces has a <u>big effect</u>
+                 on performance.</b> Always use the smallest framebuffer configuration possible; for example,
+                 experiment with a 2-byte color format, less or no bits of depth and/or stencil, and various MSAA
+                 settings.</i>
+               </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_5.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Scene visualization modes.
+              <DIV CLASS="Indent">
+                <P>
+                  [<img src="Scrubber2xMainWindow_5a.png" />]
+                  <i>Normal: the scene is rendered as it is on the device</i>
+                </P>
+                <P>
+                  [<img src="Scrubber2xMainWindow_5b.png" />]
+                  <i>Wireframe: the scene is rendered in wireframe mode</i>
+                </P>
+              </DIV>
+              <BR />
+              <P>
+                 The next three modes portray overdraw in the scene. The brighter a pixel is, the more fragments 
+                 at that screen location have passed the depth test and been rasterized. This mode is useful for 
+                 analyzing the effectiveness of depth-sorting algorithms in game engines.
+              </P>
+              <DIV CLASS="Indent">
+                <P>
+                  [<img src="Scrubber2xMainWindow_5c.png" />]
+                  <i>Show Overdraw: leaves the depth test state unchanged from what was set by the mobile application</i>
+                </P>
+                <P>
+                  [<img src="Scrubber2xMainWindow_5d.png" />]
+                  <i>Show Overdraw: forces depth testing off</i>
+                </P>
+                <P>
+                  [<img src="Scrubber2xMainWindow_5e.png" />]
+                  <i>Show Overdraw: highlights any pixels rejected by the depth test for the captured scene; the more brightly colored a pixel is, the more fragments at that screen location have been rejected by the depth test during the rendering of the scene</i>
+                </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_6.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Rotate the emulator view clockwise.
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_7.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Zoom the viewport to actual size.
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xMainWindow_8.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Zoom the viewport to fit the bounds of the emulator window.
+            </P>
+          </DIV>
+        </P>
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

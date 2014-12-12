@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "..\SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>SDKBrowser</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= ..\SDK_HelpBanner_v5.png>
+
+
+<H1>PC2Android</H1>
+<P>
+<IMG src="PC2Android.bmp">
+<p>
+PC2Android is a console application that allows the Snapdragon framework samples to be controlled via the numeric keys and mouse of the development PC. The Android sample must be started first before starting PC2Android.
+<p>
+To use, please ensure that the Fluid device is connected via usb. You must also make sure that you have your Android ADB environment set up properly (this needs to be done in order to run the SDK samples on Android). 
+<p>
+Next, you must deploy one of the Snapdragon samples. As soon as the sample is running, deploy PC2Android. If the connection works, you will see the console application look like the above image. You can now start using the numeric keys or mouse to work on the samples as if they were on the PC.
+<p>
+There are a few known issues with this program. You cannot run more then one sample at the same time. The Snapdragon samples on Android get suspended when they are closed via the home button. Only the first sample will be getting the input from PC2Android, so if you start another sample with the first application in suspended state, PC2Android will not work. This will be fixed in future releases of the tool. As well, the Android sample must be run first (it is considered the 'server' in the connection) before the PC. This will also be potentially fixed in the future so that it doesn't matter which order the sample and PC2Android are run in.
+<p>
+The full source for PC2Android is made available to developers, as well as the server side code in the Snapdragon sample framework.
+
+<iframe src = "..\Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>MotionBlur</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>MotionBlur</H1>
+This sample demonstrates how to achieve a motion blur effect through the use of FBOs and an accumulation tree.
+<P>
+<IMG src=MotionBlur_262x350.bmp>
+
+<H1>Details</H1>
+3D graphics applications represent the world as a sequence of consecutive frames.  The problem with this approach is that eyes do not work this way at all.  Instead they are constantly receiving and sending data to the brain for each of the millions of cells that make up the eyes.  The end result is that objects that move quickly within a field of view end up blurring because of the reaction time of the brain to process these millions of signals.
+<P>
+This sample achieves a motion blur effect by emulating how cameras work as opposed to how eyes work.  In the days before digital cameras, pictures were created by exposing film.  The shutter was used to control the duration of time in which the underlying film was exposed by the incoming light.  When objects moved rapidly in front of the camera, the longer the shutter was open, the longer the film was exposed, and the larger the blur that was obtained.
+<P>
+This sample closely mimics this concept.  Every rendered frame is the culmination of several frames of animation that are blended together for some shutter duration of time.  The shutter opens, frames are rendered to textures bound to FBOs and the resulting textures are blended together and rendered to the framebuffer.  The larger the shutter duration, the more blended frames, the larger the blur that is obtained.
+<P>
+This still leaves a few technical questions.  First, how can the amount of storage space be minimized?   This is important as embedded devices have limited capacity.  Second, how should the various frames blend together?
+<P>
+The simplest approach would be to simply render all N frames to N separate FBO bound textures while the shutter is open, and then render the blended result of these textures to the framebuffer.  There are two severe limitations however with this approach.  The first problem is that this approach will require an enormous amount of overhead, rendering to 64 or more FBO bound textures is simply infeasible on a handheld device.  The second problem is that every time that two frames are blended together a certain amount of error is incurred.  As a result, blending 64 frames together is going to give very inaccurate results.
+<P>
+So, how can the number of required FBO bound textures be minimized, and how can the error be minimized by blending as few frames together as possible?  The answer: with an accumulation tree.
+<P>
+The basic idea behind an accumulation tree is that every multiple of two frames are blended together.  So for example, two frames are blended together and only the blended result is important.  With four frames, each pair of frames is blended together, and then the resulting two frames are blended together.  As a result overhead is reduced 64 frames to a mere 7 FBO bound textures.  Plus the number of blending operations is logarithmic as opposed to a linear number which drastically reduces error.
+<P>
+To learn more about how accumulation trees work, please read the following paper by Ares Lagae and Philip Dutré:
+<a href="http://www.cs.kuleuven.ac.be/publicaties/rapporten/cw/CW369.pdf">www.cs.kuleuven.ac.be/publicaties/rapporten/cw/CW369.pdf</a>
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Decrease the speed</TD></TR>
+<TR><TD><B>2</B></TD><TD>Increase the speed</TD></TR>
+<TR><TD><B>3</B></TD><TD>Decrease the shutter duration</TD></TR>
+<TR><TD><B>4</B></TD><TD>Increase the shutter duration</TD></TR>
+<TR><TD><B>5</B></TD><TD>Toggle motion blur</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

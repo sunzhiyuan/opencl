@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Accel</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Accel</H1>
+
+This sample demonstrates how to program the accelerometer sensor found on many Snapdragon devices. 
+<p>
+<IMG src =Accel.bmp >
+
+<H1>Details</H1>
+
+An accelerometer is used to detect acceleration of a device in all three dimensions. Using this information, we can deduce positional movement 
+of the device and use this to control various aspects of our application.
+<p>
+The Accel application constructs a scene with a set of objects and a camera directly overhead. When the device is tilted, the camera moves on
+the X/Z plane in a smooth motion. 
+<p>
+Calibrating the device is an important step when using sensors to cut down on the drift that accumulates when reading and integrating values
+coming from sensors. Lay the device flat on a surface and touch the screen; calibration will take place while the this is happening. The longer you touch the 
+screen and the more still it is, the better the calibration results are and the less drift will occur.
+<p>
+<i>The application does not take into account any orientation (that involves more sensor math then what is in the application). It only works properly
+when the device is oriented flat with the back of the device facing the ground. 
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Toggle show sensor values</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<p>
+<p>
+NOTE: This sample compiles for both windows and Android, but requires an Android device to see the sensor in action.
+<p>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

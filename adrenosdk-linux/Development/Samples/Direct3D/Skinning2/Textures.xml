@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "blinn1"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\scorpion01_d.tga"
+    DstFormat   = "S3TC_DXT1_RGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "blinn2"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\scorpion01_n.tga"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\Logo.tga"
+    DstFormat   = "S3TC_DXT1_RGBA" 
+/>

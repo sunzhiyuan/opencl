@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\gtc">
+      <UniqueIdentifier>{7be94b74-6739-4306-810f-5908abe003ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gtx">
+      <UniqueIdentifier>{ef700b6a-208b-4038-b898-81d255ac0571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{a855f434-e107-434b-8aed-c61cfc52f142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\virtrev">
+      <UniqueIdentifier>{0930eb12-be35-48d4-9f8d-90ab9a8eb8fb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="core\func_common.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_exponential.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_geometric.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_integer.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_matrix.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_noise.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_packing.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_trigonometric.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\func_vector_relational.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_common.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_exponential.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_geometric.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_integer.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_matrix.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_trigonometric.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\intrinsic_vector_relational.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\precision.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_gentype.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_half.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat2x2.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat2x3.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat2x4.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat3x2.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat3x3.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat3x4.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat4x2.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat4x3.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_mat4x4.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_vec.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_vec1.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_vec2.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_vec3.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="core\type_vec4.inl">
+      <Filter>Source Files\core</Filter>
+    </None>
+    <None Include="gtx\associated_min_max.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\bit.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\closest_point.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\color_cast.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\color_space.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\color_space_YCoCg.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\compatibility.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\component_wise.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\dual_quaternion.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\euler_angles.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\extend.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\extented_min_max.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\fast_exponential.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\fast_square_root.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\fast_trigonometry.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\gradient_paint.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\handed_coordinate_space.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\inertia.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\int_10_10_10_2.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\integer.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\intersect.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\log_base.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\matrix_cross_product.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\matrix_interpolation.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\matrix_major_storage.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\matrix_operation.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\matrix_query.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\mixed_product.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\multiple.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\norm.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\normal.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\normalize_dot.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\number_precision.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\optimum_pow.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\orthonormalize.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\perpendicular.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\polar_coordinates.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\projection.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\quaternion.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\raw_data.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\rotate_normalized_axis.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\rotate_vector.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\scalar_relational.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\simd_mat4.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\simd_quat.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\simd_vec4.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\spline.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\std_based_type.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\string_cast.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\transform.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\transform2.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\unsigned_int.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\vec1.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\vector_access.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\vector_angle.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\vector_query.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\verbose_operator.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtx\wrap.inl">
+      <Filter>Source Files\gtx</Filter>
+    </None>
+    <None Include="gtc\angle.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\constants.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\epsilon.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\matrix_access.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\matrix_inverse.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\matrix_transform.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\noise.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\packing.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\quaternion.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\random.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\reciprocal.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\type_precision.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\type_ptr.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+    <None Include="gtc\ulp.inl">
+      <Filter>Source Files\gtc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="virtrev\xstream.hpp">
+      <Filter>Source Files\virtrev</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_features.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_fixes.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_literals.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_swizzle.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_swizzle_func.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\_vectorize.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_common.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_exponential.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_geometric.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_integer.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_matrix.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_noise.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_packing.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_trigonometric.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\func_vector_relational.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\hint.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_common.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_exponential.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_geometric.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_integer.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_matrix.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_trigonometric.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\intrinsic_vector_relational.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\precision.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\setup.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_float.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_gentype.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_half.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_int.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat2x2.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat2x3.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat2x4.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat3x2.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat3x3.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat3x4.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat4x2.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat4x3.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_mat4x4.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_vec.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_vec1.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_vec2.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_vec3.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\type_vec4.hpp">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\associated_min_max.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\bit.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\closest_point.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\color_cast.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\color_space.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\color_space_YCoCg.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\compatibility.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\component_wise.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\constants.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\dual_quaternion.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\epsilon.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\euler_angles.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\extend.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\extented_min_max.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\fast_exponential.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\fast_square_root.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\fast_trigonometry.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\gradient_paint.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\handed_coordinate_space.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\inertia.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\int_10_10_10_2.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\integer.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\intersect.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\log_base.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\matrix_cross_product.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\matrix_interpolation.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\matrix_major_storage.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\matrix_operation.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\matrix_query.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\mixed_product.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\multiple.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\noise.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\norm.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\normal.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\normalize_dot.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\number_precision.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\optimum_pow.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\orthonormalize.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\perpendicular.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\polar_coordinates.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\projection.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\quaternion.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\random.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\raw_data.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\reciprocal.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\rotate_normalized_axis.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\rotate_vector.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\scalar_relational.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\simd_mat4.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\simd_quat.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\simd_vec4.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\spline.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\std_based_type.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\string_cast.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\transform.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\transform2.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\ulp.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\unsigned_int.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\vec1.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\vector_access.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\vector_angle.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\vector_query.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\verbose_operator.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtx\wrap.hpp">
+      <Filter>Source Files\gtx</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\angle.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\constants.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\epsilon.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\matrix_access.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\matrix_integer.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\matrix_inverse.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\matrix_transform.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\noise.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\packing.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\quaternion.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\random.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\reciprocal.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\type_precision.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\type_ptr.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+    <ClInclude Include="gtc\ulp.hpp">
+      <Filter>Source Files\gtc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\dummy.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

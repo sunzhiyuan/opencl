@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-CLPM" content="CL Profiling Metrics">
+    <title>Metrics</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">OpenCL Profiling Metrics Available</div>
+    </div>
+    <div id="Content">
+		<p><h3>All of the metrics below are provided for each executed kernel which is being profiled.</h3></p>
+                <ul>
+                    <li><p><strong>Total Kernel Cycles - </strong>Count of GPU clock cycles to execute the kernel.</p></li>
+                    <li><p><strong>% Kernel Load Cycles - </strong>Percentage of cycles used for kernel loading.
+                    This is the amount of GPU execution time spent outside the Shader Processor.</p></li>
+                    <li><p><strong>% GPU busy - </strong>Percentage of time the GPU is busy. Higher is better.</p></li>
+                    <li><p><strong>% GPU Idle - </strong>Percentage of time the GPU is idle. Lower is better.</p></li>
+                    <li><p><strong>% ALU Utilization - </strong>Percentage of time that the ALU is busy.</p></li>
+                    <li><p><strong>% Load-Store Busy - </strong>Percentage of time the Load-Store unit is busy.</p></li>
+                    <li><p><strong>% Write L2 Hit - </strong>Percentage of write L2 cache hit from all SPs. Higher is better.
+                    Negative numbers indicate high cache trashing.</p></li>
+                    <li><p><strong>% Read L2 Hit - </strong>Percentage of read L2 cache hit from all SPs. Higher is better.
+                    Negative numbers indicate high cache trashing.</p></li>
+                    <li><p><strong>% L1 Hit - </strong>Percentage of L1 cache hit. Higher the better.
+                    Negative numbers indicate high cache trashing.</p></li>
+                    <li><p><strong>% L1 Misses - </strong>Percentage of L1 cache misses. Lower is better.</p></li>
+                    <li><p><strong>L1 Hit/Miss Ratio - </strong>L1 Hit/Miss ratio for all SPs. Higher is better.</p></li>
+                    <li><p><strong># Full ALU - </strong>Number of full precision ALU instructions executed for the kernel profiled.</p></li>
+                    <li><p><strong># Half ALU - </strong>Number of half precision ALU instructions executed for the kernel profiled.</p></li>
+                    <li><p><strong># EFU - </strong>Number of Elementary function instructions executed for the kernel profiled.</p></li>
+                    <li><p><strong># Local Loads - </strong>Number of local memory load instructions.</p></li>
+                    <li><p><strong># Local Stores - </strong>Number of local memory store instructions.</p></li>
+                    <li><p><strong># Local Atomics - </strong>Number of local memory atomic instructions.</p></li>
+                    <li><p><strong># Global Loads - </strong>Number of global memory load instructions.</p></li>
+                    <li><p><strong># Global Stores - </strong>Number of global memory store instructions.</p></li>
+                    <li><p><strong># Global Atomics - </strong>Number of global memory atomic instructions.</p></li>
+                    <li><p><strong># Global Read Data - </strong>Total amount of data read from Global memory in Bytes.</p></li>
+                    <li><p><strong># Global Write Data - </strong>Total amount of data written into Global memory in Bytes.</p></li>
+                    <li><p><strong>% Texture Busy - </strong>% L1 cache usage when compared to Shader Processor.</p></li>
+                </ul>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

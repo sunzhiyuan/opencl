@@ -1,0 +1,89 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Requirements">
+  <HEAD>
+    <TITLE>Release Notes</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Release Notes</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <H2>Release Notes</H2>
+      <P>
+		<H3>Adreno Profiler 3.8</H3>
+		<P>
+			<LI> Added Global GPU metrics grapher, allowing app developers to view system-wide GPU metrics
+			<LI> Added ability to view time spent in render pipeline stages per metric in Realtime Grapher 
+			<LI> Added new grapher user interface features, allowing for more customization and enhanced metric viewing
+			<LI> Added support for OpenCL 1.2
+			<LI> Added OpenCL features:<UL>
+				<LI> Support for more than one context
+				<LI> Extended cl_mem_flags to describe how the host accessess the data in a cl_mem object
+				<LI> clEnqueueFillBuffer and clEnqueueFillImage support filling a buffer with a pattern or an image with a color
+				<LI> Add CL_MAP_WRITE_INVALIDATE_REGION to cl_map_flags
+				<LI> Support 1D image, 1D image from a buffer object, 1D image array and 2D image arrays
+				<LI> clCreateImage to create an image object
+				<LI> Support for clGetKernelArgInfo
+				<LI> Additional queries to get the number of kernels and kernel names in a program have been added to clGetProgramInfo
+				<LI> Additional queries to get the compile and link status and options have been added to clGetProgramBuildInfo
+				<LI> Support for clEnqueueMarkerWithWaitList and clEnqueueBarrierWithWaitList
+				<LI> Add options to control the OpenCL C version with Kernel Analyzer
+				<LI> Add options to query kernel arguments with Kernel Analyzer</UL>
+			<LI> Added support for Adreno 306 GPU
+			<LI> OpenGL ES Client-side arrays are now marked with a performance warning
+			<LI> Fixed crashes when capturing a DirectX frame
+			<LI> Fixed problems profiling Windows Phone 8 applications using auto mipmap generation
+			<LI> Fixed memory leak in Windows version of Adreno Profiler
+			<LI> Fixed issue with CPU timeline in OpenCL Scrubber inaccuracy
+			<LI> Fixed crashes when trying to open a saved session with some applications
+			<LI> Fixed binning not being reported per rendertarget
+			<LI> Fixed application crashes when trying to profiler some OpenGL ES 3.0 applications
+			<LI> Fixed issues capturing a frame with some OpenGL ES 3.0 applications on Linux
+			<LI> Fixed miscellaneous user interface issues
+			
+		</P>
+		
+		<H3>Adreno Profiler 3.7</H3>
+		<P>
+			<LI> Adreno Profiler distributions now available for the Windows, Linux, and OS X desktop operating systems
+			<LI> Supports Adreno 4xx GPU's
+			<LI> New OpenGL ES features
+					<UL><LI> Texture arrays
+				<LI> Transform feedback
+				<LI> Uniform buffers</UL>
+			<LI> Added ability to show depth stencil textures in the texture viewer
+			<LI> Added ability to show debug markers in OpenGL ES call list for apps using EXT_debug_marker
+			<LI> Added support for DirectX 11.1
+			<LI> Improved Profiler-device connectivity
+			<LI> Fixed various bugs causing Profiler to lose connection to the device or crash the app being profiled
+			<LI> Fixed shader "Send To Device" feature, allowing developers to modify a shader and upload it to the device
+			<LI> Fixed bug where overrides weren't working properly with cube map textures
+			<LI> Fixed problems capturing frames in some OpenGL ES and DirectX apps
+			<LI> Fixed OpenCL metrics:
+				<LI> Global Read Data
+				<LI> % Read L2 Hit/Miss
+				<LI> L2 Write Hit
+				<LI> % L1 Hit/Misses 
+				<LI> L1 Hit/Miss Ratio
+				<LI> Number of Global Loads
+				<LI> Number Local Atomic
+			<LI> Fixed binning reporting
+			<LI> Fixed various OpenCL Scrubber issues with the Gantt view
+			<LI> Fixed error reporting the number of EFUs in shader stats
+			<LI> Fixed inaccuracy in reporting Pixel Write/Second OpenGL ES Scrubber metric
+			<LI> OpenCL Scrubber now captures 64-bit floating point buffer data
+			<LI> Fixed random bug with OpenGL ES render view's zoom-to-fit
+			<LI> Fixed OpenGL ES depth buffer view showing a white screen
+			<LI> Fixed support for full list of OpenGL ES 3.0 texture formats
+			<LI> Fixed many, many more bugs
+		</P>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

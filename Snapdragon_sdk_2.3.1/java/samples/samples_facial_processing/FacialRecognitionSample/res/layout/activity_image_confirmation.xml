@@ -1,0 +1,51 @@
+<!--
+/* ======================================================================
+ *  Copyright 2014 Qualcomm Technologies, Inc. All Rights Reserved.
+ *  QTI Proprietary and Confidential.
+ *  =====================================================================
+ * @file    activity_image_confirmation.xml
+ *
+ */-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    tools:context=".ImageConfirmation" >
+
+    <ImageView
+        android:id="@+id/confirmationView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        />
+
+       <ImageView
+           android:id="@+id/approve"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="80dp"
+           android:background="@drawable/confirm" />
+
+       <ImageView
+           android:id="@+id/cancel"
+           android:layout_width="35dp"
+           android:layout_height="50dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:layout_marginLeft="80dp"
+           android:background="@drawable/trash" />
+
+       <ImageView
+           android:id="@+id/home_button"
+           android:layout_width="50dp"
+           android:layout_height="55dp"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="80dp"
+           android:background="@drawable/home_button" />
+
+</RelativeLayout>

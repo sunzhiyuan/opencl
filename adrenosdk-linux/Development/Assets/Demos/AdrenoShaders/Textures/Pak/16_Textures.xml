@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Skin1"
+    SrcFileName = "..\Skin1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "Skin2"
+    SrcFileName = "..\Skin2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "SkinBump1"
+    SrcFileName = "..\SkinBump1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>

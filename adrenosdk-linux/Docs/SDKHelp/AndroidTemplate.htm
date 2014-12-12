@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>AndroidTemplate</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+<IMG src =Template.bmp >
+
+
+<H1>Template</H1>
+This sample demonstrates how to create an OpenGL ES application in Android.  The sample also includes build solutions for Windows and Windows Mobile. 
+<p>
+
+<H1>Details</H1>
+In the Android implementation, the Java layer handles EGL initialization and communicates to the opengl rendering in the native layer through the interface found in Template.java and platform_android.cpp.  
+<p>
+
+BUILDING THE NATIVE CODE
+<p>
+
+Prerequisites:
+<p>
+
+The template application uses the Android Native Development Kit (NDK) to build
+the native libraries for deployment.  You must have the Android NDK, version
+3.0 or later, installed.  The template has no prerequisites other than those
+needed by the NDK.
+<p>
+
+Setup:
+<p>
+
+To run the configuration script, you must set the ANDROID_NDK environment
+variable to point to the location of the installed NDK.  Run the configure script
+from the Cygwin command line:
+<p>
+
+$ ./configure
+<p>
+
+The script will prompt you for a name for the app.  This must be a unique name
+within the NDK, consisting only of letters, numbers, and underscores.  The script
+will then generate the file &lt;NDK&gt;/apps/&lt;name&gt;/Application.mk and copy the
+appropriate files to &lt;NDK&gt;/apps/&lt;name&gt;/project.
+<p>
+
+If you move your template directory, reinstall or upgrade the NDK, or wish to rename
+your application, rerun the configuration script.  To change the list of source
+files that are compiled in your project, edit the file:
+<p>
+
+&lt;Template&gt;/build/android/Android.mk
+<p>
+
+Compiling:
+<p>
+
+Once you have run the configuration script, build the libraries from the NDK
+directory:
+<p>
+
+$ make APP=&lt;name&gt;
+<p>
+
+This will invoke the Android NDK build.  The build will generate the library:
+<p>
+
+&lt;Template&gt;/build/android/libs/armeabi/librender.so
+
+<p>
+
+For a more verbose build process, run 'make V=1 APP=&lt;name&gt;'.  'make clean APP=&lt;name&gt;' is also supported.
+<p>
+
+
+BUILDING THE ANDROID PACKAGE
+<p>
+
+Prerequisites:
+<p>
+
+The template application uses the Android SDK and Eclipse development tools to
+build the Android package (APK).  You must have the Android SDK, version 2.1 or
+later, installed.  The template has no prerequisites other than those needed by
+the SDK.
+<p>
+
+Setup:
+<p>
+
+In Eclipse, select:
+<p>
+
+File -&gt; Import... -&gt; General -&gt; Existing Projects into Workspace
+<p>
+
+For "Select root directory", browse to the &lt;NDK&gt;/apps/&lt;name&gt;/project directory of the
+template application, and select Finish.  Eclipse will load all the necessary
+structure in its file system.
+<p>
+
+Compiling:
+<p>
+
+Each time you rebuild the native libraries, be sure to refresh the libs/
+directory in the Eclipse file system.  Eclipse does not automatically update
+its view of the files on disk, but when it detects changes it will rebuild the
+APK automatically.  The APK can be deployed to Android 2.1 or higher devices
+as usual.
+
+ 
+<p>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

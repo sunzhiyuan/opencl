@@ -1,0 +1,59 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Known Problems">
+<meta name="MS-HKWD" content="Problems">
+<meta name="MS-HKWD" content="Limitations">
+  <HEAD>
+    <TITLE>Known Problems</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Known Problems & Limitations</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <P>
+          <img src="../Images/Arrow.bmp" />
+          When scrubbing OpenGL ES v1.1 content using the OpenGL ES scrubber, fog and alpha test
+          will be disabled in the scrubber's emulator view. This is because fog and alpha test are
+          implemented on the device using hardware-specific shader extensions that are not supported in
+          desktop video cards.
+        </P>
+        <BR />
+        <P>
+          <img src="../Images/Arrow.bmp" />
+          On some devices, toggling program overrides globally off (via the Programs Browser toolbar)
+          will erroneously disable <u>all</u> overrides, including those set from the Overrides Browser.
+        </P>
+        <BR />
+        <P>
+          <img src="../Images/Arrow.bmp" />
+          Due to side effects of capturing Scrubber metrics, if at least one Scrubber metric is added to
+          a Scrubber GL document, subsequent frame captures will <b>not</b> report any resolve and
+          unresolve operations triggered by the captured frame.
+        </P>
+        <BR />
+        <P>
+          <img src="../Images/Arrow.bmp" />
+          Creating multiple scrubber documents is not supported in this release of Adreno Profiler.
+        </P>
+        <BR />
+		<P>
+          <img src="../Images/Arrow.bmp" />
+          OpenGL ES v3.0 application profiling is not supported on the OSX version of Profiler at this time.
+        </P>
+        <BR />
+        <P>
+          <img src="../Images/Arrow.bmp" />
+          UI controls will sometimes not resize properly on Linux and OSX.  Try resizing the whole
+          window to force the controls to resize.
+        </P>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

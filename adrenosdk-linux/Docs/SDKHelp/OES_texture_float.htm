@@ -1,0 +1,387 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Name</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText style='margin-left:1.5in;text-indent:.5in'><b><span
+style='font-size:20.0pt;font-family:"Times New Roman"'>OES Texture Float</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>&nbsp;</span></b></p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Name</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    OES_texture_half_float</p>
+
+<p class=MsoPlainText>    OES_texture_float</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Name
+Strings</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    GL_OES_texture_half_float, GL_OES_texture_float</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Contact</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>IP Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Please refer to the ARB_texture_float extension.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Ratified by the Khronos BOP, July 22, 2005.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Version</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Last Modified Date:  June 14, 2006</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Number</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Dependencies</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This extension is written against the OpenGL ES 2.0
+Specification.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This extension is derived from the ARB_texture_float
+extension.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Overview</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    These extensions add texture formats with 16- (aka
+half float) and 32-bit</p>
+
+<p class=MsoPlainText>    floating-point components.  The 32-bit floating-point
+components</p>
+
+<p class=MsoPlainText>    are in the standard IEEE float format.  The 16-bit
+floating-point</p>
+
+<p class=MsoPlainText>    components have 1 sign bit, 5 exponent bits, and 10
+mantissa bits.</p>
+
+<p class=MsoPlainText>    Floating-point components are clamped to the limits
+of the range</p>
+
+<p class=MsoPlainText>    representable by their format.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The OES_texture_half_float extension string indicates
+that the</p>
+
+<p class=MsoPlainText>    implementation supports 16-bit floating pt texture
+foramts.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The OES_texture_float extension string indicates that
+the </p>
+
+<p class=MsoPlainText>    implementation supports 32-bit floating pt texture
+formats.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Both these extensions only require NEAREST
+magnification filter and </p>
+
+<p class=MsoPlainText>    NEAREST, and NEAREST_MIPMAP_NEAREST minification
+filters to be supported.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Issues</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    1.  What should we do if magnification filter for a
+texture with half-float</p>
+
+<p class=MsoPlainText>        or float channels is set to LINEAR.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        RESOLUTION: The texture will be marked as
+incomplete.  </p>
+
+<p class=MsoPlainText>        Only the NEAREST filter is supported.  </p>
+
+<p class=MsoPlainText>        </p>
+
+<p class=MsoPlainText>        The cost of doing a LINEAR filter for these
+texture formats can be</p>
+
+<p class=MsoPlainText>        quite prohibitive.  There was a discussion on
+having the shader </p>
+
+<p class=MsoPlainText>        generate code to do LINEAR filter by making
+individual texture calls</p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  with a NEAREST filter but again
+the computational and memory b/w costs </p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  decided against mandating this
+approach.  The decision was that this </p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  extension would only enable
+NEAREST magnification filter.  Support for </p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  LINEAR magnification filter
+would be done through a separate extension.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    2.  What should we do if minification filter is set
+to LINEAR or </p>
+
+<p class=MsoPlainText>        LINEAR_MIPMAP_NEAREST, NEAREST_MIPMAP_LINEAR and
+LINEAR_MIPMAP_LINEAR.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        RESOLUTION: The texture will be marked as
+incomplete.  Only the NEAREST </p>
+
+<p class=MsoPlainText>        and NEAREST_MIPMAP_NEAREST minification filters
+are supported.  </p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        This was decided for the same reasons given in
+issue #1.  The decision</p>
+
+<p class=MsoPlainText>        was that this extension would only enable NEAREST
+and </p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  NEAREST_MIPMAP_NEAREST minification
+filters, and the remaining OpenGL ES </p>
+
+<p class=MsoPlainText style='text-indent:.5in'>  minification filters would be
+supported through a separate extension.</p>
+
+<p class=MsoPlainText>        </p>
+
+<p class=MsoPlainText>    3.  Should CopyTexImage2D, CopyTexSubImage{2D|3D} be
+supported for textures</p>
+
+<p class=MsoPlainText>        with half-float and float channels?</p>
+
+<p class=MsoPlainText>        </p>
+
+<p class=MsoPlainText>        RESOLUTION: No.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>New
+Procedures and Functions</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>   None</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>New
+Tokens</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Accepted by the &lt;type&gt; parameter of
+TexImage2D,  TexSubImage2D, </p>
+
+<p class=MsoPlainText>    TexImage3D, and TexSubImage3D</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        HALF_FLOAT_OES                0x8D61</p>
+
+<p class=MsoPlainText>        FLOAT                         0x1406</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Additions
+to Chapter 2 of the OpenGL ES 2.0 Specification (OpenGL Operation)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add a new section called 16-Bit Floating-Point
+Numbers</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    A 16-bit floating-point number has a 1-bit sign (S),
+a 5-bit</p>
+
+<p class=MsoPlainText>    exponent (E), and a 10-bit mantissa (M).  The value
+of a 16-bit</p>
+
+<p class=MsoPlainText>    floating-point number is determined by the following:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        (-1)^S * 0.0,                        if E == 0
+and M == 0,</p>
+
+<p class=MsoPlainText>        (-1)^S * 2^-14 * (M / 2^10),         if E == 0
+and M != 0,</p>
+
+<p class=MsoPlainText>        (-1)^S * 2^(E-15) * (1 + M/2^10),    if 0 &lt; E
+&lt; 31,</p>
+
+<p class=MsoPlainText>        (-1)^S * INF,                        if E == 31
+and M == 0, or</p>
+
+<p class=MsoPlainText>        NaN,                                 if E == 31
+and M != 0,</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    where</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        S = floor((N mod 65536) / 32768),</p>
+
+<p class=MsoPlainText>        E = floor((N mod 32768) / 1024), and</p>
+
+<p class=MsoPlainText>        M = N mod 1024.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Implementations are also allowed to use any of the
+following</p>
+
+<p class=MsoPlainText>    alternative encodings:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        (-1)^S * 0.0,                        if E == 0
+and M != 0,</p>
+
+<p class=MsoPlainText>        (-1)^S * 2^(E-15) * (1 + M/2^10),    if E == 31
+and M == 0, or</p>
+
+<p class=MsoPlainText>        (-1)^S * 2^(E-15) * (1 + M/2^10),    if E == 31
+and M != 0,</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Any representable 16-bit floating-point value is
+legal as input</p>
+
+<p class=MsoPlainText>    to a GL command that accepts 16-bit floating-point
+data.  The</p>
+
+<p class=MsoPlainText>    result of providing a value that is not a
+floating-point number</p>
+
+<p class=MsoPlainText>    (such as infinity or NaN) to such a command is
+unspecified, but</p>
+
+<p class=MsoPlainText>    must not lead to GL interruption or termination. 
+Providing a</p>
+
+<p class=MsoPlainText>    denormalized number or negative zero to GL must yield
+predictable</p>
+
+<p class=MsoPlainText>    results.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='font-size:12.0pt;color:#333399'>Revision
+History</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    04/29/2005    0.1    Original draft.</p>
+
+<p class=MsoPlainText>    06/29/2005    0.2    Added issues on why only NEAREST
+and </p>
+
+<p class=MsoPlainText>                         NEAREST_MIPMAP_NEAREST filters
+are required.</p>
+
+<p class=MsoPlainText>    04/21/2006    0.3    Added TexSubImage2D and
+TexSubImage3D as</p>
+
+<p class=MsoPlainText>                         functions that take the new
+tokens.</p>
+
+<p class=MsoPlainText>    06/14/2006    0.4    CopyTexImage2D,
+CopyTexSubImag{2D|3D} are</p>
+
+<p class=MsoPlainText>                         not supported.</p>
+
+</div>
+
+</body>
+
+</html>

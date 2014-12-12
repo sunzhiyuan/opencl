@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Bowling Pin"
+    SrcFileName = "../BowlingPin.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC"
+/>
+
+
+<Texture
+    ResourceID = "Brick"
+    SrcFileName   = "../Brick.bmp"
+    DstFormat   = "ETC2_SRGB8"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "BrickBump"
+    SrcFileName   = "../BrickBump.tga"
+    DstFormat   = "EAC_RG_UNSIGNED"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2"
+    SrcFileName   = "../Brick2.bmp"
+    DstFormat   = "ETC2_SRGB8"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2Bump"
+    SrcFileName   = "../Brick2Bump.tga"
+    DstFormat   = "EAC_RG_UNSIGNED"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStone"
+    SrcFileName   = "../FieldStone.bmp"
+    DstFormat   = "ETC2_SRGB8"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStoneBump"
+    SrcFileName   = "../FieldStoneBump.tga"
+    DstFormat   = "EAC_RG_UNSIGNED"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRock"
+    SrcFileName   = "../LayingRock.bmp"
+    DstFormat   = "ETC2_SRGB8"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRockBump"
+    SrcFileName   = "../LayingRockBump.tga"
+    DstFormat   = "EAC_RG_UNSIGNED"
+    GenMipMaps  = "TRUE"
+/>

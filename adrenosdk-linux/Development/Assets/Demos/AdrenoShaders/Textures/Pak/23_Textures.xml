@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Noise"
+    SrcFileName = "..\Noise.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "Marble1"
+    SrcFileName = "..\Marble1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Marble2"
+    SrcFileName = "..\Marble2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "FlatBump"
+    SrcFileName = "..\FlatBump.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "..\SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Known Issues</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= ..\SDK_HelpBanner_v5.png>
+
+
+<H1>Known Issues</H1>
+
+<OL>
+<LI>Currently, the SDK runs on a Windows XP / Vista / 7 machine with a Radeon X1300 or higher graphics card.</LI>
+<LI>The Procedural Texture sample takes a while to initialize. This time is spent generating the required 3D textures.</LI>
+<LI>The MotionBlur sample's performance on Adreno&trade; hardware cannot currently be approximated.</LI>
+<LI>Currently, the SDK Installer has no way of checking to see if a user's machine has a valid graphics card or not. Support for this will be added in a future release.</LI>
+<LI>The SDK framework currently only supports 32 bit displays. Support for additional color depths will be added in the future.</LI>
+<LI>In order to remove a single installed component, please select 'modify' at the time of the uninstall. This will be improved in the next release.</LI>
+<LI>If an error occurs while uninstalling the SDK, you can force the SDK to re-install on top of the old one by first running REGEDIT.EXE and searching for "Adreno", and deleting the first directory that comes up.</LI>
+<LI>The uninstall action will currently leave behind any folders that have been updated since the installation of the SDK.  This will be fixed in later releases.</LI>
+<LI>Multimon issue - if you use a configuration with a secondary monitor positioned  with negative Windows coordinates (left or top of the primary monitor), OpenGL will have a problem rendering when the application’s window is on the primary monitor.
+ <br><br>
+   Workaround 1: move the application’s window to the secondary monitor
+<br><br>
+   Workaround 2: change multimon configurations to not have negative Windows coordinates (reposition the secondary monitor to the left or bottom of the primary monitor)</LI>
+</OL>
+
+<iframe src = "..\Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,162 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Scrubber Call Trace View GL">
+  <HEAD>
+    <TITLE>Scrubber GL :: Call Trace View</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Scrubber GL :: Call Trace View</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The call trace window of the Scrubber GL lists the OpenGLES render calls (glDraw* and glClear) made by the connected application during the captured frame, along with per-rendercall performance metrics.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="Scrubber2xCallTrace_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i><A HREF="../HowTo/OpenGLES2/CaptureAndScrubFrames_GLES2.html">Capture</A> a frame from the 
+              connected application, after having enabled any 
+              <A HREF="../HowTo/OpenGLES2/CaptureRendercallMetrics_GLES2.html">per-rendercall metrics</A>
+              you wish to view. After the capture completes, each column will populate with information
+              drawn from the frame:</i>
+            <DIV CLASS="Indent">
+              <P>
+                - <i><b>Column '#':</b> the chronological ID of the render call</i>
+              </P>
+              <P>
+                - <i><b>Column 'Render Calls':</b> the API call made by the application</i>
+              </P>
+              <P>
+                - <i><b>Column 'No Effect':</b> the number of API calls made prior to the selected render call that
+                  Adreno Profiler considers redundant or irrelevant; for instance, if two calls to glViewport
+                  are made with the same parameters prior to a draw call, one of them is redundant</i>
+              </P>
+              <P>
+                - <i><b>Column 'Heavy':</b> the number of API calls made prior to the selected render call that
+                  Adreno Profiler considers heavyweight, such as glBuffer[Sub]Data, glFinish, and so on</i>
+              </P>
+              <P>
+                - <i>...additional columns will contain metrics data, if any metrics were enabled when
+                  capturing</i>
+              </P>
+            </DIV>
+          </P>
+          <P>
+            • <i>Click on a render call to scrub the emulator view to that API call.</i>
+          </P>
+          <P>
+            • <i>Click on a column header to sort the list according to the data in that column.</i>
+          </P>
+          <P>
+            • <i>Clicking on a column containing per-rendercall metrics will cause the scene to be colorized 
+              according to the data collected for that metric. Meshes with the highest values for the selected
+              metric will be <FONT COLOR=AA0000><b>red</b></FONT>, whereas low value meshes will be 
+              <FONT COLOR=00AA00><b>green</b></FONT>. Viewing the scene this way allows one to quickly identify 
+              the more expensive rendercalls in the scene.</i>
+            <DIV CLASS="Indent">
+              <P>
+                - <i>To view the scene normally, click on any non-metrics column.</i>
+              </P>
+            </DIV>
+          </P>
+          
+          <P>
+            • <i>When a render call is selected, a few of the tabs to the right of the rendercall list will
+            update:</i>
+            <DIV CLASS="Indent">
+              <P>
+                - <i>The <A HREF="Scrubber2xAPICalls.html">API Calls</A> tab will display all of the 
+                state changes and other API calls made just prior to the render call.</i>
+              </P>
+              <P>
+                - <i>The <A HREF="Scrubber2xGLState.html">GL Context</A> tab will update to show the 
+                OpenGLES context state at the time of that call.</i>
+              </P>
+            </DIV>
+          </P>
+        </DIV>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+
+      <DIV CLASS="Indent">
+        <P>
+          <img src="Scrubber2xCallTrace_2.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Chooses how to view captured Scrubber metrics.
+            </P>
+            <P>
+              Note that if you click on a column in the call trace that contains metrics data, the scene
+              in the emulator view will be shaded according to the selected metric. See the tutorial
+              <A HREF="../HowTo/OpenGLES2/CaptureRendercallMetrics_GLES2.html">How To Capture Per-Rendercall Metrics</A>
+              for more information.
+              <DIV CLASS="Indent">
+               <P>
+                 [<img src="Scrubber2xCallTrace_2a.png" />]
+                 <i>View metrics as numerical data</i>
+               </P>
+               <P>
+                 [<img src="Scrubber2xCallTrace_2b.png" />]
+                 <i>View metrics as bar graph</i>
+               </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xCallTrace_3.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Seek through the captured call trace.
+              <DIV CLASS="Indent">
+               <P>
+                 • <i>Several preset queries are provided in the dropdown list; select one then seek
+                 forwards or backwards with the adjacent buttons.</i>
+               </P>
+               <P>
+                 • <i>A custom search may be entered. Custom searches are implemented as a substring
+                 match against the text displayed for render and state API calls.</i>
+               </P>
+              </DIV>
+            </P>
+          </DIV>
+        </P>
+  
+        <BR />
+  
+        <P>
+          <img src="Scrubber2xCallTrace_4.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Toggle the call trace view's splitter orientation between horizontal and vertical.
+            </P>
+          </DIV>
+        </P>
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Font Maker</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Font Maker</H1>
+This tool reads a font file and creates the necessary assets to display text on the screen during runtime.
+
+<H1>Details</H1>
+The Font Maker creates a bitmap of the font glyphs in TGA format that are laid out in a rectangular array.  It  also creates a font file containing spacing information and texture coordinates. The spacing information allows non-uniform letter spacing. The TGA file is referred to as the “bitmap” and the font file is referred to the “spacing” file below.
+<p>
+Since this tool writes out the bitmap in TGA format, its very easy to edit this file. This is useful for embedding special characters called wingdings into the font. For example, an image of a specific key on the gamepad could be included.
+<p>
+The following figure shows an example of rendered fonts of several style and wingdings.
+<br><br><br>
+<IMG src=FontMaker.png>
+<br><br><br>
+
+<H1>Usage</H1>
+The syntax to run the tool from command line is:
+<p>
+<B><I>FontMaker.exe  &lt;Font File&gt; -b</I></B>
+<p>
+Where Font File is the name of the font such as Tuffy 16.
+<p>
+This will create the bitmap and the spacing files: Tuffy_16.tga and Tuffy_16.font.
+<p>
+For use in the SDK samples these two files must be copied to the “Samples\Media\Font” directory. To import a font into a project,  add the following line to the sample’s XML file:
+
+<p>
+<TABLE>
+<TR><TD>&lt;FontFileName = "..\..\Media\Fonts\Tuffy16.xml"/&gt;</TD></TR>
+</TABLE>
+<p>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

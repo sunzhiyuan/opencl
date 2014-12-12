@@ -1,0 +1,173 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Optimize">
+<meta name="MS-HKWD" content="Optimize Shaders">
+  <HEAD>
+    <TITLE>Tutorial: How To Optimize Shaders</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Optimize Shaders</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains how to use Adreno Profiler to help optimize GLSL shaders in your
+        OpenGLES application.
+      </P>
+
+      <BR />
+
+      <P>
+        First:
+        <DIV CLASS="Indent">
+          <P>
+            <img src="../../Images/Arrow.bmp" />
+            <A HREF="../Connect.html">Connect</A> to an application running on your mobile device.
+          </P>
+          <P>
+            <img src="../../Images/Arrow.bmp" />
+            Create a <b>Scrubber GL</b> document and
+            <A HREF="CaptureAndScrubFrames_GLES2.html">capture a frame</A> from the scene that you wish to
+            optimize.
+            <DIV CLASS="Indent">
+              <P>
+                • <i>Capturing a frame downloads the GPU programs loaded into OpenGLES, making them available 
+                for editing and overriding. If the embedded app reloads or relinks a GPU program after the 
+                capture, however, Adreno Profiler will not be able to override its shaders.
+                <b>Note that you may need to change your application to not dynamically reload
+                the programs you are interested in optimizing.</b>
+                </i>
+              </P>
+            </DIV>
+          </P>
+          <P>
+            <img src="../../Images/Arrow.bmp" />
+            Create a <b>Grapher</b> document and
+            <A HREF="../MonitorRealTimePerformance.html">add some metrics</A> to observe while prototyping
+            shader optimizations.
+            <DIV CLASS="Indent">
+              <P>
+                • <i>At minimum, enable the <b>FPS</b> metric to be informed of the overall performance
+                impact of your shader changes.</i>
+              </P>
+            </DIV>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        Next, select the GPU program you wish to edit by clicking its item in the 
+        <A HREF="../../Reference/ProgramsBrowser.html">Programs Browser</A>.
+        The meshes using the selected program will be highlighted in orange in the Scrubber.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="OptimizeShaders_GLES2_1.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        As with any type of optimization, it's best to target your effort at the most expensive portion
+        of your scene.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Adreno Profiler can help with this selection process. For instance, you can use
+            <A HREF="CaptureRendercallMetrics_GLES2.html">per-rendercall metrics</A> to identify the most
+            expensive render calls (in terms of GPU clock cycles) or most complex shaders (in terms of ALU
+            operations) in your scene, and optimize them first.</i>
+          </P>
+          <P>
+            • <i>In general, it's recommended to first optimize the shaders used in processing the largest
+            number of fragments or vertices in a scene before moving on to other shaders, even if
+            others are more computationally complex.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        The <A HREF="../../Reference/ShadersViewer.html">Shaders Viewer</A> displays the shaders bound to the currently selected GPU program.
+        Select which shader attachment to edit from the toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="OptimizeShaders_GLES2_2.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        As you make changes, the modified shader will be automatically recompiled and relinked.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>If compilation or linking fails, generated errors will be shown in the bottom half of the
+            Shader Viewer.</i>
+          </P>
+          <P>
+            • <i>If linking succeeds, compiler metrics will be displayed, including predicted cycle counts
+            and GPR requirements for the updated shader.</i>
+          </P>
+          <P>
+            <img src="OptimizeShaders_GLES2_3.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        To profile a shader modification, press the "Send" button to override the shader on the device.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>The scene being rendered on your mobile device will begin to use your modified shader.</i>
+          </P>
+          <P>
+            • <i>Any Grapher metrics being plotted will now reflect the performance or throughput
+            effects of your changes.</i>
+          </P>
+          <P>
+            • <i>Also note that you can accumulate changes to multiple shaders.</i>
+          </P>
+          <P>
+            <img src="OptimizeShaders_GLES2_4.gif" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        If you wish to revert a GPU program back to its original, unmodified shaders, your changes can be
+        undone using the Shader Viewer's toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="OptimizeShaders_GLES2_5.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        After accumulating a set of optimizations, you can toggle all shader overrides on and off
+        in the Programs Browser's toolbar, in order to see the total effect of all of your changes.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="OptimizeShaders_GLES2_6.png" />
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

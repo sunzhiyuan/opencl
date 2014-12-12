@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Bowling Pin"
+    SrcFileName = "../BowlingPin.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Floor Texture"
+    SrcFileName = "../ParqFloorBase.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

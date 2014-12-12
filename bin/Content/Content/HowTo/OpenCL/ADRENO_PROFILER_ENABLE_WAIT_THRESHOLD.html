@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD">
+    <title>ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD Reference</div>
+    </div>
+    <div id="Content">
+		<p><h3><i><b>Summary:</b></i></h3></p>
+		<p>
+			Property used to modify the default threshold for the amount of time after the last API called to stop trying to connect to profiler.
+		</p>
+		<p><h3><i><b>Usage:</b></i></h3></p>
+		<p>
+			To modify the threshold:
+		</p>
+		<br>
+			<div align="center">
+				<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD_N.png"/>
+			</div>
+		<br>
+		<p>
+			Where N is the number of seconds that profiler should wait before stop trying to connect to profiler.
+		</p>
+		<p><h3><i><b>Description:</b></i></h3></p>
+		<p>
+			While an application is executed with OpenCL profiling enabled, the connection mechanism on the application will fall into sleep mode after 5 seconds passed since the last OpenCL API and will revive when another API is called.
+		</p>
+		<p>
+			The default time is 5 seconds and for most use case scenarios this is more than enough time to connect to profiler. In fact, on OpenCL/OpenGL interoperability there's  usually no need to touch this property as most likely OpenCL API's will be called every frame which resets the count down.
+		</p>
+		<p>
+			An application needs to execute at least one API in order for the driver to be able to bootstrap the connection mechanism.  If (for example) an APK with a menu that requires user interaction is implemented and the developer would want to be able to establish a connection while standing on the menu (most likely scenario to attempt to profile from the beginning of the application) a harmless API such as clGetPlatformIDs can be called before the menu to bootstrap the connection mechanism on the application.
+		</p>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

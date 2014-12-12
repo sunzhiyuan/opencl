@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{5df67403-9eb3-475c-b443-8a69f3a949a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Win32">
+      <UniqueIdentifier>{f8099420-7886-4220-ab42-aa7f5fe438ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\OpenGLES">
+      <UniqueIdentifier>{02fed9e1-d5bc-432c-af5c-2dfaf22c2a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Model">
+      <UniqueIdentifier>{bed24f2a-39df-4e62-aacf-6191793ff481}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmApplication.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmFont.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmInput.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmPackedResource.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUserInterface.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUtils.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmApplication_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmFile_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmNoise_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmStdlib_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmUtils_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.cpp">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmAnimation.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmAnimationTrack.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmIndexBuffer.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmJoint.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMaterial.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMemoryBuffer.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurfaceArray.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModel.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModelIO.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmModelMesh.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmNamedId.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexBuffer.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexFormat.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Model\FrmVertexProperty.cpp">
+      <Filter>Framework\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Animation.cpp" />
+    <ClCompile Include="..\..\Base.cpp" />
+    <ClCompile Include="..\..\Bone.cpp" />
+    <ClCompile Include="..\..\Camera.cpp" />
+    <ClCompile Include="..\..\FbxModelConverter.cpp" />
+    <ClCompile Include="..\..\FbxUtils.cpp" />
+    <ClCompile Include="..\..\FilmboxManager.cpp" />
+    <ClCompile Include="..\..\FilmboxNode.cpp" />
+    <ClCompile Include="..\..\Mesh.cpp" />
+    <ClCompile Include="..\..\QuaternionAnimation.cpp" />
+    <ClCompile Include="..\..\Scene.cpp" />
+    <ClCompile Include="..\..\SceneNode.cpp" />
+    <ClCompile Include="..\..\SceneObject.cpp" />
+    <ClCompile Include="..\..\SceneSerializer.cpp" />
+    <ClCompile Include="..\..\ShaderParameter.cpp" />
+    <ClCompile Include="..\..\Vector3Animation.cpp" />
+    <ClCompile Include="..\..\VertexArray.cpp" />
+    <ClCompile Include="..\..\VertexFormat.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmApplication.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFile.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFont.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmInput.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmMath.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmNoise.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmPackedResource.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmResource.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmStdlib.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUserInterface.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUtils.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.h">
+      <Filter>Framework\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.h">
+      <Filter>Framework\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmAnimation.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmAnimationTrack.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmIndexBuffer.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmJoint.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMaterial.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMemoryBuffer.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurface.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmMeshSurfaceArray.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModel.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModelIO.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmModelMesh.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmNamedId.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmPointerTable.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmTransform.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexBuffer.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexFormat.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexProperty.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Model\FrmVertexPropertyType.h">
+      <Filter>Framework\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Animation.h" />
+    <ClInclude Include="..\..\AnimationType.h" />
+    <ClInclude Include="..\..\Base.h" />
+    <ClInclude Include="..\..\Bone.h" />
+    <ClInclude Include="..\..\Camera.h" />
+    <ClInclude Include="..\..\Color.h" />
+    <ClInclude Include="..\..\FbxTypeConverters.h" />
+    <ClInclude Include="..\..\FbxTypes.h" />
+    <ClInclude Include="..\..\FbxUtils.h" />
+    <ClInclude Include="..\..\FilmboxBone.h" />
+    <ClInclude Include="..\..\FilmboxManager.h" />
+    <ClInclude Include="..\..\FilmboxMaterialInfo.h" />
+    <ClInclude Include="..\..\FilmboxNode.h" />
+    <ClInclude Include="..\..\FilmboxSceneInfo.h" />
+    <ClInclude Include="..\..\FilmboxSkinInfo.h" />
+    <ClInclude Include="..\..\FilmboxSkinWeight.h" />
+    <ClInclude Include="..\..\Material.h" />
+    <ClInclude Include="..\..\Mesh.h" />
+    <ClInclude Include="..\..\Quaternion.h" />
+    <ClInclude Include="..\..\QuaternionAnimation.h" />
+    <ClInclude Include="..\..\Scene.h" />
+    <ClInclude Include="..\..\SceneNode.h" />
+    <ClInclude Include="..\..\SceneObject.h" />
+    <ClInclude Include="..\..\SceneObjectType.h" />
+    <ClInclude Include="..\..\SceneSerializer.h" />
+    <ClInclude Include="..\..\ShaderParameter.h" />
+    <ClInclude Include="..\..\ShaderParameters.h" />
+    <ClInclude Include="..\..\ShaderParameterTypes.h" />
+    <ClInclude Include="..\..\SkinWeight.h" />
+    <ClInclude Include="..\..\Surface.h" />
+    <ClInclude Include="..\..\TimeRange.h" />
+    <ClInclude Include="..\..\Transform.h" />
+    <ClInclude Include="..\..\Triangle.h" />
+    <ClInclude Include="..\..\Vector2.h" />
+    <ClInclude Include="..\..\Vector3.h" />
+    <ClInclude Include="..\..\Vector3Animation.h" />
+    <ClInclude Include="..\..\Vector4.h" />
+    <ClInclude Include="..\..\VertexArray.h" />
+    <ClInclude Include="..\..\VertexFormat.h" />
+    <ClInclude Include="..\..\VertexProperty.h" />
+    <ClInclude Include="..\..\VertexPropertyUsage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Samples\Framework\Win32\FrmMath_Platform.inl">
+      <Filter>Framework\Win32</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,146 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Configure DirectX App for Profiling">
+  <HEAD>
+    <TITLE>Tutorial: How To Configure a DirectX App for Profiling</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Configure a DirectX App for Profiling</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains the basics of setting up a DirectX-based WinRT or Windows Phone 8 application for 
+        profiling in the Adreno Profiler.
+      </P>
+
+      <BR />
+
+      <P>
+        Steps:
+        <DIV CLASS="Indent">
+          <P>
+            <B>1) Add "D3D11_AP_WINRT.dll" to your project (or D3D11_AP_WP8 for Windows Phone 8).</B>
+            <P>
+            <I>This library contains methods that override the functionality of normal DirectX calls. The overridden calls will log data to communicate with the Adreno Profiler.</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Right-click on your project in the Solution Explorer, 
+                select "Add&quot; -&gt; &quot;Existing Item&quot;.</P>
+                <P>
+               • Select D3D11_AP_WINRT.dll (D3D11_AP_WP8 for Windows Phone 8) from the windows explorer.</P>
+            <P>
+               • 
+                Once added, right click the dll file and select &quot;Properties&quot;. Set &quot;Content&quot; 
+                property to &quot;Yes&quot;.
+            </P>
+            </DIV>
+          </P>
+          
+          <BR />
+          
+          <P>
+            <B>2) Add D3D11_AP.h and D3D11_AP.cpp to your project.</B>
+            <PThe header provides the macros necessary to override DirectX objects with their corresponding shim versions (from 
+                D3D11_AP.dll).</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Right-click on your project in the Solution Explorer, select "Add&quot; -&gt; &quot;Existing 
+                Item&quot;.</P>
+                <P>
+               • Select D3D11_AP.h and D3D11_AP.cpp from the windows explorer.</P>
+            <P>
+               • The first #include statement for 
+                D3D11_AP.h file must be placed before any Direct3D, Direct2D, or DXGI object declarations because it changes the corresponding type names into macros.
+            </P>
+            <P>
+               • A good guideline for where to include this file is to find the first (topmost, hierarchically) #include statement
+               for &lt;d3d11.h&gt; (or whichever version you are using) and to replace it with "#include &lt;D3D11_AP.h&gt;". 
+                &nbsp;</P>
+            </DIV>
+          
+          <P>
+              <P>
+                &nbsp;<P>
+                <B>3) Add a call to APSetup function.</B>
+            <P>
+            <I>This function helps load and setup the D3D11_AP shim dll.</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Add "APSet()" before the function call CreateDXGIFactory1().</P>
+            <P>
+               • If your project does not have the CreateDXGIFactory1() api call, add "APSetup()"
+                before the function call D3D11CreateDevice().</P>
+            </DIV>
+          </P>
+
+          <BR />
+          
+          <P>
+            <B>4) Add "USE_ADRENO_PROFILER" to your project's preprocessor definitions.</B>
+            <P>
+            <I>This macro enables profiling using the Adreno Profiler.  If it is not added, your app will run normally, as if the shim was not present.lly, as if the shim was not present.</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Right-click on your project in the Solution Explorer and select "Properties".</P>
+                <P>
+                    • Under Configuration Properties -&gt; C/C++ -&gt; Preprocessor -&gt; Preprocessor Definitions, add USE_ADRENO_PROFILER.
+            </P>
+            </DIV>
+          </P>
+          
+          <BR />
+
+            <P>
+            <B>5) Add "_WINRT" if you are profiling on a Windows RT device or "_WP" if you are profiling on a Windows Phone 8 device, to your project's preprocessor definitions.</B>
+            <P>
+            <I>This macro makes sure the device specific function get compiled for the correct device.</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Right-click on your project in the Solution Explorer and select "Properties".</P>
+                <P>
+                    • Under Configuration Properties -&gt; C/C++ -&gt; Preprocessor -&gt; Preprocessor Definitions, add _WINRT for WINRT devices and _WP for Windows Phone 8 devices.
+            </P>
+            </DIV>
+          </P>
+
+          <BR />
+          
+          <P>
+            <B>5) Give your application the "Private Networks (Client & Server)" capability.</B>
+            <P>
+            <I>The shim (overridden DirectX objects) needs to communicate with the Adreno Profiler over a local network.  Without this capability, a shimmed application will not build. shimmed application will not build.</I>
+            </P>
+            <DIV CLASS="Indent">
+            <P>
+               • Under your project in the Solution Explorer, find the file "Package.appxmanifest" and double-click it.</P>
+                <P>
+                    • On the "Capabilities" tab in the window that opened, check the box next to "Private Networks (Client & Server)".
+            </P>
+            </DIV>
+          </P>
+          
+          <BR />
+          
+          <P>
+            <B>6) Deploy your application to the WinRT (or Windows Phone 8) device.</B>
+          </P>
+          
+        </DIV>
+      </P>
+
+      <BR />
+    </DIV>
+    
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

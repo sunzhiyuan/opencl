@@ -1,0 +1,8 @@
+# Copyright (c) 2013 QUALCOMM Technologies, Inc.
+LOCAL_PATH := $(call my-dir)
+SRC_PATH   := ../..
+
+CL_TEST_CHECK := false
+SDK_SAMPLE_NAME := ClothSimCLGLES
+SRC_FILES := $(SRC_PATH)/ClothSim.cpp $(SRC_PATH)/ClothSimCL.cpp
+include $(SRC_PATH)/../Android_common.mk

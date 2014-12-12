@@ -1,0 +1,5 @@
+You have reached this page in error. There are a few reasons why this may happen
+	
+Did you modify any of the Manifest.xml files that came with the Snapdragon SDK? This browser reads those manifest files when starting to populate it's information, so changing those files may cause an error. 
+
+It is also possible that the option that you clicked on is not installed in the location that the Browser is expecting. The Browser reads these manifest files from relative paths found in Tools\Browser\Manifest\BrowserManifest.xml. The actual path to your tool's Manifest.xml and the path in that file need to match. 

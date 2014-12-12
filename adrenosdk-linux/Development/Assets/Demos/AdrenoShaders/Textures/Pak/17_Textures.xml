@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Cloth1"
+    SrcFileName = "..\Cloth1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "Cloth2"
+    SrcFileName = "..\Cloth2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "ClothBump1"
+    SrcFileName = "..\ClothBump1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "ClothBump2"
+    SrcFileName = "..\ClothBump2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>

@@ -1,0 +1,105 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Capture DirectX">
+  <HEAD>
+    <TITLE>Tutorial: How To Capture DirectX Frames</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Capture DirectX Frames</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains the basics of using Adreno Profiler to capture and analyze DirectX frames
+        from a mobile application.
+      </P>
+
+      <BR />
+
+      <P>
+        After <A HREF="../Connect.html">connecting</A> to a device, create a new Scrubber DX from the main toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_DX_1.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        Once the Scrubber appears, click the <b>"Capture Frame"</b> button on the scrubber's toolbar.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_DX_2.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        A progress bar will be visible at the bottom-right corner of the window while the capture is in progress.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_DX_3.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        After the frame's data has finished downloading, the frame is recreated in a DirectX emulator window.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_DX_4.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        There are several panes below the emulator window that are used to explore the captured frame(s) in more detail.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureAndScrubFrames_DX_5.png" />
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The <A HREF="../../Reference/ScrubberDX_DrawCalls.html">DrawCalls</A> pane shows a tree of captured frames
+        and the corresponding draw calls for each frame.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The <A HREF="../../Reference/ScrubberDX_APICalls.html">API Calls</A> pane shows the API calls preceding the
+        selected draw call.
+      </P>
+      
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The <A HREF="../../Reference/ScrubberDX_BufferView.html">Buffer View</A> pane shows details about a resource
+        that was clicked in the <A HREF="../../Reference/ScrubberDX_APICalls.html">API Calls</A> pane.
+      </P>
+
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        The <A HREF="../../Reference/ScrubberDX_ShaderView.html">Shader View</A> pane shows details about a shader resource
+        that was clicked in the <A HREF="../../Reference/ScrubberDX_BufferView.html">Buffer View</A> pane.
+      </P>
+      
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

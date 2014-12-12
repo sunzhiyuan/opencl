@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "PhongLookup"
+    SrcFileName = "..\illumMap_face.tga"
+   DstFormat   = "RGBA"
+/>

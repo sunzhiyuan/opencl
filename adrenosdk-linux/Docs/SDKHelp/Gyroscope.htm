@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Gyro</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Gyro</H1>
+
+This sample demonstrates how to program the gyrospcope sensor found on many Snapdragon devices. 
+<p>
+<IMG src =Gyro.bmp >
+
+<H1>Details</H1>
+
+A gyroscope is used to track the angular rotation of a device in all three dimensions. Using this information, we can solve for the 
+orientation of the device and use this to control various aspects of our application.
+<p>
+The Gyro application constructs a scene with a set of objects and a camera directly overhead. When the device is rotated on the x and y axis,
+the camera shifts to stay aligned with the device. The resulting effects is as if one is looking into a 'window', and can trick the mind into seeing
+the objects as being true 3D (without 3D glasses!).
+<p>
+Calibrating the device is an important step when using sensors to cut down on the drift that accumulates when reading and integrating values
+coming from sensors. Lay the device flat on a surface and touch the screen; calibration will take place while the this is happening. The longer you touch the 
+screen and the more still it is, the better the calibration results are and the less drift will occur.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Toggle show sensor values</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<p>
+<p>
+NOTE: This sample compiles for both windows and Android, but requires an Android device to see the sensor in action.
+<p>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

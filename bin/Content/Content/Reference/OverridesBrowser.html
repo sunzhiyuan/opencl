@@ -1,0 +1,63 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Overrides">
+<meta name="MS-HKWD" content="Overrides Browser">
+  <HEAD>
+    <TITLE>Overrides Browser</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Overrides Browser</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Overrides Browser lists the GLES context overrides supported for the connected application.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="OverridesBrowser_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <b>Note:</b> Overrides are disabled until a Scrubber document is created.
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Double-click an override to toggle it on or off.</i>
+          </P>
+          <P>
+            • <i>Experiment with overrides while <A HREF="../HowTo/MonitorRealTimePerformance.html">monitoring performance</A>
+              to try to isolate performance bottlenecks in the connected application. Examples:</i>
+            <DIV CLASS="Indent">
+              <P>
+                - <i>Use "DisableGL" to determine whether or not the application is graphics-bound. If disabling GLES API 
+                  calls causes a large increase in framerate, it implies the application is graphics bound; if the 
+                  framerate improvement is small, application code is the limiting factor.</i>
+              </P>
+              <P>
+                - <i>Use "ForceScissorTestReject" to determine whether or not the application is fillrate-bound. 
+                  Enabling the override forces a 1-by-1 scissor window to be enabled, which leaves per-vertex
+                  computation unchanged but prevents most per-fragment work from taking place. If the override 
+                  triggers a large increase in framerate, it implies the application is bound by fragment operations.</i>
+              </P>
+            </DIV>
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

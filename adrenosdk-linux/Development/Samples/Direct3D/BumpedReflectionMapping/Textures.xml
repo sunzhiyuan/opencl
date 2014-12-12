@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Logo"
+	SrcFileName = "..\..\..\Assets\Samples\Textures\Logo.tga"
+    DstFormat   = "S3TC_DXT1_RGBA"    
+/>
+
+<CubeMap
+    ResourceID    = "CubeMap"
+    SrcFileNameXP = "..\..\..\Assets\Samples\Textures\Skydome_Right.png"
+    SrcFileNameXN = "..\..\..\Assets\Samples\Textures\Skydome_Left.png"
+    SrcFileNameYP = "..\..\..\Assets\Samples\Textures\Skydome_Top.png"
+    SrcFileNameYN = "..\..\..\Assets\Samples\Textures\Skydome_Bottom.png"
+    SrcFileNameZP = "..\..\..\Assets\Samples\Textures\Skydome_Back.png"
+    SrcFileNameZN = "..\..\..\Assets\Samples\Textures\Skydome_Front.png"
+    FlipImages    = "TRUE"
+    DstFormat     = "S3TC_DXT1_RGB"
+/>
+
+<Texture
+    ResourceID  = "DiffuseMap"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\layingrock.BMP"
+    DstFormat   = "S3TC_DXT1_RGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "NormalMap"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\layingrockBump.TGA"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>

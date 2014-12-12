@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID = "Brick"
+    SrcFileName   = "..\..\Media\Textures\Brick.bmp"
+    DstFormat   = "S3TC_DXT1_SRGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "BrickBump"
+    SrcFileName   = "..\..\Media\Textures\BrickBump.tga"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2"
+    SrcFileName   = "..\..\Media\Textures\Brick2.bmp"
+    DstFormat   = "S3TC_DXT1_SRGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2Bump"
+    SrcFileName   = "..\..\Media\Textures\Brick2Bump.tga"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStone"
+    SrcFileName   = "..\..\Media\Textures\FieldStone.bmp"
+    DstFormat   = "S3TC_DXT1_SRGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStoneBump"
+    SrcFileName   = "..\..\Media\Textures\FieldStoneBump.tga"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRock"
+    SrcFileName   = "..\..\Media\Textures\LayingRock.bmp"
+    DstFormat   = "S3TC_DXT1_SRGB"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRockBump"
+    SrcFileName   = "..\..\Media\Textures\LayingRockBump.tga"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>

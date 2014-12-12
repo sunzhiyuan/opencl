@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>ShadowMap</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>ShadowMap</H1>
+This sample demonstrates how to create shadows with the use of a depth map.
+<p>
+<IMG src="ShadowMap.bmp">
+
+<H1>Details</H1>
+The basic idea behind shadow mapping is that if a light source is unable to see part of an object, then it is in shadow.  To figure out what the light source is able to see we render a shadow map which is simply a depth map rendered from the perspective of the light source.  Then, when we render a particular fragment of an object to determine whether this portion of the object is in shadow or not, we need to calculate the distance away this object is from the light source, and we also need to calculate what the depth in our depth map is at this point.  If the object is farther away then the value that we have stored in our depth map at that point, than our object is in shadow, otherwise it is not in shadow.
+<p>
+<IMG src="ShadowMap2.bmp">
+<br>
+<b>The above figure shows a shadow map for a bumpy sphere</b>
+<p>
+This sample also provides a few additional controls for tweaking shadow performance vs. quality.  One method for manipulating the performance of the sample is by changing the resolution of the shadow map; the higher the resolution the greater the quality, the lower the resolution the greater the performance.  The sample also has an option for partially softening the shadows which enhances their quality.  This technique is known as percentage closer filtering (PCF) and essentially involves averaging additional samples.  In this sample's case, a 2x2 PCF kernel is employed to average the results of 4 slightly offset results.
+<p>
+<IMG src="ShadowMap3.bmp"> <IMG src="ShadowMap4.bmp">
+<p>
+<b>Shadows without PCF on left and with PCF on right</b>
+<p>
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Move the shadow to the left (light to the right)</TD></TR><TR><TD><B>2</B></TD><TD>Move the shadow to the right (light to the left)</TD></TR>
+<TR><TD><B>3</B></TD><TD>Change to a previous mesh</TD></TR>
+<TR><TD><B>4</B></TD><TD>Change to the next mesh</TD></TR>
+<TR><TD><B>5</B></TD><TD>Decrease the shadow map resolution</TD></TR>
+<TR><TD><B>6</B></TD><TD>Increase the shadow map resolution</TD></TR>
+<TR><TD><B>7</B></TD><TD>Toggle the display of the shadow map</TD></TR>
+<TR><TD><B>8</B></TD><TD>Toggle PCF</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

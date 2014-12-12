@@ -1,0 +1,105 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="FAQ">
+  <HEAD>
+    <TITLE>Frequently Asked Questions</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Frequently Asked Questions</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <img src="Images/Arrow.bmp" />
+        <i><b>My mobile device is plugged in, and my application is running. Why is nothing listed
+        in Adreno Profiler's connection box?</b></i>
+        <DIV CLASS="Indent">
+          <P>
+            • Confirm USB drivers have been installed for your device according to the
+            instructions in <A HREF="DeviceInstallation.html">Device Installation</A>.
+          </P>
+		  <P>
+		    • Before an Android application may be profiled, it must have the android.permission.INTERNET permission enabled in its manifest. 
+          </P>
+		  <P>
+            • Before profiling, and after rebooting your Android device, you must enable debug mode by setting the following ADB property on the command-line:
+            <DIV CLASS="Indent">
+            <P>
+              <b>adb.exe shell setprop debug.egl.profiler <i><1 to enable, 0 to disable></i></b>
+            </P>
+            </DIV>
+		    <P>
+            On 2.x versions of Adreno Profiler this step is done for you automatically. Simply launch the Adreno Profiler connect dialog before launching your application. 
+			</P>
+		  </P>
+          <P>
+            • For Windows Mobile devices, Adreno Profiler must be running, and ActiveSync connected,
+            <b>before</b> starting the embedded graphics application.
+          </P>
+          <P>
+            • Make sure the embedded application creates a <b>hardware-accelerated</b> OpenGLES
+            context, and is not falling back to a software reference driver.
+          </P>
+          <P>
+            • If ActiveSync or Android Debug Bridge crashes or closes abnormally, Adreno Profiler
+            may be unable to scan the device after it has been reconnected. Close and restart
+            Adreno Profiler.
+          </P>
+          <P>
+            • If you use firewall software, ensure that its exception list includes Adreno Profiler
+            (AdrenoProfiler.exe).
+          </P>
+          <DIV CLASS="Indent">
+            <P>
+              - Additionally, if using a Windows Mobile device, ensure all ActiveSync processes and
+              services are also listed as firewall exceptions: <b>rapimgr.exe</b>, <b>wcescomm.exe</b>,
+              <b>WCESMgr.exe</b>, and port <b>26675</b> for the ActiveSync Service.
+            </P>
+            <P>
+              - If using an Android or BREW-based device, no additional firewall exceptions are needed.
+            </P>
+            <P>
+              - If the above suggestions do not resolve your connection problem, please contact
+              <A HREF="GettingHelp/TechnicalSupport.html">Technical Support</A>.
+            </P>
+          </DIV>
+        </DIV>
+      </P>
+
+      <P>
+        <img src="Images/Arrow.bmp" />
+        <i><b>The Scrubber is not rendering my captured frame correctly.</b></i>
+        <DIV CLASS="Indent">
+          <P>
+            If a captured frame does not render identically in both Adreno Profiler and the device,
+            please <A HREF="GettingHelp/TechnicalSupport.html">let us know</A>.
+          </P>          
+        </DIV>
+      </P>
+
+      <P>
+        <img src="Images/Arrow.bmp" />
+        <i><b>When profiling a DirectX application, why does the profiler crash with an error about missing dll or relevant depedencies?
+        </b></i>
+        <DIV CLASS="Indent">
+          <P>
+            If you get the error, "System.IO.FileNotFoundException: Could not load file or assembly 'DXPlaybackWrapper.dll' or one of its dependencies.<br> 
+            The specified module could not be found. File name: 'DXPlaybackWrapper.dll'", this is most likely due to DirectX runtime not being installed
+            on your machine. <br>Please install DirectX Runtime from <a HREF="https://www.microsoft.com/en-us/download/details.aspx?id=35">this</a> location. 
+            <br>For any other crashes, please <A HREF="GettingHelp/TechnicalSupport.html">contact us.</A>
+          </P>
+          <P>
+            Before contacting Technical Support, however, please consult the list of
+            <A HREF="GettingHelp/KnownProblems.html">known issues</A>.
+          </P>
+        </DIV>
+      </P>
+
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

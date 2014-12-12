@@ -1,0 +1,10 @@
+cp $OUT/data/graphics_tests/opencl/cl_demo_tests/cl_demo_test_waveletransform ../../../bin/cl_demo_tests/wavelet_transform
+cp install.sh       ../../../bin/cl_demo_tests/wavelet_transform
+cp dwt_forward_x.cl ../../../bin/cl_demo_tests/wavelet_transform
+cp dwt_forward_y.cl ../../../bin/cl_demo_tests/wavelet_transform
+cp dwt_inverse_x.cl ../../../bin/cl_demo_tests/wavelet_transform
+cp dwt_inverse_y.cl ../../../bin/cl_demo_tests/wavelet_transform 
+cp haar_forward.cl  ../../../bin/cl_demo_tests/wavelet_transform
+cp haar_inverse.cl  ../../../bin/cl_demo_tests/wavelet_transform
+cp test.ycbcr       ../../../bin/cl_demo_tests/wavelet_transform
+cp run_tests.sh     ../../../bin/cl_demo_tests/wavelet_transform

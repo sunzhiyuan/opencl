@@ -1,0 +1,79 @@
+
+
+//--------------------------------------------------------------------------------------
+// File: NormalMapping.glsl
+// Copyright (c) 2005 ATI Technologies Inc. All rights reserved.
+//
+// Author:                 QUALCOMM, Adreno SDK
+//
+//               Copyright (c) 2013 QUALCOMM Technologies, Inc. 
+//                         All Rights Reserved. 
+//                      QUALCOMM Proprietary/GTDR
+//--------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------
+// The vertex shader
+//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+// File: CommonFS.glsl
+// Desc: Useful common shader code for fragment shaders
+//
+// Author:                 QUALCOMM, Adreno SDK
+//
+//               Copyright (c) 2013 QUALCOMM Technologies, Inc. 
+//                         All Rights Reserved. 
+//                      QUALCOMM Proprietary/GTDR
+//--------------------------------------------------------------------------------------
+
+// default to medium precision
+precision mediump float;
+
+// OpenGL ES require that precision is defined for a fragment shader
+// usage example: varying NEED_HIGHP vec2 vLargeTexCoord;
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+   #define NEED_HIGHP highp
+#else
+   #define NEED_HIGHP mediump
+#endif
+
+// Enable supported extensions
+#extension GL_OES_texture_3D : enable
+
+
+// Define some useful macros
+#define saturate(x) clamp( x, 0.0, 1.0 )
+#define lerp        mix
+
+
+
+uniform float fAmbient;
+
+uniform sampler2D BaseTexture;
+uniform sampler2D BumpTexture;
+
+varying vec2 g_vTexCoord;
+varying vec3 g_vLightVec;
+varying vec3 g_vViewVec;
+varying vec3 g_vNormal;
+
+void main()
+{
+    vec4 vBaseColor = texture2D( BaseTexture, g_vTexCoord );
+    
+    // Select the normal in the appropriate space
+    // Note: the mip level is biased to sharpen the bumpmapping effect
+    vec3 vNormal    = texture2D( BumpTexture, g_vTexCoord, -1.0 ).xyz * 2.0 - 1.0;
+
+    // Standard Phong lighting
+    float fAtten    = saturate( 1.0 - 0.05 * dot( g_vLightVec, g_vLightVec ) );
+    vec3  vLight    = normalize( g_vLightVec );
+    vec3  vView     = normalize( g_vViewVec );
+    vec3  vHalf     = normalize( vLight + vView );
+    float fDiffuse  = saturate( dot( vLight, vNormal ) );
+    float fSpecular = pow( saturate( dot( vHalf, vNormal ) ), 64.0 );
+
+    gl_FragColor = ( fDiffuse * fAtten + fAmbient ) * vBaseColor
+                 + ( fSpecular * fAtten ) * 0.7;
+}
+

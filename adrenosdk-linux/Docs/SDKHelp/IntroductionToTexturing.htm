@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Introduction to Texturing</Title>
+</HEAD>
+<BODY>
+
+<H1>Introduction to Texturing</H1>
+This tutorial is for the novice 3D programmer.  For the experienced Direct3D or OpenGL programmer wanting to see the changes between their API and OpenGL ES, please look at the appropriate OpenGL ES 2.0 papers.
+<p>
+Texturing is applying detail to a surface in 3D, it lets a simple shape take on a more prominent representation, transforming a sphere into a globe, a cylinder into a lead pipe, or a cone into an ice cream.  Beyond this, it can also provide shadows and depth to a brick wall, or take a flat grid and transform it into a mountainous terrain.  We will cover some of the techniques and limitations on textures.
+
+<h2>OpenGL 2.0 vs OpenGL 2.0 ES</h2>
+OpenGL ES is a stripped down version of OpenGL.  It removed redundant functions, barely used functionality and some things not practical on a mobile system.  We will try to make note of when functionality did not make the transition to ES.
+
+<H1>A Brief Quick Example</H1>
+So let's just get started with a quick sample that will throw up a texture on a triangle inside the program.  
+<p> 
+To do this we need to:
+<ol>
+<LI>Load the texture</LI>
+<LI>Compile and link the shaders</LI>
+<LI>Enable Texturing</LI>
+<LI>Render</LI>
+<LI>Unload for a clean shutdown</LI>
+</ol>
+
+We will quickly go over the process in our code tutorial SimpleTexture.  All code from this section is taken directly from that tutorial.
+<p>
+<ol>
+<LI><b>Load the texture</b><br>
+Loading the texture requires getting the image data into memory.  In the sample code we use the LoadTGA function to do this.  The specifics are not too important other than if it's uncompressed texture, you need to have the format in RGB or RGBA.   In the end you have an array of RGB or RGBA data in a chunk of memory with a pointer to it, in our case the pointer is pImageData.
+<p>
+A series of calls creates the texture in the OpenGL ES space.  These calls are identical to OpenGL:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+// Grab a free handle from OpenGL
+glGenTextures( 1, &g_hTextureHandle );
+
+// Bind the handle to a texture format
+glBindTexture( GL_TEXTURE_2D, g_hTextureHandle );
+
+// Set the mipmap settings
+glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+
+// Load the texture into OpenGL emory
+glTexImage2D( GL_TEXTURE_2D, 0, nFormat, nWidth, nHeight,
+              0, nFormat, GL_UNSIGNED_BYTE, pImageData );
+</PRE>
+</TD></TR>
+</TABLE>
+<p>
+
+The first call generates a free handle from OpenGL that will be used to reference the texture to be loaded.  The second call specifies that the incoming texture data is a 2D texture.  The next two calls specify filter settings and the final call loads our image data in pImageData and binds it to the handle we just created.
+<p></LI>
+
+<LI><b>Compile and link the shaders</b><br>
+Inside the fragment shader code itself, we must declare the texture as a variable that later in our OpenGL calls we will bind the texture handle to:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+uniform   sampler2D g_sImageTexture;
+</PRE>
+</TD></TR>
+</TABLE>
+<p>
+
+The texture data loaded into OpenGL is retrieved in the fragment shader with a call to texture2d:
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+gl_FragColor = texture2D(g_sImageTexture, g_vVSTexcoord.xy);</PRE>
+</TD></TR>
+</TABLE>
+<p>
+This takes in the texture coordinates, does a texture lookup, and returns the RGB value found at that location.
+<p></LI>
+
+<LI><b>Enable Texturing</b><br>
+To enable texturing during the render loop, we need to bind the texture to the texture handle and then provide the texture coordinate data to OpenGL.
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+glBindTexture( GL_TEXTURE_2D, g_hTextureHandle[0] );
+
+glVertexAttribPointer( g_TexcoordLoc, 2, GL_FLOAT, 0, 0, VertexTexcoord);
+glEnableVertexAttribArray( g_TexcoordLoc );
+</PRE>
+</TD></TR>
+</TABLE>
+<p>
+<p></LI>
+
+<LI><b>Render</b><br>
+Rendering is done with the standard render command such as glDrawArrays() when drawing the triangle.
+<p></LI>
+
+<LI><b>Unload for a clean shutdown</b><br>
+As with all of our data, we need to free texture memory when it is no longer going to be used.  We do this with the command glDeleteTextures.
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+glDeleteTextures( 1, &g_hTextureHandle );
+</PRE>
+</TD></TR>
+</TABLE>
+<p>
+<p></LI>
+</ol>
+
+<H1>Texture Properties</H1>
+Beyond loading a texture, there are many things we can do to change the appearance of the texture through its various properties.  We will briefly go over the differences between loading different simple textures and applying effects such as wrapping and how to load textures.
+
+<OL>
+<LI><b>Dimensions, sizes and the power of 2</b><br>
+Most think of textures as 2 dimensional images.  However they can be a 1D color array, 3D, or cube maps and most APIs including OpenGL ES 2.0 support all of these different formats.  OpenGL ES supports 2D, 3D and Cube maps directly.  1D texture can be represented as a 2D texture with a width of 1, so the 1D texture calls were removed.   Information about Cubemaps and 3D textures can be found elsewhere in the SDK.
+<p>
+Obviously if you can have a width of 1, textures can be of any arbitrary dimension.  Power of 2 textures (i.e. 2x2, 4x4, 8x8 etc.) are not necessary.  However non-Power2 textures have limitation in that OpenGL ES spec doesn't support mipmapping or texture wrap modes beyond clamp to edge.
+<p></LI>
+
+<LI><b>Wrap Modes</b><br>
+Texture wrapping allows us to go beyond the normal range of the texture of 0 to 1 and get different effects such as tiling and isolated images.  Adreno&trade; hardware supports all wrap modes for power of 2 and non-power of 2 textures.
+<p></LI>
+
+<LI><b>Compressed Textures</b><br>
+The API also supports compressed textures.  The hardware is responsible for handling it and beyond set up, using them are just like using a normal texture.  They are a great asset on Adreno&trade; hardware as they can lower memory requirements on textures. Also, on Adreno&trade; hardware, decompressing is a free operation.
+<p></LI>
+
+<LI><b>Mipmaps</b><br>
+Often, as objects move in your scene, they will go from taking up a few pixels to many and back again.  It is a waste of processing power to have a 128x128 image cover 20 pixels.  So, instead the hardware can have multiple representations of the same image to correspond more closely to the textures used.  
+<p>
+OpenGL can generate mipmaps for any texture you give to it by calling void GenerateMipmap(enum target), where target is the 2D texture or cubemap.  For the function to work on Cubemaps, all 6 images of the cubemap must be of the same size, type, and dimensions. They must all be squares, i.e.: the images must make a cube.
+<p></LI>
+
+<LI><b>Features that have been removed</b><br>
+This is a quick recap the features that are not supported by OpenGL ES 2.0:
+<UL>
+<LI>1D textures (But can be represented as a 2D texture with width of 1</LI>
+<LI>Texture borders</LI>
+<LI>Depth textures</LI>
+<LI>glTexCoord() (specified within glBegin/glEnd, which are also not supported in OpenGL ES)</LI>
+</UL>
+<p></LI>
+</OL>
+
+<H1>Texture Related Extensions</H1>
+There are several texture extensions available for Adreno&trade; devices.  Please look under the OpenGL ES Extension documentation to view information about the extensions.
+
+<H1>Additional Resources</H1>
+There are many more things that can be done with textures.  Great places for more possibilities are other tutorials and samples in the SDK, the OpenGL ES 2.0 Specs and the extension registry.
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

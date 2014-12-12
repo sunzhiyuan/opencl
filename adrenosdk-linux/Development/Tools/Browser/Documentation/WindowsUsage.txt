@@ -1,0 +1,7 @@
+How to get the Browser up and Running on Windows.
+
+To Run the Browser on Windows, you will need two packages. 
+- .NET Framework 4.0
+- GTK# for .NET 2.12.25
+
+These can both be downloaded from www.monodevelop.com/Download

@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="ADRENO_PROFILER_ENABLE_OPENCL">
+    <title>ADRENO_PROFILER_ENABLE_OPENCL</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">ADRENO_PROFILER_ENABLE_OPENCL Reference</div>
+    </div>
+    <div id="Content">
+		<p><h3><i><b>Summary:</b></i></h3></p>
+		<p>
+			Property used to enable and disable OpenCL profiling.
+		</p>
+		<p><h3><i><b>Usage:</b></i></h3></p>
+		<p>
+			To enable OpenCL profiler:
+		</p>
+		<br>
+			<div align="center">
+				<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_OPENCL_1.png"/>
+			</div>
+		<br>
+		<p>
+			To disable OpenCL profiler:
+		</p>
+		<br>
+			<div align="center">
+				<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_OPENCL_0.png"/>
+			</div>
+		<br>
+		</p>
+		<p><h3><i><b>Description:</b></i></h3></p>
+		<p>
+			When this property is initially set, non-blocking profiling is enabled by default which means that the application will continue execution without waiting for profiler to connect. If this behavior is desired please look at <a href= "ADRENO_PROFILER_ENABLE_BLOCKING.html">ADRENO_PROFILER_ENABLE_BLOCKING</a>.
+		</p>
+		<p>
+			This property is needed as a "master toggle" to profile OpenCL applications and needs to be <b>ALWAYS</b> set if any kind of profiling is expected(either blocking or non-blocking).
+
+		</p>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

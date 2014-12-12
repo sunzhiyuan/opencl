@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Texture 
+    ResourceID  = "Particle"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\Particle.tga"
+    DstFormat   = "S3TC_DXT5_RGBA" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\Logo.tga"
+    DstFormat   = "S3TC_DXT1_RGBA" 
+/>

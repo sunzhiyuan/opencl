@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "FontTexture"
+    SrcFileName = "Tuffy12.tga"
+    DstFormat   = "S3TC_DXT1_RGBA"
+/>
+
+<BinaryData
+    ResourceID  = "FontData"
+    SrcFileName = "Tuffy12.font"
+/>

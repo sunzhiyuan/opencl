@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F0BE420D-6F41-4357-9019-7E41B581EE0C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GeometryShader</RootNamespace>
+    <ProjectName>FboNoAttachment</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\..\..\..\..\Bin_d\</OutDir>
+    <IntDir>..\..\..\..\..\Intermediate\Tests\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\..\..\Bin\</OutDir>
+    <IntDir>..\..\..\..\..\Intermediate\Tests\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\Inc;..\..\..\..\External\glm-0.9.5.B\glm\;..\..\..\..\External\glm-0.9.5.B\;..\..\..\Framework;..\..\..\Framework\Win32;$(OutDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\obj\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <DisableSpecificWarnings>4996;4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;libEGL_d.lib;libGLESv2_d.lib;GLM_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\$(PlatformName);..\..\..\..\Lib\$(PlatformName)\GLM</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\..\..\Bin_d\Samples\Shaders\OpenGLES31
+copy ..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.vert ..\..\..\..\..\Bin_d\Samples\Shaders\OpenGLES31
+copy ..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.frag ..\..\..\..\..\Bin_d\Samples\Shaders\OpenGLES31
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\Inc;..\..\..\..\External\glm-0.9.5.B\glm\;..\..\..\..\External\glm-0.9.5.B\;..\..\..\..\External\gli-0.4.1.0\gli\;..\..\..\Framework;..\..\..\Framework\Win32;$(OutDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)\obj\</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)\$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\..\..\Lib\$(PlatformName);..\..\..\..\Lib\$(PlatformName)\GLM</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;libEGL.lib;libGLESv2.lib;GLM.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\..\..\Bin\Samples\Shaders\OpenGLES31
+copy ..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.vert ..\..\..\..\..\Bin\Samples\Shaders\OpenGLES31
+copy ..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.frag ..\..\..\..\..\Bin\Samples\Shaders\OpenGLES31
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmFile.h" />
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmStdLib.h" />
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.h" />
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.h" />
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.frag" />
+    <None Include="..\..\..\..\Assets\Samples\Shaders\OpenGLES31\image-2d.vert" />
+    <None Include="..\..\..\..\Assets\Samples\Textures\Pak\FboNoAttachment.xml" />
+    <None Include="..\..\..\Framework\Win32\Adreno.ico" />
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

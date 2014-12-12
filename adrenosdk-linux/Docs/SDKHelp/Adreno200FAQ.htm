@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Adreno 200 FAQ</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Adreno&trade; 200 FAQ</H1>
+<p>
+<H2>Contents</H2>
+<pre>
+<a href="#1">1 Chip</a>
+<a href="#2">2 Memory</a>
+<a href="#3">3 Formats</a>
+<a href="#4">4 Raster/Blending Stage</a>
+<a href="#5">5 API</a>
+</pre>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<H1><a name="1">1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chip</a></H1>
+<hr>
+<H3>1. Are Pixel Units and Vertex Units unified?</H3>
+Yes, through the use of a unified shader architecture.
+
+<H3>2. What are the ALU and video memory frequencies?</H3>
+This is up to the customer but some ballpark numbers are 166MHz for ALUs and 400 MB of memory bandwidth. The EDRAM has enough bandwidth to never be a bottleneck, but everything else (EDRAM export, texture fetching, generating the video signal, etc.) can be adversely affected by bandwidth.
+
+<H3>3. How many ALUs does Adreno&trade; 200 have?</H3>
+1 4-vector and 1 scalar unit
+
+<H3>4. What is the supported shader model version?</H3>
+Feature wise, it's slightly better than Shader Model 3.0, but we only support the GLSL shading language for OpenGL ES 2.0. More specifically GLSL ES version 1.0.
+
+<H3>5. What are the constraints bound to battery saving?</H3>
+The following is a snippet from one of our hardware docs.
+<p>
+<i>
+<b>10.5 Power Dissipation Factors </B><br>
+As one would expect, the amount of power dissipated by the Graphics Core is correlated to the amount of processing work being accomplished. A given processing task may take more time with a lower power output or less time with a higher power output depending on how the Graphics Core compute resources are utilized and other system constraints (such as memory system performance). In either case, the power dissipation to perform the processing work is roughly equivalent. This being said, the following sections highlight some of the factors that affect the amount of power dissipated by the Graphics Core. 
+<p>
+<b>Vertex/Pixel Shading Overlap </b><br>
+The balance of vertex/geometry processing and pixel processing affects the power dissipation by the Graphics Core. Scenarios that have a large overlap in the geometry and pixel activity can see significantly increased power dissipated by the Graphics Core relative to scenarios without the overlap. A relatively low pixel to triangle ratio tends to cause the overlap in vertex and pixel shader processing that causes the higher power dissipation. 
+<p>
+<b>Binning </b><br>
+The Adreno&trade; 200 Graphics Core provides a hardware mechanism to efficiently handle cases in which embedded memory is not sufficient to render an entire frame. This mechanism, called “binning”, divides the surface into 'bins', with each bin representing a rectangular region. A two pass render algorithm is then used to generate bin ID's for each vertex index and then fetch only the vertices for visible primitives when processing a bin. The alternative to this hardware binning mechanism is to use 'soft binning' later in the graphics pipeline. 
+<p>
+One of the advantages of the hard binning is that many vertex fetches for primitives that are not visible are eliminated. The vertex fetch savings are far greater than the overhead required for the two pass render algorithm and the overall 
+time for graphics processing is significantly reduced. The performance advantage provided by the hard binning reduces the overall power required to render a given image and should be used as a mechanism to reduce power 
+even if the performance is not required to meet the frame rate. 
+<p>
+<b>Index Input Mode </b><br>
+Indices are fed into the graphics pipeline via one of two possible methods. One method uses a DMA path and the other method is through the Graphics Core Command Processor (CP) engine with the DMA path disabled. Using the DMA path increases power dissipation in the front end of the graphics pipeline by roughly 10% over the CP path. In particular, with DMA enabled there is higher power dissipation from the GC internal VGT and MH modules. More of the VGT module is active with the DMA path enabled. Also, there's a higher switching rate as a consequence of a faster rate of data being sent through the VGT pipeline. With the DMA mode being enabled, another MH client is active, thus the higher power dissipation from the MH module. Although using the DMA path causes higher power dissipation in the GC, it is for a shorter period of time - the overall power dissipation for a given set of indices is roughly the same for either input mode. 
+<p>
+<b>Texture Processing </b><br>
+The Graphics Core internal Texture Pipe (TP), Texture Cache (TC) and Memory Hub (MH) blocks are used for both texture fetching and vertex fetching. Because of this, the clocks for these blocks are active for geometry processing (using vertex fetches) as well as pixel processing (using texture fetches) and the power dissipated is similar.  Filtering of textures in the TP results in a small increase in power over unfiltered textures (in the TP or shader). 
+Trilinear or anisotropic filtering increase the processing time and therefore dissipate more overall power than bilinear filtering. 
+<p>
+Power dissipation is very similar between different texture and vertex data formats. However, formats that increase the fetch time, such as compressed formats and high color formats (> 32bpp), will dissipate more overall power because of the longer processing time.
+</i>
+
+<H3>6. What is a Unified Shader Architecture ?</H3>
+The use of a Unified Shader Architecture allows for better utilization of hardware resources. The Adreno&trade; 200 hardware dynamically shares shader ALU and memory resources between the vertex and pixel shaders. It dynamically allocates workload between vertex and pixel shader tasks vs. having the vertex/pixel shader hardware alternately sit idle under a non-unified architecture. One outcome for this is that vertex shaders can access pixel shader features such as textures that are necessary to implement features such as displacement mapping and cloth animation.
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<H1><a name="2">2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memory</a></H1>
+<hr>
+<H3>1. Is the memory unified?</H3>
+Most of these are system issues which the customer must decide.
+
+<H3>2. What is the amount of memory available for:</H3>
+<pre>
+     - Render targets
+     - Textures
+     - Vertex buffers
+</pre>
+Again, these are part of a shared pool and get decided by the customer/system.
+
+<H3>3. What is the memory organization of textures (linear, tiled, etc.)</H3>
+The GPU can handle linear, tiled, or compressed textures. Linear textures should be avoided, due to poor usage of the texture cache. Compressed textures (which are convenient to tile, btw) are best.
+
+<H3>4. Is render to texture allowed?</H3>
+Yes, through frame buffer objects.
+
+<H3>5. What are the size limits for textures and render targets?</H3>
+Max texture size is 1024 and if a 3d texture exceeds 16 MB it will fail.  The max render target size would be the size of your screen.
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<H1><a name="3">3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Formats</a></H1>
+<hr>
+<H3>1. What are the pixel formats (16 bits/component, Floating point, etc.) available for:</H3>
+<b>- Textures (S3Tc/3DTc compressed formats?)</b><br>
+We will support both 16-bit and 32-bit floats for textures. Also, here are the texture formats which we currently support:
+<pre>
+LUMINANCE_8
+ALPHA_8
+LUMINANCE_ALPHA_88
+RGB565
+RGBA4444
+RGBA5551
+RGB888
+RGBA8888
+RGB_10_10_10
+RGBA_10_10_10_2
+
+LUMINANCE_HF (half-float)
+ALPHA_HF
+LUMINANCE_ALPHA_HF
+RGB_HF
+RGBA_HF
+
+LUMINANCE_F (float)
+ALHPA_F
+LUMINANCE_ALPHA_F
+RGB_F
+RGBA_F
+
+ETC_RGB
+ETC_RGB_A4
+ETC_RGB_interp
+GL_ATC_RGB_AMD
+GL_ATC_RGBA_AMD
+3DC_X
+3DC_XY
+</pre>
+
+<b>-  Render targets</b><br>
+We will support the following color buffer formats:
+<pre>
+RGB565
+RGBA4444
+RGBA5551
+RGB888
+RGBA8888
+</pre>
+
+And we will support the following z/stencil buffer formats:
+<pre>
+Z16
+Z24_S8
+</pre>
+
+<b>  - Render to texture </b><br>
+For render-to-texture, we will only support texture formats that match a supported color buffer format, and additionally we will map 16 and 24-bit depth formats to equivalent color formats in order to support render-to-depth texture.  However, the driver has not yet reached the level of maturity required to fully support FBO functionality, so currently there may be some issues with render-to-texture support.
+
+<h3>2. Do all render targets formats support blending?</h3>
+fp32 RTs don't support blending.
+
+<h3>3. How costly is 16 bits and/or floating point use?</h3>
+Since the hardware is optimized for 32-bit pixels, that means 64-bit pixels (16:16:16:16F and 32:32F) run at half-rate, and 128-bit pixels (32:32:32:32F) run at quarter rate. Only 16F and 16:16F run at full rate.
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<H1><a name="4">4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Raster/Blending Stage</a></H1>
+<hr>
+<h3>1. What are the supported blending operators (MAX, MIN, ADD, SUB, etc.)?</h3>
+All OpenGL ES 2.0 supported blending modes that are equivalent to ADD, SUBTRACT, and REVERSE_SUBTRACT, and there are currently no extensions offering other blending operators.
+
+<h3>2. Can the fragment depth be changed in the pixel shader (binding semantics DEPTH in Cg or gl_FragDepth in GLSL)?</h3>
+gl_FragDepth has been removed from GLSL ES, hence no, it can't be changed.
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<H1><a name="5">5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; API</a></H1>
+<hr>
+<h3>1. Which APIs are supported (OpenGL, OpenGL ES, proprietary, etc.)? </h3>
+OpenGL ES 2.0 is natively supported.  OpenGL ES 1.x is supported through a wrapper.
+
+<h3>2. What extensions are available for OpenGL ES?</h3>
+Extension list (others may be added in future):
+<UL>
+<LI>GL_AMD_3DC_compressed_texture</LI>
+<LI>GL_AMD_compressed_ATC_texture</LI> 
+<LI>GL_AMD_performance_counters </LI>
+<LI>GL_EXT_texture_filter_anisotropic</LI> 
+<LI>GL_OES_compressed_ETC1_RGB8_texture</LI>
+<LI>GL_OES_data_type_10_10_10_2 (not yet completed by Khronos) </LI>
+<LI>GL_OES_depth_texture (not yet completed by Khronos)</LI> 
+<LI>GL_OES_depth24</LI> 
+<LI>GL_OES_element_index_uint </LI>
+<LI>GL_OES_fragment_precision_high</LI> 
+<LI>GL_OES_rgb8_rgba8 </LI>
+<LI>GL_OES_standard_derivatives (not yet completed by Khronos)</LI> 
+<LI>GL_OES_texture_3D </LI>
+<LI>GL_OES_texture_float </LI>
+<LI>GL_OES_texture_float_linear </LI>
+<LI>GL_OES_texture_half_float </LI>
+<LI>GL_OES_texture_half_float_linear</LI> 
+<LI>GL_OES_texture_npot </LI>
+<LI>GL_OES_vertex_half_float</LI>  
+</UL>
+
+<h3>3. What are the supported shading languages (Cg, GLSL, etc.)?</h3>
+GLSL ES
+
+<h3>4. Does the API and/or vertex shader support instancing? (Multiple vertex buffers used in one draw call at different "frequencies"/rates)</h3>
+The API certainly does not, but the hardware is capable of implementing this. To a vertex shader, vertex components are fetched manually with vfetch instructions. The vertex shader can do arbitrary math on the vertex index prior to the vfetch, allowing instancing and other interesting effects. However, GLSL would require major modifications to support this. The modifications are not necessarily difficult to implement (it was done for HLSL and Xenos), but there seems to be strong resistance to modifying OpenGL ES 2.0 or GLSL without approved extensions.
+
+<h3>5. Does the API and/or extensions expose all of the functionality described above? (e.g. we know that by default OpenGL ES has some limitations)</h3>
+Except for the extensions listed here, we only expose OpenGL ES features.  Where additional HW capabilities exist, we may expose them if resources permit.
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

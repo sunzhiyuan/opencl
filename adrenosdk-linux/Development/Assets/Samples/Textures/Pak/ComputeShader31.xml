@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "DiffuseTexture"
+    SrcFileName = "..//kueken1-bgr8-inv.tga"
+    DstFormat   = "RGBA"
+/>

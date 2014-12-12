@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Boo"
+    SrcFileName = "..\boo_color.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "BooNormal"
+    SrcFileName = "..\boo_normal.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "Noise"
+    SrcFileName = "..\noise.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>

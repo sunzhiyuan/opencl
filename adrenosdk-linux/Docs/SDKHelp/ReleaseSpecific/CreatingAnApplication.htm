@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "..\SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>CreatingAnApplication</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= ..\SDK_HelpBanner_v5.png>
+
+
+<H1>Creating an Application</H1>
+
+This document explains the process of creating and building new and existing applications within the SDK framework for QUALCOMM’s OpenGL ES 2.0 / 3.0 Emulator.
+
+<H2>To build and run existing samples (Win32)</H2>
+<OL>
+<LI>Go to Adreno SDK\Samples\OpenGLES directory and pick a sample, say Lighting.</LI>
+<LI>Go to Lighting\Win32 and double click Lighting.sln to open the Lighting project.</LI>
+<LI>Build and run the Lighting sample.</LI>
+<br><br>
+<LI>For OGLES3.0 samples Go to Adreno SDK\Samples\OpenGLES30 directory and pick a sample, say CascadedShadowMaps.</LI>
+<LI>Go to CascadedShadowMaps\Win32 and double click CascadedShadowMaps.sln to open the CascadedShadowMaps project.</LI>
+<LI>Build and run the CascadedShadowMaps sample.</LI>
+</OL>
+
+<H2>To build and run existing samples on Android (OGLES2.0 samples only)</H2>
+<B>The following steps are required to build this native sample for an Android platform:</B><br><br>
+1. You must have the latest Android SDK and NDK installed onto your machine.<br>
+2. Make sure to have the latest Eclipse build installed.<br>
+3. Make sure you have Cygwin installed on your system.<br>
+4. Ensure that your device is connected to your development PC (type 'adb devices' to check this).<br>
+5. Ensure that you can compile the native applications within the NDK and launch on your 
+   Android device via Eclipse (for more information about setting up your Android development
+   platform, visit http://developer.android.com/index.html)<br>
+6. To compile this sample natively, we use the ndk-build system via Cygwin. Navigate to the
+Android/jni directory of this sample within Cygwin and run the following command:<br><br>
+   '$ANDROID_NDK/ndk-build'<br><br>
+Where ANDROID_NDK is an environment variable pointing to the root location of the NDK<br>
+7. Open Eclipse and add this newly compiled sample. Make sure to choose the latest API level
+   that is installed on your machine.<br>
+8. Run the InstallMedia.bat file located in the main Android directory of the sample. This
+   will copy over the data required to run the sample into the 'assets' directory.<br>
+9. Clean the project (Project->Clean...) to ensure everything is ready when APK is generated.<br>
+10. Run the sample (Run As->Android Application)<br><br>
+
+<H2>To create a new sample</H2>
+<p>
+<H3><a name="method1">Method 1 (OGLES2.0 samples only) </a></H3>
+This method is useful if you want to start a sample from scratch. This will give you a Visual Studio project that has just enough code to create an empty rendering window.
+<p>
+To create an empty OpenGL ES sample, run the GLES_CreateSample.exe program located in the Utilities\bin directory. Enter the name of the new sample at the prompt and hit 'Enter'. The new sample will get created in the Samples\OpenGLES directory.
+
+<H3>Method 2 (both ES2.0 and ES3.0)</H3>
+Use this method if you want to edit or add more code to a similar existing sample 
+<OL>
+<LI>Use an existing sample, say Lighting, as a template.</LI>
+<LI>Create a directory called NewSample for the new sample in Adreno SDK\Samples\OpenGL ES.</LI>
+<LI>Copy all files under Lighting to this new sample folder.</LI>
+<LI>Rename Lighting.xml to NewSample.xml and edit it to reflect the project name and appropriate files.</LI>
+<LI>Edit NewSample\Textures.xml to specify the new sample’s image files if any.</LI>
+<LI>Edit Visual Studio solution and project files to reflect the settings for the new sample. Rename them to NewSample.sln and NewSample.vcproj.</LI>
+<LI>Open the solution file in Visual Studio and edit Scene.cpp and Scene.h with code for the new sample.</LI>
+<LI>Build and run the new sample.</LI>
+</OL>
+
+<H2>Other Details</H2>
+
+<H3>Emulator dlls</H3>
+All of the samples in the SDK are built to link with the ES 2.0 Emulator dlls. These dlls are: libGLESv2x.dll and libEGL.dll. libGLESv2x.dll and libEGL.dll are core OpenGL ES 2.0 libraries needed for any application using ES 2.0.
+<br><br>
+The sample applies for ES 3.0, but the dll's are located under a sub-directory OGLES3. The 2 main dlls required from this directory are libGLESv3x.dll and libEGL.dll. The framework for samples allow for which dlls to use, thereby allowing a sample to emulate either 2.0 or 3.0 hardware. 
+
+
+<H3>Visual Studio Custom Build Rules</H3>
+All applications for the ES 2.0 / 3.0 Emulators in the SDK are built using Visual Studio 2008. The sample programs in the SDK use the following build rules.
+
+<OL>
+<LI><B>Textures.xml -> Win32\Media\Textures.pak</B><br>
+Textures.xml has a list of all images to be used as textures in this sample. Textures.pak is a binary file that has the raw data for all images. The rule uses the Resource Packer tool to parse the XML file to determine what image files to read and pack into the output Textures.pak file.</LI>
+
+<LI><B>ShaderFile.glsl -> Win32\Media\Shaders\ShaderFile.vs and Win32\Media\Shaders\ShaderFile.fs</B><br>
+ShaderFile.glsl contains all of the vertex and fragment shaders separated by appropriate tags. The Shader Compiler tool parses this file to extract individual shader code and place each of them into individual shader files. The rule here shows the extraction of a vertex and a shader code from ShaderFile.glsl and placement of these shaders into ShaderFile.vs (vertex shader file) and ShaderFile.fs (fragment shader file).</LI>
+
+<LI><B>Sample.exe -> Adreno SDK\Samples\bin</B><br>
+This rule copies the built sample’s executable to the specified directory. Apart from keeping the executables in the current sample’s sub folder, they are also copied into this bin directory so that these samples can be run without the need for Visual Studio.</LI>
+</OL>
+
+
+
+<iframe src = "..\Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

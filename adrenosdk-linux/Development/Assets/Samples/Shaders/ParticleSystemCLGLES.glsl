@@ -1,0 +1,77 @@
+//--------------------------------------------------------------------------------------
+// File: ParticleSystemCLGLES.glsl
+// Desc: Shaders for the ParticleSystemCLGLES sample
+//
+// Author:                 QUALCOMM, Adreno SDK
+//
+//               Copyright (c) 2013 QUALCOMM Technologies, Inc. 
+//                         All Rights Reserved. 
+//                      QUALCOMM Proprietary/GTDR
+//--------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------
+// The vertex shader
+//--------------------------------------------------------------------------------------
+[ParticleSystemCLGLESVS]
+#include "CommonVS.glsl"
+
+// Uniform shader constants 
+uniform   mat4   g_matModelViewProj;
+uniform   float  g_fTime;
+
+// Input per-vertex attributes
+attribute vec4   g_vPosition;
+attribute vec4   g_vVelocity;
+attribute vec4   g_vColor;
+attribute float  g_fStartTime;
+attribute float  g_fLifeSpan;
+attribute float  g_fInitialSize;
+attribute float  g_fSizeIncreaseRate;
+
+// Varying per-vertex outputs
+varying   vec4   g_vOutColor;
+
+
+void main()
+{
+    float fAge = g_fTime - g_fStartTime;
+
+    if( fAge <= g_fLifeSpan )
+    {
+        vec3 vPositionWS = g_vPosition.xyz + g_vVelocity.xyz * fAge;
+        vec4 vPositionCS = g_matModelViewProj * vec4( vPositionWS, 1.0 );        
+        gl_Position = vPositionCS;
+        
+        float fDepthScaleFactor = 2.0 * vPositionCS.z / vPositionCS.w;
+        gl_PointSize    = g_fInitialSize + fAge * fDepthScaleFactor * g_fSizeIncreaseRate;
+
+        float fAlpha = g_vColor.a * ( 1.0 - ( fAge / g_fLifeSpan ) );
+        g_vOutColor.rgb = fAlpha * g_vColor.rgb;
+        g_vOutColor.a   = fAlpha;
+    }
+    else
+    {
+        gl_Position = vec4( 1000.0, 0.0, 0.0, 0.0 ); // Move dead particles off screen
+        gl_PointSize = 0.0;
+    }
+}
+
+
+//--------------------------------------------------------------------------------------
+// The fragment shader
+//--------------------------------------------------------------------------------------
+[ParticleSystemCLGLESFS]
+#include "CommonFS.glsl"
+
+uniform sampler2D g_TextureSampler;
+
+varying vec4      g_vOutColor;
+
+
+void main()
+{
+    float fIntensity = texture2D( g_TextureSampler, gl_PointCoord.xy ).r;
+    
+    gl_FragColor = fIntensity * g_vOutColor;
+}

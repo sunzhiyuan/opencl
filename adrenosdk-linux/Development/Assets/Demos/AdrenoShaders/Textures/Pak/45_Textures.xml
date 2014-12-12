@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Jitter"
+    SrcFileName = "..\Jitter.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID = "Brick"
+    SrcFileName   = "..\BounceTex2.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2"
+    SrcFileName   = "..\BounceTex1.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStone"
+    SrcFileName   = "..\BounceTex1.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRock"
+    SrcFileName   = "..\BounceTex1.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>

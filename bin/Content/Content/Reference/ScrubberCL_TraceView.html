@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../Style/style.css">
+    <meta name="MS-HKWD" content="Scrubber CL Trace View">
+    <title>Scrubber DX :: Draw Call View</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">Scrubber CL:: Trace View</div>
+    </div>
+    <div id="Content">
+      <p> <b>The OpenCL APIcall trace captured by profiler will be displayed
+          plus some translation (return value, global work size, local work
+          size, etc)</b> </p>
+      <br>
+      <p> <img title="TraceView1" alt="TraceView1" src="OpenCLTraceView1.png">
+      </p>
+      <br>
+      <br>
+      <p> Basic usage: </p>
+      <div class="Indent">
+        <p> &#8226; <i><a href="../HowTo/OpenCL/CaptureAndScrub_CL.html">Capture</a>
+            an OpenCL application from the connected application. After capture
+            completes, the tree will populate.</i> </p>
+        <p> &#8226; <i>CPU time will be displayed and if current API triggers GPU
+            execution, GPU time will be displayed as well
+            (clEnqueneRead/WriteBuffer, clEnqueueNDRangeKernel, etc).</i> </p>
+        <p> &#8226; <i>Scrubber Metrics will be displayed if metrics is dragged to
+            time line Gantt View area after device connection and prior to
+            record/capture. <br>
+          </i></p>
+        <p> </p>
+      </div>
+      <p></p>
+      <br>
+      <br>
+      <div align="center">
+        <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+          Technologies, Inc.</a> All rights reserved. </div>
+    </div>
+  </body>
+</html>

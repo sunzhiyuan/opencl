@@ -1,0 +1,25 @@
+<html>
+	<h2>Using the Adreno SDK</h2>
+	<body>
+		<hr >
+		<h3>Windows XP/7</h3>
+		<li >Visual Studio 2010 solutions and projects are provided with all SDK source code. All of the SDK samples, tutorials, and demos use the OpenGL ES 3 Emulator when built with Visual Studio and targeted to Windows XP/7.</li>
+		<li >The AdrenoSDK.sln in the SDK/Development/Build/VS2010 directory contains all of the SDK's projects that will run with the OpenGL ES 3 Emulator.</li>
+		<li >Note that the DirectX 11 samples require a Windows 8/RT platform or device with Visual Studio 2010.</li>
+		<li >If you are interested in building the OpenCL samples on Windows, please copy the OpenCL.lib file from the OpenCL SDK that you are using to the Development/External/OpenCL folder before building the SDK. The Adreno SDK OpenCL Samples link against this lib file.</li>
+
+		<h3>Linux Ubuntu</h3> 
+		<li >The Adreno SDK has been tested with Ubuntu 12.10.</li>
+		<li >The SDK includes makefiles for all samples, tutorials, demos, and tools provided with source code. The samples, tutorials, and demos use the OpenGL ES 3 Emulator.</li>
+		<li >The makefile located in SDK/Development/Build/Linux builds all SDK samples projects.</li>
+		<li >Env. variable GPU_DRIVER_PATH w/ full path to GPU's libGL.so is required for emulator and any app depending on it.</li>
+		<li >SDK Samples can be run from the Bin folder with the Run_Samples.sh shell script. Type "./Run_Samples.sh SampleName" in a terminal running in the Bin folder.</li>
+		<li >The Adreno Texture Tool can be run with the Run_QCompress.sh shell script.</li>		
+
+					
+		<h3>Android</h3>
+		Scripts and instructions are provided for building the Samples to an Android device in the respective directories of the samples (OpenGLES, OpenGLES30, OpenCL). The build_android script will build your apk, while the install_android script will build and install your apk to the default device (must be connected).
+							
+		</li>
+	</body>
+</html>

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{fbc70a72-e52f-494e-8a13-94e492ee50c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files">
+      <UniqueIdentifier>{86d7e93d-0fed-46db-84fc-6c7adaa33af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files\OpenGLES">
+      <UniqueIdentifier>{2c61d634-cabf-47de-ae99-a6fb7fc9f43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Win32">
+      <UniqueIdentifier>{9a019c4c-91df-47db-9209-6df36eb12257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files">
+      <UniqueIdentifier>{99d593b3-e4c5-46f7-963a-5b84f180645b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files\OpenGLES">
+      <UniqueIdentifier>{f90a5509-1d58-48d4-bce1-54d0c6c3efa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{db2dc538-7070-4ced-b4ae-8e1a46b7a85f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Resources">
+      <UniqueIdentifier>{b015a33d-484c-4953-a1d2-968a68ba74de}</UniqueIdentifier>
+      <Extensions>.xml</Extensions>
+    </Filter>
+    <Filter Include="Assets\Fonts">
+      <UniqueIdentifier>{81748b3c-cd05-4cae-ba57-b43a1be6f347}</UniqueIdentifier>
+      <Extensions>.xml</Extensions>
+    </Filter>
+    <Filter Include="Assets\Meshes">
+      <UniqueIdentifier>{95f9a4dc-59e1-4702-89ba-de4415319bbc}</UniqueIdentifier>
+      <Extensions>.mesh;</Extensions>
+    </Filter>
+    <Filter Include="Assets\Shaders">
+      <UniqueIdentifier>{c42da4e1-18ec-4bbf-bde7-0487ea2092d8}</UniqueIdentifier>
+      <Extensions>.shd;.glsl</Extensions>
+    </Filter>
+    <Filter Include="Framework\Header Files\Model">
+      <UniqueIdentifier>{500173cd-e2f5-48a3-8273-e620e119073d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files\Model">
+      <UniqueIdentifier>{151bc5fc-6fa9-4813-8a9a-d7835df29a15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmApplication.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFile.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmFont.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmInput.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmMath.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmNoise.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmStdlib.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUserInterface.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmFontGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmMesh.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmShader.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h">
+      <Filter>Framework\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Scene.h" />
+    <ClInclude Include="..\..\..\Framework\Model\FrmAnimation.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmAnimationTrack.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmIndexBuffer.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmJoint.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmMaterial.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmMemoryBuffer.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmMeshSurface.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmMeshSurfaceArray.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmModel.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmModelIO.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmModelMesh.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmNamedId.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmPointerTable.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmTransform.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmVertexBuffer.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmVertexFormat.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmVertexProperty.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Framework\Model\FrmVertexPropertyType.h">
+      <Filter>Framework\Header Files\Model</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmApplication_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\win32\FrmNoise_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmApplication.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmFont.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmInput.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\FrmUserInterface.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmFontGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmMesh.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmPackedResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmShader.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUserInterfaceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\OpenGLES\FrmUtilsGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scene.cpp" />
+    <ClCompile Include="..\..\..\Framework\Model\FrmAnimation.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmAnimationTrack.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmIndexBuffer.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmJoint.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmMaterial.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmMemoryBuffer.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmMeshSurfaceArray.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmModel.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmModelIO.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmModelMesh.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmNamedId.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmVertexBuffer.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmVertexFormat.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Framework\Model\FrmVertexProperty.cpp">
+      <Filter>Framework\Source Files\Model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Framework\Win32\Adreno.ico">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Fonts\Tuffy12.xml">
+      <Filter>Assets\Fonts</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Meshes\scorpion.anim">
+      <Filter>Assets\Meshes</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Meshes\scorpion.model">
+      <Filter>Assets\Meshes</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Textures\Pak\Skinning2.xml">
+      <Filter>Assets\Resources</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Samples\Shaders\Skinning2.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

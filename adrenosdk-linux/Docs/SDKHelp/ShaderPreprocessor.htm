@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Shader Preprocessor</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Shader Preprocessor</H1>
+This is an offline tool to preprocess GLSL shaders. Since managing many shader files can be quite involved, this tool encapsulates most of the process. It allows users to have multiple shaders in a single file. 
+
+<H1>Details</H1>
+
+Typically, shader code is specified in a text file. The game reads this file to obtain the shader code as a string that is then passed to GLSL for compilation. In the most simplistic approach, one text file contains one shader. This gives rise to potentially hundreds of shader files for a real game. It becomes extremely hard to manage these many files. Hence, game developers like to group their shaders into fewer number of files. The Shader Preprocessor tool supports this type of grouping by preprocessing these files to obtain each individual shader.
+<P>
+This tool also processes “#include” directive similar to a C-preprocessor. This allows the users to have all common shader code in a single file that gets included in the main shader file through this directive. 
+<P>
+In the future versions, this tool will support binary shader compilation. This will drastically reduce the shader compile time that a game currently spends during startup. All of the shaders will be compiled offline by this tool to produce the runtime binary shader code that will then get loaded into the game for use. Precompiling the shaders will also allow the users to debug any compilation errors before using the shaders in the game.
+<P>
+The Shader Preprocessor works by taking the GLSL shader file as its input and scanning it for the user specified tags in square brackets. For every tag that it finds, it generates a text file containing the shader code that is given after that tag. During this time, it also processes the “#include” directive.
+
+<H1>Usage</H1>
+The tool can be used in two ways:
+<OL>
+<LI>invoking it on the command line</LI>
+<LI>invoking it inside a custom build rule of any IDE such as Microsoft Developer Studio</LI>
+</OL>
+The syntax to run this tool from command line is:
+<P>
+<B><I>ShaderPreprocessor.exe   -t "[shaderTag]"  &lt;inputShaderFile&gt;   -o "&lt;outputShaderFile&gt;"</I></B>
+<P>
+The following example illustrates this usage.
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+//-------------------------------------------------------          
+// File: DownSample.glsl
+// Description: Shaders for down sampling an image
+//-------------------------------------------------------
+
+[DownSampleVS]
+#include "CommonVS.glsl"
+
+main()
+{
+    // This is a vertex shader for down sampling
+}
+
+[DownSampleFS]
+#include "CommonFS.glsl"
+
+main()
+{
+    // This is a fragment shader for down sampling
+}</PRE>
+</TD></TR>
+</TABLE>
+<P>
+The shader file shown above has two shaders: a vertex shader and a fragment shader. In order to generate individual shader files from this, the Shader Preprocessor tool is invoked as:
+<P>
+<B><I>ShaderPreprocessor.exe   -t "[DownSampleVS]"    DownSample.glsl   -o “DownSample.vs"</I></B><br>
+<B><I>ShaderPreprocessor.exe   -t "[DownSampleFS]"    DownSample.glsl   -o "DownSample.fs"</I></B>
+<P>
+
+This generates DownSample.vs and DownSample.fs that contain the vertex shader and the fragment shader code respectively. These output files are then read by the game and the code is compiled and used.
+<P>
+For an example of using this tool in a build rule, please refer to any of the samples in the SDK.
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

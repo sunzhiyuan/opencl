@@ -1,0 +1,134 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Shaders Viewer">
+  <HEAD>
+    <TITLE>Shaders Viewer</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Shaders Viewer</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The Shaders Viewer displays shaders belonging to the currently selected program from the 
+          <A HREF="ScrubberDX_BufferView.html">Buffer View</A>.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="ScrubberDX_ShaderView_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Pre requisite:
+      </P>
+      <DIV CLASS="Indent">
+      <P>
+      Before running the app, please make sure the shader was built with the "Enable Debugging Information" set.
+      <P>
+        <img src="ScrubberDX_ShaderView_2.png" />
+      </P>
+      </P>
+      </DIV>
+
+      <BR /><BR />
+
+      <P>
+        Toolbar options:
+      </P>
+
+      <DIV CLASS="Indent">
+        <P>
+          <img src="ScrubberDX_ShaderView_3.png" />
+          <DIV CLASS="Indent">
+            <P>
+              This text box displays the HLSL file path. 
+            </P>
+          </DIV>
+        </P>  
+
+        <BR />
+
+        <P>
+          <img src="ScrubberDX_ShaderView_9.png" />
+          <DIV CLASS="Indent">
+            <P>
+              This button opens a file explorer which can be used to select and open a shader file.
+            </P>
+          </DIV>
+        </P>  
+  
+        <BR />
+  
+        <P>
+          <img src="ScrubberDX_ShaderView_4.png" />
+          <DIV CLASS="Indent">
+            <P>
+              This text box displays the entry point function for the shader. Please enter the appropriate function here before compiling the shader.
+            </P>
+          </DIV>
+        </P>
+
+         <BR />
+  
+        <P>
+          <img src="ScrubberDX_ShaderView_5.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Target is used to tell the compiler what shader model to use for compilation.
+              A list of targets can be found <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb509709(v=vs.85).aspx#Profiles">here.</a><br />
+              Examples:<BR />
+              Vertex Shader: vs_1_1, vs_2_0, vs_2_a, vs_2_sw, vs_3_0, vs_3_sw, vs_4_0, vs_4_1<BR />
+              Pixel Shader: ps_2_0, ps_2_a, ps_2_b, ps_2_sw, ps_3_0, ps_3_sw, ps_4_0, ps_4_1<BR />
+              Texture Shader: tx_1_0<BR />
+              Geometry Shader: gs_4_0, gs_4_1<BR />
+              Effect (may contain any combination of vertex, pixel and geometry shaders): fx_2_0, fx_4_0, fx_4_1<BR />
+            </P>
+          </DIV>
+        </P>
+
+        <P>
+          <img src="ScrubberDX_ShaderView_6.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Once you are done making changes to the hlsl code, hit this button to compile the shader.<BR />
+              Once compilation is complete, the "Compilation Errors" tab should come in focus displaying any errors during compilation. <br />
+              If no errors are found, the new shader is applied to the playback window.
+            </P>
+          </DIV>
+        </P>
+
+         <BR />
+
+         <P>
+          <img src="ScrubberDX_ShaderView_7.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Hit this button to open a file explorer and save the new hlsl code in a file.
+            </P>
+          </DIV>
+        </P>
+
+         <BR />
+          
+          <P>
+          <img src="ScrubberDX_ShaderView_8.png" />
+          <DIV CLASS="Indent">
+            <P>
+              Redo button overwrites the hlsl code changes and reverts back to the original shader code.
+            </P>
+          </DIV>
+        </P>
+
+      </DIV>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

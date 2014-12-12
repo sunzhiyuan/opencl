@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Cel-Shading"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\celshading.bmp"
+    DstFormat   = "RGBA" 
+    WrapMode    = "CLAMP_TO_EDGE"
+/>
+
+<Texture 
+    ResourceID  = "RayGun"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\RayGun.tga"
+    DstFormat   = "S3TC_DXT1_RGBA" 
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "..\..\..\Assets\Samples\Textures\Logo.tga"
+    DstFormat   = "S3TC_DXT1_RGBA" 
+/>

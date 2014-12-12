@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "White"
+    SrcFileName = "..\White.bmp"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "tennisBall.png"
+    SrcFileName = "..\tennisBall.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Robot_Head_Tex.png"
+    SrcFileName = "..\Robot_Head_Tex.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Robot_Red_Tex.png"
+    SrcFileName = "..\Robot_Red_Tex.png"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Robot_Silver_Tex.png"
+    SrcFileName = "..\Robot_Silver_Tex.png"
+    DstFormat   = "ATC" 
+/>
+
+
+
+<Texture 
+    ResourceID  = "bedCompleteMap.png"
+    SrcFileName = "..\bedCompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "CeilingCompleteMap.png"
+    SrcFileName = "..\CeilingCompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "floor01CompleteMap.png"
+    SrcFileName = "..\floor01CompleteMap.png"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "floor02CompleteMap.png"
+    SrcFileName = "..\floor02CompleteMap.png"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Lawn.png"
+    SrcFileName = "..\Lawn.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "rugCompleteMap.png"
+    SrcFileName = "..\rugCompleteMap.png"
+    DstFormat   = "ATC" 
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Wall01CompleteMap.png"
+    SrcFileName = "..\Wall01CompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Wall02CompleteMap.png"
+    SrcFileName = "..\Wall02CompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Wall03CompleteMap.png"
+    SrcFileName = "..\Wall03CompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Wall04CompleteMap.png"
+    SrcFileName = "..\Wall04CompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "chair.png"
+    SrcFileName = "..\chair.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Lamp.png"
+    SrcFileName = "..\Lamp.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "EndTable.png"
+    SrcFileName = "..\EndTable.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "deskColors.png"
+    SrcFileName = "..\deskColors.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "curtainCompleteMap.png"
+    SrcFileName = "..\curtainCompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "FrameCompleteMap.png"
+    SrcFileName = "..\FrameCompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "dresserCompleteMap.png"
+    SrcFileName = "..\dresserCompleteMap.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Robot_Shadow.tga"
+    SrcFileName = "..\Robot_Shadow.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "BallShadow.tga"
+    SrcFileName = "..\BallShadow.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Rocket01.jpg"
+    SrcFileName = "..\Rocket01.jpg"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "SphereMap_Silver.png"
+    SrcFileName = "..\SphereMap_Silver.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "SphereMap_Red.png"
+    SrcFileName = "..\SphereMap_Red.png"
+    DstFormat   = "ATC"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "..\Logo.tga"
+    DstFormat   = "ATC" 
+/>

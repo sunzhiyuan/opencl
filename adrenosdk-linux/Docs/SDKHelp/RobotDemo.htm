@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Robot Demo</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Robot Demo</H1>
+
+The Robot Demo is an OpenGL ES 2.0 graphics sample that uses artist-generated artwork and animations. The demo shows a wind-up toy robot walking peacefully about a child's room until the user sends a tennis ball into his path, making him none-too-happy.
+<p>
+<IMG src =RobotDemo.bmp >
+
+<H1>Details</H1>
+The demo was written to begin work on the daunting task of solidifying the content-pipeline, which is by far one of the trickier tasks for any 3D application. The meshes and animations were created in 3D Studio Max, and exported as ASCII files. Those files were then imported into a custom tool, cleaned up, and exported into binary files designed for easy run-time loading by the demo framework.
+<p>
+The demo uses a total of three animations, two artist driven and one programmatically controlled. The robot can be in one of two states: either a peaceful, repeating walk cycle, or a mad cycle where it runs amok for a while before settling back down. Both robot animations were created by an artist. The tennis ball motion, on the other hand, is not artist-driven but rather is controlled programmatically to collide with the robot.
+<p>
+The animations are key-framed sets of translation, scale, and rotation values. The robot mesh is jointed, which makes sense for the nature of the artwork, but the code and animation structures also support character skinning with bones and matrix palettes.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>0</B></TD><TD>Throw a ball at the robot</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

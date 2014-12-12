@@ -1,0 +1,120 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Capture Rendercall GLES">
+
+  <HEAD>
+    <TITLE>Tutorial: How To Capture Per-Rendercall Metrics</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Tutorial: How To Capture Per-Rendercall Metrics</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        This tutorial explains how to capture performance information for individual render calls.
+      </P>
+
+      <BR />
+
+      <P>
+        After <A HREF="../Connect.html">connecting</A> to a device, create a new scrubber via the main toolbar.
+      </P>
+
+      <BR />
+
+      <P>
+		Click ont he 'Metrics' drop down menu on the Trace view toolstrip to get the list of metrics supported by the connected
+		device. The tooltip displays information about the selected metric.
+        <DIV CLASS="Indent">
+          <P>
+            • <i>Note that Scrubber metrics are only supported by Adreno 200+ series devices.</i>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        Click on the desired metric and a column should be added to the Trace view were values will be populated upon capture. Please note that
+		if a capture has been done previous to attaching metrics the scene needs to get recaptured for the values to get populated.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="ScrubberMetricsDropDown.png" width = "400"/>
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        To enable and capture a Scrubber metric:
+        <DIV CLASS="Indent">
+          <P>
+            <img src="../../Images/Arrow.bmp" />
+            Click on the disred metric from the Metrics drop down. The metric
+            will appear as a new column in the <A HREF="../../Reference/Scrubber2xCallTrace.html">call trace listing</A>
+            at the bottom of the Scrubber. Multiple Scrubber metrics may be enabled this way.
+            <DIV CLASS="Indent">
+              <P>
+                • <i>Note that due to concurrency restrictions in the embedded hardware, there are limits to how many
+                metrics can be enabled simultaneously. Adreno Profiler will convey those limitations by highlighting
+                metrics in red as they become unavailable.</i>
+              </P>
+            </DIV>
+          </P>
+          <P>
+            <img src="../../Images/Arrow.bmp" />
+            Next, <A HREF="CaptureAndScrubFrames_GLES2.html">Capture</A> a new frame from the device. After the
+            frame downloads, any metrics columns you have added will be filled with the values of the
+            enabled metrics for each render call within the frame.
+          </P>
+        </DIV>
+      </P>
+
+      <BR />
+
+      <P>
+        To stop capturing a metric, click on the metric again within the Metrics drop down menu.
+      </P>
+
+      <BR />
+
+      <P>
+        <b>Scrubber metrics can be visualized in several ways:</b>
+      </P>
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        By default, the collected metrics are displayed as a vertical histogram alongside the API calls.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureRendercallMetrics_GLES2_3.png" />
+          </P>
+        </DIV>
+      </P>
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        You can also view the raw numerical metric data. Select this mode using the toolbar above the call trace.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="CaptureRendercallMetrics_GLES2_4.png" />
+          </P>
+        </DIV>
+      </P>
+      <P>
+        <img src="../../Images/Arrow.bmp" />
+        If you click on a column in the call trace that contains metrics data, the scene in the emulator
+        view will be colorized according to the selected metric as shown in the following screenshot.
+        <DIV CLASS="Indent">
+          <P>
+            <img src="../ScrubberGLWithMetrics.png" width="800" />
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

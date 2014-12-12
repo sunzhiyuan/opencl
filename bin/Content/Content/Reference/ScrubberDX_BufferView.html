@@ -1,0 +1,53 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="../Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Scrubber DX Buffer View">
+  <HEAD>
+    <TITLE>Scrubber DX :: Buffer View</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Scrubber DX :: Buffer View</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <P>
+        <b>The "Buffer View" window of the Scrubber DX displays detailed information about a DirectX object.</b>
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        <img src="ScrubberDX_BufferView_1.png" />
+      </P>
+
+      <BR /><BR />
+
+      <P>
+        Basic usage:
+        <DIV CLASS="Indent">
+          <P>
+            • <i><A HREF="../HowTo/DirectX/CaptureAndScrubFrames_DX.html">Capture</A> a frame from the 
+              connected application, and select a draw call in the 
+              <A HREF="ScrubberDX_DrawCalls.html">DrawCalls</A> pane. The "API Calls" tab will list all API
+              calls made between the selected draw call and the previous draw call.</i>
+          </P>
+          <P>
+            • <i>Click on a hyperlink in an API call to display additional information about the selected
+                element in the Buffer View pane.  DirectX resources, state objects, etc... can all be examined.</i>
+          </P>
+          <P>
+            • <i>Click on a hyperlink in the Buffer View pane to display even more information about the object
+                being examined.  For example, a render target view is generally created with a Texture2D resource
+                as its target.  Examining a render target view will expose the resource in the Buffer View, allowing you
+                to view the details of the Texture2D object, such as the width, height, and texture format.</i>
+          </P>
+        </DIV>
+      </P>
+    </DIV>
+    
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BEGIN_INCLUDE(manifest) -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.qualcomm.ImageHistogram"
+      android:versionCode="412"
+      android:versionName="4.12">
+
+  <uses-sdk android:minSdkVersion="8" />
+  <uses-feature android:glEsVersion="0x00020000"/>
+  <supports-screens android:smallScreens="true"
+                    android:normalScreens="true"
+                    android:largeScreens="true"
+                    android:anyDensity="true"/>
+  <uses-permission android:name="android.permission.INTERNET"   />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="com.qti.permission.PROFILER" />
+  
+   <application
+        android:icon="@drawable/ic_launcher"
+        android:label="ImageHistogram">
+
+        <!-- AdrenoLauncherActivity to present GUI -->
+        <activity
+            android:name="com.qualcomm.common.AdrenoLauncherActivity"
+            android:label="CL Image Histogram" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="adreno_package" android:value="com.qualcomm.ImageHistogram" />
+            <meta-data android:name="adreno_activity" android:value="android.app.NativeActivity" />
+            <meta-data android:name="device_type_exclusive" android:value="gpu" />
+            <meta-data android:name="select_wg_size" android:value="yes" />
+            <meta-data android:name="select_2d_wg_ratio" android:value="yes" />
+            <meta-data android:name="use_local" android:value="yes" />
+        </activity>
+
+        <!-- AdrenoNativeActivity to run OpenCL code -->
+        <activity android:name="com.qualcomm.common.AdrenoNativeActivity"
+               android:launchMode="singleInstance"
+               android:label="ImageHistogram">
+               <meta-data android:name="android.app.lib_name"
+                    android:value="ImageHistogram" />
+               <intent-filter>
+                   <action android:name="adreno.intent.action.Launch" />
+                   <category android:name="android.intent.category.DEFAULT" />
+               </intent-filter>
+               <meta-data android:name="imageLabel1" android:value="Original" />
+               <meta-data android:name="imageLabel2" android:value="Grayscale" />
+               <meta-data android:name="imageLabel3" android:value="Equalized" />
+               <meta-data android:name="imageLabel4" android:value="Color Reduced" />
+      </activity>
+  </application>
+</manifest>
+<!-- END_INCLUDE(manifest) -->

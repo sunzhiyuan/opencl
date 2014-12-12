@@ -1,0 +1,73 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Device Installation">
+  <HEAD>
+    <TITLE>Device Installation</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Device Installation</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <H2>Android Device Setup</H2>
+      <P>
+        <P>
+          For Android devices, the Android Debug Bridge (ADB) must be installed in order to use Adreno Profiler.
+          ADB should be downloaded as part of the latest Android SDK release from Google, which may be obtained
+          from the following link:
+          <DIV CLASS="Indent">
+            <P>
+              <a href="http://developer.android.com/sdk/index.html">Android SDK</a>
+            </P>
+          </DIV>
+        </P>
+        <P>
+          After downloading and unpacking the Android SDK, add the path location of <b>adb.exe</b> and <b>AdbWinApi.dll</b>
+          to your system PATH environment variable.  Ensure that there are no versions of ADB in the profiler directory and
+		  no additional versions of ADB are accessible via the PATH environment variable.
+        </P>
+        <P>
+          An appropriate USB driver must also be installed for your Android device.  A Windows USB driver for the HTC G1 may
+          be obtained here:
+          <DIV CLASS="Indent">
+            <P>
+              <a href="http://dl.google.com/android/android_usb_windows.zip">http://dl.google.com/android/android_usb_windows.zip</a>
+            </P>
+          </DIV>
+        </P>
+        <P>
+          Additionally, before an Android application may be profiled, it must have the <b>android.permission.INTERNET</b>
+          and <b>com.qti.permission.PROFILER</b> permissions enabled in its manifest.
+        </P>
+        <P>
+          Finally, before profiling, and after rebooting your Android device, you must enable debug mode by setting the following ADB
+          property on the command-line:
+          <DIV CLASS="Indent">
+            <P>
+              <b>adb.exe shell setprop debug.egl.profiler <i><1 to enable, 0 to disable></i></b>
+            </P>
+          </DIV>
+		  
+		  On 2.x versions of Adreno Profiler this step is done for you automatically.  Simply launch the Adreno Profiler connect dialog
+		  before launching your application.
+        </P>
+		
+		Note:  If Adreno Profiler is having difficulty connecting to your application, try killing the ADB server with <i>adb kill-server</i>
+		on the command line.  Then close your application, launch Adreno Profiler, then launch your application and attempt to connect again.
+      </P>
+
+      <BR /><BR />
+      
+      <h2>Windows Device Setup</h2>
+      <p>For instructions on using Adreno Profiler with your application on Windows RT or Windows Phone devices, please see <a href="HowTo/DirectX/ConfigureAppForProfiling_DX.html">How To Configure a DirectX App for Profiling</a>.</p>
+
+      <BR /><BR />
+      
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

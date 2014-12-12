@@ -1,0 +1,75 @@
+<LINK TYPE="text/css" REL="stylesheet" HREF="Style/style.css">
+<HTML>
+<meta name="MS-HKWD" content="Requirements">
+  <HEAD>
+    <TITLE>Requirements</TITLE>
+  </HEAD>
+  <BODY>
+    <DIV ID="Banner">
+      <DIV ID="TopicGroup">Adreno Profiler</DIV>
+      <DIV ID="TopicTitle">Requirements</DIV>
+    </DIV>
+    <DIV ID="Content">
+      <H2>Device Requirements</H2>
+      <P>
+        In general, Adreno Profiler works with all devices based on Qualcomm's application processors utilizing an Adreno 200 or newer GPU. This includes both commercial devices and development platforms. We support the following target operating systems:
+      </P>
+      <DIV CLASS="Indent">
+        <P>
+          <img src="Images/Arrow.bmp" /> <b>Android:</b> All versions of Snapdragon, as well as pre-Snapdragon app processors.
+        </P>
+        <P>
+          <img src="Images/Arrow.bmp" /> <b>Windows RT/Windows Phone 8:</b> Snapdragon S4 and newer
+        </P>
+        <P>
+          <img src="Images/Arrow.bmp" /> <b>BlackBerry:</b> BlackBerry 10
+        </P>
+      </DIV>
+
+      <BR />
+
+      <P>
+        Additionally, the following APIs are supported:
+      </P>
+
+      <DIV CLASS="Indent">
+        <P><img src="Images/Arrow.bmp" /> <b>OpenGLES v1.1</b> <i>(Adreno 200+ only)</i></P>
+        <P><img src="Images/Arrow.bmp" /> <b>OpenGLES v2.0</b> <i>(Adreno 200+ only)</i></P>
+        <P><img src="Images/Arrow.bmp" /> <b>OpenGLES v3.0</b> <i>(Adreno 300+ only)</i></P>
+        <P><img src="Images/Arrow.bmp" /> <b>OpenCL</b> <i>(Adreno 300+ only)</i></P>
+        <P><img src="Images/Arrow.bmp" /> <b>DirectX 11</b> <i>(Adreno 225+ only)</i></P>
+      </DIV>
+
+      <H2>Software Requirements</H2>
+      <P>
+        <b>Please ensure you have installed the latest drivers for your video card.</b>
+        <DIV CLASS="Indent">
+          <P>
+            We have found it is sometimes necessary to install the latest <u>reference</u> 
+            drivers for your video card, directly from its manufacturer. If you are unable to view 
+            captured frames in a Scrubber with the drivers provided by your PC or laptop vendor, 
+            install the latest from ATI or NVIDIA.
+          </P>
+        </DIV>
+      </P>
+      <P>
+        If you are profiling DirectX applications, please ensure that you have <a HREF="https://www.microsoft.com/en-us/download/details.aspx?id=35">DirectX Runtime</a> installed on your PC.        
+      </P>
+      <P>
+        Adreno Profiler runs under Microsoft Windows XP, Windows Vista, and Windows 7.
+      </P>
+      <P>
+        See <A HREF="DeviceInstallation.html">Device Installation</A> for device setup instructions.
+      </P>
+
+
+      <H2>Hardware Requirements</H2>
+      <p>Adreno Profiler uses the desktop OpenGL ES emulator from the Adreno SDK to render the scrubber view for OpenGL ES applications. In order to render frames from OpenGL ES 2.0 applications, the emulator requires that the desktop GPU support OpenGL 2.0 or greater. For OpenGL ES 3.0 applicaitons, OpenGL 3.3 or greater is required.</p>
+      <p>The scrubber for DirectX applications renders directly using DirectX. The desktop GPU must support DirectX feature level 9_3.</p>
+    </DIV>
+    <DIV align="center">
+      <HR />
+      Copyright © 2014 <A HREF="http://www.qualcomm.com/">Qualcomm Technologies, Inc.</A>  All rights reserved.
+    </DIV>
+  </BODY>
+</HTML>

@@ -1,0 +1,101 @@
+--------------------------------------------
+OpenGL ES Samples Android Build Instructions
+2013 Qualcomm Technologies, Inc.
+--------------------------------------------
+
+These instructions show how to use the command line to build a sample and 
+install it on a Qualcomm device using the Android SDK, NDK, and Apache Ant toolset. 
+These instructions have been tested in Windows and cygwin environments.
+
+Prerequisites:
+* Latest Android SDK (API 14) and Android NDK
+* Apache Ant
+* An Android device connected to your machine (type 'adb devices' to check this)
+
+
+NOTE: API 14 can be downloaded via the the Android SDK manager. The quick build/install files also specify API 14.
+
+
+Instructions
+------------
+
+1. Open a command prompt.
+2. In the command prompt, navigate to the sample's Android/jni directory.
+3. In the Android/jni directory, run the ndk-build command:
+
+	'$ANDROID_NDK/ndk-build'
+
+	where ANDROID_NDK is an environment variable pointing to the root location of the NDK.
+
+4. Navigate up one directory to the Android directory ('cd ..').
+5. In the Android directory, copy the sample's assets using the InstallAssets script:
+
+    Windows: InstallAssets.bat
+	Linux: ./InstallAssets.sh (chmod 755 may be necessary)
+
+6. Remaining in the Android directory, use the android command to update the project for Ant:
+
+	android project update -p . -t android-14
+
+7. Use Ant to create the sample app apk:
+
+	ant debug (or ant release)
+
+8. Install the sample app apk on your connected device:
+
+	ant installd (or ant install)
+
+9. Run the app on your device.
+
+
+===============================
+QUICK INSTALL Windows
+===============================
+
+1. Open a command prompt.
+2. In the command prompt, navigate to the OpenGLES 3.0 sample root directory (SDK/Development/Samples/OpenGLES30).
+3. Run the install_android batch file:
+
+        'install_android <SampleName>'
+
+4. The sample will be built and installed on your device.
+
+===============================
+QUICK INSTALL Linux
+===============================
+
+1. Open a command prompt.
+2. In the command prompt, navigate to the OpenGLES 3.0 sample root directory (SDK/Development/Samples/OpenGLES30).
+3. Run the install_android shell script file:
+
+        './install_android.sh <SampleName>'
+
+4. The sample will be built and installed on your device.
+
+===============================
+QUICK BUILD Windows
+===============================
+
+1. Open a command prompt.
+2. In the command prompt, navigate to the OpenGLES 3.0 sample root directory (SDK/Development/Samples/OpenGLES30).
+3. Run the install_android batch file:
+
+        'build_android <SampleName>'
+
+4. The sample will be built and installed on your device.
+
+NOTE: 'install' option also allows flexibility for install if desired, e.g.: 'build_android <SampleName> install'
+
+===============================
+QUICK BUILD Linux
+===============================
+
+1. Open a command prompt.
+2. In the command prompt, navigate to the OpenGLES 3.0 sample root directory (SDK/Development/Samples/OpenGLES30).
+3. Run the build_android shell script file:
+
+        './build_android.sh <SampleName>'
+
+4. The sample will be built and installed on your device.
+
+NOTE: 'install' option also allows flexibility for install if desired, e.g.: './build_android.sh <SampleName> install'

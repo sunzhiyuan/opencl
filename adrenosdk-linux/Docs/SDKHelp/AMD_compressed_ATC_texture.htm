@@ -1,0 +1,358 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>AMD_compressed_ATC_texture</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoPlainText align=center style='text-align:center'><b><span
+style='font-size:20.0pt;font-family:"Times New Roman";color:#333399'>AMD_compressed_ATC_texture</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Name</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    AMD_compressed_ATC_texture</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Name Strings</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    GL_AMD_compressed_ATC_texture</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Contributors</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Aaftab Munshi</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Contact</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Benj Lipchak, AMD (benj.lipchak 'at' amd.com)</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>IP Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Please contact AMD regarding any intellectual
+property questions/issues </p>
+
+<p class=MsoPlainText>    associated with this extension.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Status</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Complete.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Version</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Last Modified Date: February 26, 2008</p>
+
+<p class=MsoPlainText>    Revision: 7</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Number</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    OpenGL ES Extension #40</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Dependencies</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Written based on the wording of the OpenGL ES 1.1
+specification.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Overview</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This extension enables support for ATC compressed
+texture formats.  ATC is </p>
+
+<p class=MsoPlainText>    AMD's proprietary compression algorithm for
+compressing textures for </p>
+
+<p class=MsoPlainText>    handheld devices to save on power consumption, memory
+footprint and </p>
+
+<p class=MsoPlainText>    bandwidth.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Three compression formats are introduced:</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    - A compression format for RGB textures.</p>
+
+<p class=MsoPlainText>    - A compression format for RGBA textures using
+explicit alpha encoding.</p>
+
+<p class=MsoPlainText>    - A compression format for RGBA textures using
+interpolated alpha encoding.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>New Procedures and
+Functions</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>New Tokens</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Accepted by the &lt;internalformat&gt; parameter of
+CompressedTexImage2D and</p>
+
+<p class=MsoPlainText>    CompressedTexImage3DOES.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        ATC_RGB_AMD                        0x8C92</p>
+
+<p class=MsoPlainText>        ATC_RGBA_EXPLICIT_ALPHA_AMD        0x8C93</p>
+
+<p class=MsoPlainText>        ATC_RGBA_INTERPOLATED_ALPHA_AMD    0x87EE</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Additions to Chapter 2 of
+the OpenGL 1.3 Specification (OpenGL Operation)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    None.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Additions to Chapter 3 of
+the OpenGL 1.3 Specification (Rasterization)</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add to Table 3.17:  Specific Compressed Internal
+Formats</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>        Compressed Internal Format         Base Internal
+Format</p>
+
+<p class=MsoPlainText>        ===============================   
+====================</p>
+
+<p class=MsoPlainText>        ATC_RGB_AMD                        RGB</p>
+
+<p class=MsoPlainText>        ATC_RGBA_EXPLICIT_ALPHA_AMD        RGBA</p>
+
+<p class=MsoPlainText>        ATC_RGBA_INTERPOLATED_ALPHA_AMD    RGBA</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    Add to Section 3.8.3, Alternate Image Specification</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The details of these formats is not disclosed, so
+refer to AMD's </p>
+
+<p class=MsoPlainText>    Compressonator tool in order to encode your textures
+offline:</p>
+
+<p class=MsoPlainText>    http://ati.amd.com/developer/compressonator.html</p>
+
+<p class=MsoPlainText>    </p>
+
+<p class=MsoPlainText>    OpenGL ES requires that all mip-levels have to be
+specified when</p>
+
+<p class=MsoPlainText>    CompressedTexImage2D is called to load a palettized
+texture.  In this case </p>
+
+<p class=MsoPlainText>    the &quot;level&quot; value is either 0 or a negative
+number to indicate the number of</p>
+
+<p class=MsoPlainText>    mip-levels.  This rule is not followed when loading
+an ATC texture.  The </p>
+
+<p class=MsoPlainText>    &quot;level&quot; number in this case represents the
+actual mip-level number,</p>
+
+<p class=MsoPlainText>    so a negative number will raise an error.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ATC_RGB_AMD Format</p>
+
+<p class=MsoPlainText>    ==================</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This format compresses blocks of source texels down
+to 4 bits per texel.</p>
+
+<p class=MsoPlainText>    Assuming 8-bit component source texels, this
+represents a 8:1 compression</p>
+
+<p class=MsoPlainText>    ratio.  This is the best format to use when no alpha
+channel is needed.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ATC_RGBA_EXPLICIT_ALPHA_AMD Format</p>
+
+<p class=MsoPlainText>    ==================================</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This format compresses blocks of source texels down
+to 8 bits per texel.</p>
+
+<p class=MsoPlainText>    Assuming 8-bit component source texels, this
+represents a 4:1 compression</p>
+
+<p class=MsoPlainText>    ratio.  This is generally the best format to use when
+alpha transitions are</p>
+
+<p class=MsoPlainText>    sharp.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    ATC_RGBA_INTERPOLATED_ALPHA_AMD Format</p>
+
+<p class=MsoPlainText>    ======================================</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    This format compresses blocks of source texels down
+to 8 bits per texel.</p>
+
+<p class=MsoPlainText>    Assuming 8-bit component source texels, this
+represents a 4:1 compression</p>
+
+<p class=MsoPlainText>    ratio.  This is generally the best format to use when
+alpha transitions are</p>
+
+<p class=MsoPlainText>    gradient.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Errors</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    INVALID_OPERATION is generated by TexImage2D,
+TexSubImage2D, </p>
+
+<p class=MsoPlainText>    CompressedTexSubImage2D, or CopyTexSubImage2D if
+&lt;internalformat&gt; or </p>
+
+<p class=MsoPlainText>    &lt;format&gt; is ATC_RGB_AMD,
+ATC_RGBA_EXPLICIT_ALPHA_AMD, or </p>
+
+<p class=MsoPlainText>    ATC_RGBA_INTERPOLATED_ALPHA_AMD.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>New State</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    The queries for NUM_COMPRESSED_TEXTURE_FORMATS and </p>
+
+<p class=MsoPlainText>    COMPRESSED_TEXTURE_FORMATS include ATC_RGB_AMD,
+ATC_RGBA_EXPLICIT_ALPHA_AMD,</p>
+
+<p class=MsoPlainText>    and ATC_RGBA_INTERPOLATED_ALPHA_AMD.</p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText><b><span style='color:#333399'>Revision History</span></b></p>
+
+<p class=MsoPlainText>&nbsp;</p>
+
+<p class=MsoPlainText>    02/26/2008    Benj Lipchak     Throw
+INVALID_OPERATION on subimage updates.</p>
+
+<p class=MsoPlainText>    10/24/2007    Benj Lipchak     Add interpolated alpha
+RGBA format.</p>
+
+<p class=MsoPlainText>    09/24/2007    Jon Leech        Assign extension
+number.</p>
+
+<p class=MsoPlainText>    09/05/2007    Benj Lipchak     Cosmetic changes.</p>
+
+<p class=MsoPlainText>    08/01/2007    Benj Lipchak     Publication readiness.</p>
+
+<p class=MsoPlainText>    07/07/2005    Aaftab Munshi    Fixed typos.</p>
+
+<p class=MsoPlainText>    09/15/2004    Aaftab Munshi    Created the document.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:id="@+id/maxWGLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Max Local Workgroup Size"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <SeekBar
+            android:id="@+id/maxWGBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100" />
+
+        <TextView
+            android:id="@+id/whRatioLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2D Local Workgroup Size W:H ratio"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <SeekBar
+            android:id="@+id/whRatioBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="99"
+            android:progress="50" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/gpuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onGPUButtonClick"
+        android:text="GPU" />
+
+    <Button
+        android:id="@+id/cpuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gpuButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="onCPUButtonClick"
+        android:text="CPU" />
+
+    <CheckBox
+        android:id="@+id/runTestsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpuButton"
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+        android:text="Run Tests" />
+
+    <Button
+        android:id="@+id/cpugpuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gpuButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="onCPUGPUButtonClick"
+        android:text="GPU + CPU" />
+
+    <CheckBox
+        android:id="@+id/useLocalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/runTestsCheckBox"
+        android:layout_below="@+id/runTestsCheckBox"
+        android:checked="true"
+        android:text="Use Local Memory" />
+
+</RelativeLayout>

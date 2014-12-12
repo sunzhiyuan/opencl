@@ -1,0 +1,104 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=..\..\SDKHelp.chm
+Contents file=SDKHelpTOC.hhc
+Default Window=SDKHelp
+Default topic=IntroductionToAdrenoSDK.htm
+Display compile progress=No
+Full text search stop list file=stoplist.stp
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x409 English (United States)
+Title=SDKHelp
+
+[WINDOWS]
+SDKHelp=,"SDKHelpTOC.hhc",,"IntroductionToAdrenoSDK.htm",,,,,,0x43520,,0x3006,[409,113,1309,913],,,,,,,0
+
+
+[FILES]
+GettingStarted.htm
+ToolsAndUtilities.htm
+SDKBrowser.htm
+TutorialsAndSamples.htm
+AboutTutorialsAndSamples.htm
+Tutorials.htm
+Samples.htm
+TechnicalArticles.htm
+..\3DOptimizations.htm
+..\AboutDemos.htm
+..\Acknowledgements.htm
+..\BinaryShaderCompilation.htm
+..\Bloom.htm
+..\Demos.htm
+..\Emulator.htm
+..\FontMaker.htm
+..\Framework.htm
+..\FreeImageLicense.htm
+..\ImageEffects.htm
+..\Lighting.htm
+..\MeshConverter.htm
+..\MeshFileFormat.htm
+..\MotionBlur.htm
+..\NPR.htm
+..\OpenGLES2.0.htm
+..\PointSprites.htm
+..\ProceduralTexture.htm
+..\Reference.htm
+..\Reflections.htm
+..\RenderingIn16Bit.htm
+..\ResourcePacker.htm
+..\ShaderPreprocessor.htm
+..\ShadowMap.htm
+..\ShadowVolume.htm
+..\TinyXMLlicense.htm
+..\TuffyLicense.htm
+..\SDK_HelpBanner_v4B.png
+SystemRequirements.htm
+CreatingAnApplication.htm
+KnownIssues.htm
+..\MigratingOpenGLES1.xTo2.0.htm
+..\MigratingOpenGL2.0ToOpenGLES2.0.htm
+..\ExtensionSpecs.htm
+..\ESControl.htm
+..\SDKStyleSheet.css
+..\DepthOfField.htm
+..\NormalMapping.htm
+..\ProjectiveShadows.htm
+..\OpenGLES2.0Samples.htm
+..\RobotDemo.htm
+..\OES_compressed_ETC1_RGB8_texture.htm
+..\OES_texture_npot.htm
+..\OES_depth24.htm
+..\OES_depth32.htm
+..\OES_element_index_uint.htm
+..\OES_fragment_precision_high.htm
+..\OES_rgb8_rgba8.htm
+..\OES_texture_3D.htm
+..\OES_texture_float.htm
+..\OES_texture_float_linear.htm
+..\OES_texture_half_float_linear.htm
+..\OES_vertex_half_float.htm
+..\Footer.htm
+..\CubeMapGen.htm
+..\NormalMapper.htm
+..\AMD_compressed_ATC_texture.htm
+..\AMD_compressed_3DC_texture.htm
+..\Texcompress.htm
+..\TextureConverter.htm
+..\Adreno200FAQ.htm
+..\AdrenoSDK_License.htm
+..\Qstrip.htm
+..\OES_get_program_binary.htm
+..\AMD_program_binary_Z400.htm
+..\TextureCompression.htm
+..\BestPractices.htm
+..\SkinnedMesh.htm
+..\DisintegrateDemo.htm
+..\ShaderDemo.htm
+AdrenoSDK.htm
+IntroductionToAdrenoSDK.htm
+..\SquishLicense.htm
+
+[INFOTYPES]
+

@@ -1,0 +1,1097 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0a0bb53b-cfc7-4206-9dc7-ef67a113fe1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{3f18abb3-873b-41a5-9688-d17e7314c47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c7bb02e3-8e85-4e02-b97b-d9782c762c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{9484ac2a-380a-4790-bc79-63e0a8741109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{39080d90-6839-4e43-817e-0b4f05a4df74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders">
+      <UniqueIdentifier>{797dd187-8aef-4d3f-be4e-40c1cc0c3581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Fonts">
+      <UniqueIdentifier>{f987bd5e-d91c-49b8-bacc-acb89b6f1d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures">
+      <UniqueIdentifier>{4022ecec-9429-406d-ab61-7c4f9f1cec9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{9c94bfa2-8f6d-4af9-818d-aef2b16f5aa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files">
+      <UniqueIdentifier>{ab2a3254-c6c9-4c2e-939e-14074aa1f0bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files">
+      <UniqueIdentifier>{5a8d93d4-76fd-40b2-aa58-bdcc171c0326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Win32">
+      <UniqueIdentifier>{d2b0c658-53e1-453d-94c9-f9188e31c4c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header Files\OpenGLES">
+      <UniqueIdentifier>{7b517bcb-a423-4757-b8e8-514a65f14c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Source Files\OpenGLES">
+      <UniqueIdentifier>{b7a0cf95-761a-47b9-ab46-57f6c5e6ae16}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene01.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene02.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene03.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene04.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene05.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene06.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene07.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene08.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene09.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene10.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene11.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene12.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene13.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene14.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene14b.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene15.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene16.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene17.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene18.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene19.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene20.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene21.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene22.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene23.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene24.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene25.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene26.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene27.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene28.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene29.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene30.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene31.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene32.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene33.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene34.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene35.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene36.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene37.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene38.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene39.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene40.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene41.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene42.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene43.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene44.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene45.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene46.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene47.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene48.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene49.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\scenes\Scene50.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmFile_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmNoise_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmStdlib_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmUtils_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.cpp">
+      <Filter>Framework\Source Files\OpenGLES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmApplication.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmFont.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmInput.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmPackedResource.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUserInterface.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\FrmUtils.cpp">
+      <Filter>Framework\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Samples\Framework\Win32\FrmApplication_Platform.cpp">
+      <Filter>Framework\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene01.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene02.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene03.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene04.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene05.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene06.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene07.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene08.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene09.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene10.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene11.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene12.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene13.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene14.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene14b.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene15.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene16.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene17.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene18.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene19.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene20.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene21.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene22.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene23.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene24.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene25.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene26.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene27.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene28.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene29.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene30.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene31.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene32.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene33.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene34.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene35.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene36.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene37.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene38.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene39.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene40.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene41.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene42.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene43.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene44.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene45.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene46.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene47.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene48.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene49.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\scenes\Scene50.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmFontGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmMesh.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmPackedResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmResourceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmShader.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUserInterfaceGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\OpenGLES\FrmUtilsGLES.h">
+      <Filter>Framework\Header Files\OpenGLES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmApplication.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFile.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmFont.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmInput.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmMath.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmNoise.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmPackedResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmResource.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmStdLib.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUserInterface.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\FrmUtils.h">
+      <Filter>Framework\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Samples\Framework\Win32\FrmPlatform.h">
+      <Filter>Framework\Win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Fonts\Tuffy12.xml">
+      <Filter>Assets\Fonts</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Fonts\Tuffy16.xml">
+      <Filter>Assets\Fonts</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\01_Ambient.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\02_Diffuse.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\03_Specular.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\04_SpecularAniso.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\05_Blinn-Phong.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\06_IllumMap.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\07_CubeMapLighting.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\08_ParallaxMapping.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\09_CookTorrance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\10_BlinnPhongShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\10_OrenNayarShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\11_Ward.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\12_Ashikhmin.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\13_StraussShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_NormalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14_ToonShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\14b_ToonShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_HatchShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_HatchShaderB.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\15_NormalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\16_SkinShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\17_ClothShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\18_LeatherShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\19_MetalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\20_BlinnPhongShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\20_WoodShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\21_BlinnPhongShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\21_PlasticShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\22_EyeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\23_MarbleShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\23_PerlinNoise.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\24_FurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\25_FishShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\26_ElephantShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\27_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\28_MotionBlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\29_DepthFogShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\29_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\30_HeightFogShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\30_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_CutoutShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_RayExtruderShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\31_SpriteShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_BackdropShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_GlassShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\32_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\33_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_AdaptLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_AverageLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_BrightPass.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_CopyRT.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_GenerateLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\34_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_AdaptLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_AverageLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_BrightPass.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_CopyRT.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_GenerateLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\35_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_AdaptLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_AverageLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_BrightPass.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_CopyRT.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_GenerateLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\36_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\37_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\38_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_AdaptLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_AverageLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_BrightPass.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_CopyRT.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_GenerateLuminance.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_LightStreakShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\39_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\40_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\41_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_DownsizeShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\42_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\43_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\43_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_AOShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_NormalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\44_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_BlurShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_BounceShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_NormalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\45_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\46_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\47_EnvShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_CombineShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_LightShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_NormalShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\48_PreviewShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\49_MaterialShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_CIE.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_HSV.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_L16Luv.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_PassThroughShader.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_RGB.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\50_RGBE.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\CommonFS.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Shaders\CommonVS.glsl">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\04_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\06_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\07_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\08_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\09_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\10_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\11_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\13_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\14_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\14b_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\15_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\16_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\17_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\18_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\19_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\20_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\21_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\22_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\23_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\24_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\25_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\26_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\27_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\28_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\29_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\30_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\31_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\32_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\33_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\34_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\35_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\36_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\37_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\38_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\39_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\40_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\41_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\42_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\43_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\44_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\45_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\46_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\47_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\48_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\49_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\50_Textures.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\Textures\Pak\Logo.xml">
+      <Filter>Assets\Textures</Filter>
+    </None>
+    <None Include="..\..\..\..\Assets\Demos\AdrenoShaders\CurrentScene.txt">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\..\..\Samples\Framework\Win32\Adreno.ico">
+      <Filter>Framework\Win32</Filter>
+    </None>
+    <None Include="..\..\..\..\Samples\Framework\Win32\FrmMath_Platform.inl">
+      <Filter>Framework\Win32</Filter>
+    </None>
+  </ItemGroup>
+</Project>

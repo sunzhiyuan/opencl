@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Cel-Shading"
+    SrcFileName = "../celshading.bmp"
+    DstFormat   = "ATC" 
+    WrapMode    = "CLAMP_TO_EDGE"
+/>
+
+<Texture 
+    ResourceID  = "RayGun"
+    SrcFileName = "../RayGun.tga"
+    DstFormat   = "ATC" 
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+
+<Texture
+    ResourceID  = "WoodGrain1"
+    SrcFileName = "..\WoodGrain1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "WoodGrain2"
+    SrcFileName = "..\WoodGrain2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "WoodGrain3"
+    SrcFileName = "..\WoodGrain3.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "WoodBump1"
+    SrcFileName = "..\WoodBump1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "WoodBump2"
+    SrcFileName = "..\WoodBump2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "WoodBump3"
+    SrcFileName = "..\WoodBump3.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "TRUE"
+/>

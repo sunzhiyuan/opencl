@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Migrating from OpenGL ES 1.x to OpenGL ES 2.0</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Migrating from OpenGL ES 1.x to OpenGL ES 2.0</H1>
+The purpose of this document is to assist in the migration of OpenGL ES 1.x content to OpenGL ES 2.0. It will cover new features in 2.0, as well as going over parts of the API that have been changed or removed entirely. It is assumed that the reader is familiar with OpenGL.
+<p>
+In order to avoid confusion between OpenGL and OpenGL ES, OpenGL will be referred to desktop OpenGL, and the ES suffix will always be used when referring to the embedded version.
+
+<H1>OpenGL ES 2.0 Programmability</H1>
+The most significant change added in OpenGL 2.0 is programmability and shaders. Whereas OpenGL ES 1.x uses a fixed function pipeline, where graphics operations are well defined with only limited controls available to the programmer, OpenGL ES 2.0 makes two stages of the pipeline programmable. At these two stages, namely during vertex processing and fragment processing, the programmer is allowed to completely control what happens. This is done through small programs called <i>shaders</i>. A very good illustration of these two pipelines can be seen at : <a href="http://www.khronos.org/opengles/2_X/">http://www.khronos.org/opengles/2_X/</a>.
+<p>
+A shader is executed once for each vertex and fragment that is processed. Each type of shader has a well defined set of inputs and outputs that are required in order for the shader to work correctly with the rest of the graphics pipeline.
+<p>
+Shaders enable you to use a much broader range of effects than are possible with a fixed-function pipeline. This includes such things as using alternative lighting models, storing non-color data in textures, and performing operations on the GPU that are normally done on the CPU.
+
+<H2><i>The Vertex Shader</i></H2>
+The vertex shader replaces the following operations previously performed by the fixed function pipeline:
+<UL>
+<LI>The application of the modelview, projection, and texture matrix</LI>
+<LI>Normal transformation, rescale, and normalization</LI>
+<LI>Texture coordinate generation</LI>
+<LI>Per-vertex lighting</LI>
+<LI>Point size distance attenuation</LI>
+</UL>
+If you require any of this functionality, you will have to handle it yourself in the vertex shader.
+
+<H2><i>The Fragment Shader</i></H2>
+Similarly, the fragment shader replaces the following operations:
+<UL>
+<LI>Texture application (including texture environment)</LI>
+<LI>Fog</LI>
+<LI>Color sum</LI>
+</UL>
+
+<H2><i>Shader I/O</i></H2>
+As mentioned previously, both vertex and fragment shaders have a predefined set of inputs and outputs. This allows the shaders to work seamlessly with the rest of the pipeline. These inputs and outputs are illustrated in Figure 2.
+<p>
+<IMG src =ShaderIO.bmp >
+<p>
+
+<H1>Changes to OpenGL ES 2.0 API</H1>
+
+In order to support shaders, additions have been made to the OpenGL ES 2.0 API. However, unlike desktop OpenGL 2.0, which supports both the fixed function and programmable pipelines, OpenGL ES 2.0 has removed support for the fixed function pipeline. This was done in order to make the API more lightweight as well as to avoid redundancy, since the programmable pipeline is smaller that the fixed function pipeline while being capable of performing all of the same tasks.
+<p>
+While these changes don't have as great an impact when developing new content for OpenGL ES 2.0, they're important to understand when porting OpenGL 1.x or desktop OpenGL games, since many of the APIs that you are using have been removed.
+<p>
+The following sections will cover the details of which APIs have been added, changed, and removed for each stage of the pipeline.
+
+<H2><i>Vertex Specification</i></H2>
+All of the attribute specific APIs, such as glColorPointer(), glVertexPointer(), etc., have been removed. They have been replaced with generic APIs such as glVertexAttrib() and glVertexAttribPointer(). Using these APIs, you establish various vertex attribute streams, which are then mapped to their specific use in the vertex shader.
+
+<H2><i>Transformation and Matrix Manipulation</i></H2>
+Almost all of the APIs for specifying transformations and working with matrices have been removed. This includes APIs such as glTranslate(), glRotate(), glLoadMatrix(), glFrustum(), etc. Instead, the application is expected to handle these things, either on the CPU, or in the vertex shader.
+<p>
+The ability to set the viewport and control depth range is still supported.
+
+<H2><i>Materials, Lighting, and Shading</i></H2>
+The OpenGL fixed function lighting and shading model has been completely removed from OpenGL ES 2.0. Games are free to use their own lighting model using the vertex and fragment shader.
+
+<H2><i>Texturing</i></H2>
+Most of the functionality related to texturing has been retained, since much of texturing happens outside of the fragment shader. 2D textures and cubemaps are supported, and 3D textures and depth textures may be supported as extensions. The way in which a texture is applied to a fragment using the texture environment, however, must be handled in the fragment shader.
+
+<H2><i>Fragment Operations</i></H2>
+Fragment operations such as scissoring, stencil test, depth test, dithering, blending, and sample coverage all happen outside of the fragment shader, so the APIs for controlling them are still supported.
+<p>
+Fog can be implemented in the fragment shader, so glFog() and related APIs have been removed.
+<p>
+The APIs for alpha test have also been removed, since the fragment shader can implement this functionality in a much more flexible way.
+
+<H2><i>Everything Else</i></H2>
+Although most APIs related to vertex and fragment operations have been removed from OpenGL ES 2.0, most of the rest of the API remains unchanged. Important features added in 1.1+, such as framebuffer objects, point sprites, and vertex buffer objects are still supported.
+
+<H2><i>Shaders</i></H2>
+Naturally, in order to support shaders, a number of APIs have been added. These include APIs for:
+<UL>
+<LI>Compiling shader programs and storing them in shader objects</LI>
+<LI>Attaching shader objects to program objects, which can then be linked and activated as part of the rendering pipeline</LI>
+<LI>Passing attributes and uniform values to the current program</LI>
+</UL>
+
+<H1>Further Reading</H1>
+For more information about OpenGL ES 2.0 and the changes from previous versions, see the specification documents at the Khronos website (<a href="http://www.khronos.org">http://www.khronos.org</a>)
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

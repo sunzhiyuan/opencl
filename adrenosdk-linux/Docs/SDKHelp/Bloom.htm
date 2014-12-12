@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Bloom</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Bloom</H1>
+
+This sample demonstrates how to create a bloom effect.  Bloom effects are great ways to make scenes appear to be brighter than they are.
+<p>
+<IMG src =Bloom.bmp >
+
+<H1>Details</H1>
+This effect is achieved through the use of several off-screen passes.  The first pass consists of the scene that we want to apply the bloom effect to.  The second pass consists of the same scene with all of the objects rendered with a black constant shader.  Next, we take this pass and apply a Gaussian blur to it.  Finally, we add the results of this pass to our first pass which results in the background color bleeding into our objects.
+<p>
+There are a few additional tricks that can be applied to modify the appearance of the bloom effect as well as improve performance.  The first trick is to down sample the FBO that is used for the second pass.  This tends to increase the impact of the Gaussian blur while at the same time improving performance.  Another trick that can be applied is to deform the surface of your objects that are rendered in the second pass along their normals.  This enables us to sink the contours of the objects in a little bit which in turn increases the size of the bloom effect.
+<p>
+<IMG src =Bloom2.bmp >
+<p>
+From left to right we have the first pass which consists of the scene without the bloom effect applied, then we have the second pass that consists of the scene rendered in black deformed inwards along the surface normals, followed by the same pass which has been down-sampled with a Gaussian blur applied, and finally we have the two passes added together. 
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Toggle bloom effect</TD></TR>
+<TR><TD><B>2</B></TD><TD>Decrease bloom FBO size</TD></TR>
+<TR><TD><B>3</B></TD><TD>Increase bloom FBO size</TD></TR>
+<TR><TD><B>4</B></TD><TD>Decrease normal deformation</TD></TR>
+<TR><TD><B>5</B></TD><TD>Increase normal deformation</TD></TR>
+<TR><TD><B>6</B></TD><TD>Decrease Gaussian blur step size</TD></TR>
+<TR><TD><B>7</B></TD><TD>Increase Gaussian blur step size</TD></TR>
+<TR><TD><B>8</B></TD><TD>Toggle rotation</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Ambient"
+    SrcFileName = "../TextureSynthesis/ambient.jpg"
+    DstFormat   = "LUMINANCE"
+/>
+
+<Texture
+    ResourceID  = "Displacement"
+    SrcFileName = "../TextureSynthesis/displace16.jpg"
+    DstFormat   = "LUMINANCE"
+    WrapMode	= "MIRRORED_REPEAT"
+/>
+
+<Texture
+    ResourceID  = "Noise"
+    SrcFileName = "../TextureSynthesis/noise16.jpg"
+    DstFormat   = "LUMINANCE"
+    WrapMode	= "MIRRORED_REPEAT"
+/>
+
+<Texture
+    ResourceID  = "Shadow"
+    SrcFileName = "../TextureSynthesis/shadow.jpg"
+    DstFormat   = "LUMINANCE"
+/>

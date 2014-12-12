@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction to Adreno SDK">
+		<param name="Local" value="IntroductionToAdrenoSDK.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Acknowledgements">
+			<param name="Local" value="..\Acknowledgements.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="GettingStarted.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="System Requirements">
+			<param name="Local" value="SystemRequirements.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Creating an Application">
+			<param name="Local" value="CreatingAnApplication.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Known Issues">
+			<param name="Local" value="KnownIssues.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Adreno SDK">
+		<param name="Local" value="AdrenoSDK.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tools and Utilities">
+			<param name="Local" value="ToolsAndUtilities.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDK Browser">
+				<param name="Local" value="SDKBrowser.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OpenGL ES Emulators">
+				<param name="Local" value="..\Emulator.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ES_Control">
+				<param name="Local" value="..\ESControl.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TextureCompressionSuite">
+				<param name="Local" value="..\TexCompToolSuite.htm">
+			</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FBXModelConverter">
+				<param name="Local" value="..\FBXModelConverter.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Texcompress">
+				<param name="Local" value="..\Texcompress.htm">
+			</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PC2Android">
+				<param name="Local" value="..\PC2Android.htm">
+			</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Binary Shader Compilation">
+				<param name="Local" value="..\BinaryShaderCompilation.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Qstrip">
+				<param name="Local" value="..\Qstrip.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FontMaker">
+				<param name="Local" value="..\FontMaker.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="MeshConverter">
+				<param name="Local" value="..\MeshConverter.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ResourcePacker">
+				<param name="Local" value="..\ResourcePacker.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ShaderPreprocessor">
+				<param name="Local" value="..\ShaderPreprocessor.htm">
+				</OBJECT>			
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tutorials and Samples">
+			<param name="Local" value="TutorialsAndSamples.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="About Tutorials and Samples">
+				<param name="Local" value="AboutTutorialsAndSamples.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Tutorials">
+				<param name="Local" value="Tutorials.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Framework">
+				<param name="Local" value="..\Framework.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Samples">
+				<param name="Local" value="Samples.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="OpenGL ES 2.0 ">
+					<param name="Local" value="..\OpenGLES2.0Samples.htm">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Bloom">
+						<param name="Local" value="..\Bloom.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DepthOfField">
+						<param name="Local" value="..\DepthOfField.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ImageEffects">
+						<param name="Local" value="..\ImageEffects.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Lighting">
+						<param name="Local" value="..\Lighting.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="MotionBlur">
+						<param name="Local" value="..\MotionBlur.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="NormalMapping">
+						<param name="Local" value="..\NormalMapping.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="NPR">
+						<param name="Local" value="..\NPR.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ParallaxMapping">
+						<param name="Local" value="..\Parallaxmapping.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="PointSprites">
+						<param name="Local" value="..\PointSprites.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ProceduralTexture">
+						<param name="Local" value="..\ProceduralTexture.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ProjectiveShadows">
+						<param name="Local" value="..\ProjectiveShadows.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Reflections">
+						<param name="Local" value="..\Reflections.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ShadowMap">
+						<param name="Local" value="..\ShadowMap.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ShadowVolume">
+						<param name="Local" value="..\ShadowVolume.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ShallowWater">
+						<param name="Local" value="..\SWE.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="SkinnedMesh">
+						<param name="Local" value="..\SkinnedMesh.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="SkinnedMesh2">
+						<param name="Local" value="..\SkinnedMesh2.htm">
+						</OBJECT>
+
+				</UL>
+
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="OpenGL ES 3.0 ">
+					<param name="Local" value="..\OpenGLES3.0Samples.htm">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="CascadedShadowMaps">
+						<param name="Local" value="..\CascadedShadowMapsES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="CompressedGeometry">
+						<param name="Local" value="..\CompressedGeometryES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="DepthOfField">
+						<param name="Local" value="..\DepthOfFieldES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="HDRTexture">
+						<param name="Local" value="..\HDRTextureES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="NPR">
+						<param name="Local" value="..\NPRES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="PointSprites">
+						<param name="Local" value="..\ParticleSystemES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="PhysicallyBasedLighting">
+						<param name="Local" value="..\PhysicallyBasedLightingES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ShadowMap">
+						<param name="Local" value="..\ShadowMapES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="SkyDome">
+						<param name="Local" value="..\SkyDomeES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="TextureSynthesis">
+						<param name="Local" value="..\TextureSynthesisES3.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="ToneMapping">
+						<param name="Local" value="..\ToneMappingES3.htm">
+						</OBJECT>
+
+				</UL>
+
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="OpenSLES">
+					<param name="Local" value="..\OpenSLES.htm">
+					</OBJECT>
+				<UL>					
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="SampleCode">
+						<param name="Local" value="..\OpenSLESSampleCode.htm">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Advanced Input">
+					<param name="Local" value="..\AdvancedInput.htm">
+					</OBJECT>
+				<UL>					
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Accel">
+						<param name="Local" value="..\Accelerometer.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Gyro">
+						<param name="Local" value="..\Gyroscope.htm">
+						</OBJECT>
+				</UL>
+
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Demos">
+			<param name="Local" value="..\Demos.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="About Demos">
+				<param name="Local" value="..\AboutDemos.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Robot Demo">
+				<param name="Local" value="..\RobotDemo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Disintegrate Demo">
+				<param name="Local" value="..\DisintegrateDemo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Shader Demo">
+				<param name="Local" value="..\ShaderDemo.htm">
+				</OBJECT>
+
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reference">
+			<param name="Local" value="..\Reference.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Mesh File Format">
+				<param name="Local" value="..\MeshFileFormat.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="OpenGL ES 2.0">
+		<param name="Local" value="..\OpenGLES2.0.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Extension Specs">
+			<param name="Local" value="..\ExtensionSpecs.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_compressed_ETC1_RGB8_texture">
+				<param name="Local" value="..\OES_compressed_ETC1_RGB8_texture.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_depth24">
+				<param name="Local" value="..\OES_depth24.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_depth32">
+				<param name="Local" value="..\OES_depth32.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_element_index_unit">
+				<param name="Local" value="..\OES_element_index_uint.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_fragment_precision_high">
+				<param name="Local" value="..\OES_fragment_precision_high.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_get_program_binary">
+				<param name="Local" value="..\OES_get_program_binary.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_rgb8_rgba8">
+				<param name="Local" value="..\OES_rgb8_rgba8.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_texture_3D">
+				<param name="Local" value="..\OES_texture_3D.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_texture_float">
+				<param name="Local" value="..\OES_texture_float.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_texture_npot">
+				<param name="Local" value="..\OES_texture_npot.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_texture_float_linear">
+				<param name="Local" value="..\OES_texture_float_linear.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_texture_half_float_linear">
+				<param name="Local" value="..\OES_texture_half_float_linear.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OES_vertex_half_float">
+				<param name="Local" value="..\OES_vertex_half_float.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="AMD_compressed_3DC_texture">
+				<param name="Local" value="..\AMD_compressed_3DC_texture.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="AMD_compressed_ATC_texture">
+				<param name="Local" value="..\AMD_compressed_ATC_texture.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="AMD_program_binary_Z400">
+				<param name="Local" value="..\AMD_program_binary_Z400.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Migrating OpenGL ES 1.x to 2.0">
+			<param name="Local" value="..\MigratingOpenGLES1.xTo2.0.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Migrating OpenGL 2.0 To OpenGL ES 2.0">
+			<param name="Local" value="..\MigratingOpenGL2.0ToOpenGLES2.0.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Technical Articles">
+		<param name="Local" value="TechnicalArticles.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Best Practices">
+			<param name="Local" value="..\BestPractices.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Texture Compression">
+			<param name="Local" value="..\TextureCompression.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Adreno 200 FAQ">
+			<param name="Local" value="..\Adreno200FAQ.htm">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

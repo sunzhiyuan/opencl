@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID = "Banner_D"
+    SrcFileName   = "../Banner_D.tga"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Banner_N"
+    SrcFileName   = "../Banner_N.tga"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC" 
+/>

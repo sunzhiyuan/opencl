@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "CookTorrance"
+    SrcFileName = "..\CT.tga"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Metal1"
+    SrcFileName = "..\Metal1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "Metal2"
+    SrcFileName = "..\Metal2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "MetalBump1"
+    SrcFileName = "..\MetalBump1.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "MetalBump2"
+    SrcFileName = "..\MetalBump2.tga"
+    WrapMode    = "GL_REPEAT"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>

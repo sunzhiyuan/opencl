@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>ImageEffects</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>ImageEffects</H1>
+This sample demonstrates how to achieve various post-processing effects.
+<P>
+<IMG src =ImageEffects.bmp >
+
+<H1>Details</H1>
+This sample demonstrates that OpenGL ES 2.0 can be used to achieve a variety of 2D effects that can be used for both gaming and non-gaming purposes alike.
+<P>
+<TABLE>
+<TR><TD><B>Blur</B></TD><TD>Blurs an image by averaging each pixel with its four diagonal neighbors.</TD></TR>
+<TR><TD><B>Emboss</B></TD><TD>Makes an image appear bumpy by subtracting the lower right three neighbors of each pixel from their upper left three neighbors.</TD></TR>
+<TR><TD><B>Lens</B></TD><TD>An image warping effect.</TD></TR>
+<TR><TD><B>Noise</B></TD><TD>Adds 2D noise to an image.</TD></TR>
+<TR><TD><B>Sepia</B></TD><TD>Tints an image to make it look like an antique photograph.  The effect is achieved by calculating the luminance at a given pixel, and using the result as a lookup into a 1D sepia texture.</TD></TR>
+<TR><TD><B>Sharpen</B></TD><TD>Sharpens the image by increasing local contrast. This is done by adding the difference of each pixel and its four diagonal neighbors to each pixel.</TD></TR>
+<TR><TD><B>Sobel</B></TD><TD>Detects edges in an image by computing the first order derivate of the image.</TD></TR>
+<TR><TD><B>Static</B></TD><TD>Adds TV-like static to an image through the use of a 3D texture map of random values.</TD></TR>
+<TR><TD><B>Warp</B></TD><TD>Warps the center of an image with turbulence through the use of a 3D turbulent texture map.</TD></TR>
+</TABLE>
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Previous Effect</TD></TR>
+<TR><TD><B>2</B></TD><TD>Next Effect</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

@@ -1,0 +1,2 @@
+1. glBlitFramebuffer
+2. glRenderbufferStorageMultisample

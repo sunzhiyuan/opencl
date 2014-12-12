@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "HDRTexture1"
+    SrcFileName = "../HDRTexture1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "HDRTexture2"
+    SrcFileName = "../HDRTexture2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+    GenMipMaps  = "FALSE"
+/>
+
+<Texture
+    ResourceID  = "Logo"
+    SrcFileName = "../Logo.tga"
+    DstFormat   = "ATC"
+/>
+

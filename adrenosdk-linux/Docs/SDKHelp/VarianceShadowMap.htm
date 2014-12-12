@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>VarianceShadowMap</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>VarianceShadowMap</H1>
+This sample demonstrates how to create projective shadows.
+<p>
+<IMG src =VarianceShadowMap.bmp >
+
+<H1>Details</H1>
+Variance shadow mapping is an extension upon traditional shadow mapping that attempts to add support for soft-shadowing.  The basic idea is that instead of having a shadow map of depth values, we also store depth-squared values.  We then apply a filter to this texture map, in this samples case a Gaussian blur so that the resulting texture stores average depth values hereby known as E(x) and average depth-squared values hereby known as E(x<sup>2</sup>).  We can then use Chebychev's Inequality shown below to estimate the probability that a fragment with depth t will be in shadow.
+<p>
+<IMG src =VarianceShadowMap2.bmp>
+<p>
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Move the shadow to the left (light to the right)</TD></TR><TR><TD><B>2</B></TD><TD>Move the shadow to the right (light to the left)</TD></TR><TR><TD><B>3</B></TD><TD>Change to a previous mesh</TD></TR>
+<TR><TD><B>4</B></TD><TD>Change to the next mesh</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

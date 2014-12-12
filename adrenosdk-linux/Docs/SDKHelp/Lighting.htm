@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Lighting</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Lighting</H1>
+This sample demonstrates how to compute lighting on both a per-vertex and a per-fragment basis.
+<P>
+<IMG src=Lighting.bmp>
+
+<H1>Details</H1>
+Lighting is one of the key components that makes up a 3D application.  This application makes use of the Blinn-Phong lighting model which breaks lighting up into the sum of three components: ambient, diffuse, and specular lighting.
+<P>
+<B>Ambient light </B>can be thought of as the light that is constantly bouncing around a room which contributes equally to all of the objects in the scene.  Ambient lighting is simply represented as some constant amount of light that is added to all objects in the scene.
+<P>
+<B>Diffuse lighting </B>has to do with the fact that surfaces are typically not perfectly smooth and as a result tend to reflect light evenly in all directions.  Diffuse lighting is calculated by looking at the angle between the light source and the normal vector at the point being shaded.
+<P>
+Finally <B>specular lighting </B>has to do with the fact that some surfaces are smooth, and smooth surfaces such as marbles tend to perfectly reflect light.  In the Phong lighting model which we are not using, the contribution of specular lighting is calculated by looking at the angle between the viewer and the reflection vector to some shininess exponent.  The Blinn-Phong model approximates this result for performance reasons by looking at the angle between the normal vector and the vector halfway in between the light vector and the reflection vector also to some shininess exponent.
+<P>
+So, the Blinn-Phong model can be written as: A + (N • L) + (N • H)<sup>s</sup>
+<P>
+Essentially all this sample does is calculates this result in the vertex shader for per-vertex lighting and in the fragment shader for per-fragment lighting.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Change to the next material</TD></TR>
+<TR><TD><B>2</B></TD><TD>Toggle between per-vertex and per-fragment lighting</TD></TR>
+<TR><TD><B>3</B></TD><TD>Toggle rotation on/off</TD></TR>
+<TR><TD><IMG SRC="dpad.bmp"></TD><TD>Move the light</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

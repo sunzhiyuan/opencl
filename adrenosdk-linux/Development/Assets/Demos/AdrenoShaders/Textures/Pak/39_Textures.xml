@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Logo"
+    SrcFileName = "..\Logo.tga"
+    DstFormat   = "ATC" 
+/>
+
+
+
+<Texture
+    ResourceID = "Brick"
+    SrcFileName   = "..\Brick.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "BrickBump"
+    SrcFileName   = "..\BrickBump.tga"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2"
+    SrcFileName   = "..\Brick2.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "Brick2Bump"
+    SrcFileName   = "..\Brick2Bump.tga"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStone"
+    SrcFileName   = "..\FieldStone.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "FieldStoneBump"
+    SrcFileName   = "..\FieldStoneBump.tga"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRock"
+    SrcFileName   = "..\LayingRock.bmp"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID = "LayingRockBump"
+    SrcFileName   = "..\LayingRockBump.tga"
+    GenMipMaps  = "TRUE"
+/>

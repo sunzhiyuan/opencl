@@ -1,0 +1,158 @@
+gtk-error-bell = 0
+
+style "imagemenuitem"
+{
+	bg[PRELIGHT] = "#0000ff"
+	
+	bg[NORMAL] = "#0000ff"
+	#bg[PRELIGHT] = "#ff0000"
+	bg[SELECTED] = "#ff0000"
+	bg[ACTIVE] = "#ff0000"
+	
+	engine "" {}
+}
+
+style "Label"
+{
+	#Color when clicked.
+	fg[PRELIGHT] = "#2A2B2C"
+	fg[NORMAL] = "#000000"
+	
+	engine "" {}
+}
+
+
+#The File Menu Bar. 
+# We really only need to set the background for this. The Menu Items need
+#  their own configuration. 
+style "MenuBar"
+{
+    #The bg color when nothing is clicked. 
+	bg[NORMAL] = "#2A2B2C"
+	
+	engine "" {}
+}
+
+# Setting the Background color for the File Menu item we click
+#  when we click "File" or another options on the 'File' menu
+style "menuitem"
+{
+	bg[PRELIGHT] = "#ffffff"
+	fg[NORMAL]="#FFFFFF"
+	
+	engine "" {}
+}
+
+# For the Image Menu items. 
+style "imagemenuitem"
+{
+	bg[PRELIGHT] = "#1C91E2"
+	fg[NORMAL]="#333333"
+}
+
+#The drop down menu when we click something like "File"
+style "SubMenu"
+{
+	bg[NORMAL] = "#ffffff"
+}
+
+# The Background color for the Toolbar. 
+style "Toolbar"
+{
+	bg[NORMAL] = "#2A2B2C"
+	
+	engine "" {}
+}
+
+#This will need to be modified if we use any other EventBoxes.
+style "EventBox"
+{
+	#bg[NORMAL] = "#2A2B2C"
+}
+
+#ToolBar Buttons
+# When you hover over the toolbar button it turns PRELIGHT
+# When you click and hold is becomes ACTIVE
+style "ToolBarButtons"
+{
+	bg[PRELIGHT] = "#000000" 
+	bg[ACTIVE] = "#444444"
+}
+
+#Style for the Tooltips when you hover on an item. 
+style "tooltip"
+{
+    fg[NORMAL] = "#ffffff"
+    bg[NORMAL] = "#313232"
+}
+
+#The 'File' menu bar.
+class "GtkMenuBar" style : highest "MenuBar"
+
+#The items in the main Menu Bar
+# Example:
+# | File | Resources | Help |
+#widget_class "*<GtkMenuItem>*"  style "menuitem"
+widget_class "*GtkMenuItem*" style "menuitem"
+
+#These are the items in the drop down
+widget_class "*GtkImageMenuItem*" style "imagemenuitem"
+
+#The drop down menu when we click something like "File"
+class "GtkMenu" style "SubMenu"
+
+#This actually only holds the QC Icon in the top left
+class "GtkEventBox" style "EventBox"
+
+#The Toolbar
+widget_class "*<GtkToolbar>*" style : highest "Toolbar"
+
+#The Buttons on the Tool bar
+widget_class "*ToolButton*" style : highest "ToolBarButtons"
+
+#The ToolTips when you hover over an item. 
+widget "gtk-tooltip*" style : highest "tooltip"
+
+class "GtkLabel" style "Label"
+
+
+
+
+#class "GtkSubMenu" style "imagemenuitem"
+#class "GtkImageMenuItem" style "imagemenuitem"
+
+
+
+
+
+
+#	bg[NORMAL] = "#2A2B2C"
+#	bg[PRELIGHT] = "#ffff00"
+#	bg[SELECTED] = "#ff0000"
+#	bg[ACTIVE] = "#0000ff"
+#	bg[INSENSITIVE] = "#00ff00"
+
+
+
+#class "GtkToolItem" style "custom"
+#class "GtkToolBar" style "custom"
+
+
+#widget_class "*<GtkMenuItem>.GtkLabel" style "menuitem"
+
+
+
+#class "GtkMenu" style : highest "menuitem"
+#class "GtkMenuBar" style : highest "toolbar"
+
+#widget_class "*<GtkMenuBar>*" style : highest "toolbar"
+#widget_class "*<GtkToolbar>*" style : highest "toolbar"
+#class "GtkMenu"    style : highest "menuitem
+
+
+#widget_class "*<GtkMenu>*"      style "menuitem"
+#widget_class "*<GtkEventBox>*" style : highest "toolbar"
+
+#widget_class "*" style : highest "toolbar"
+
+#widget_class "*<GtkTextView>*" style : highest "toolbar"

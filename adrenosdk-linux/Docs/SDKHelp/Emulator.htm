@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Emulator</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>OpenGL ES Unified Emulators</H1>
+
+QUALCOMM's OpenGL ES 2.0 / 3.0 Emulator is designed to emulate functionality exposed by QUALCOMM's Adreno&trade; GPUs.  The purpose of this emulator is to aid developers in their design of OpenGL ES games and applications.  The emulator allows developers to get a head start designing their graphics code before hardware supporting OpenGL ES is available, and even after this hardware becomes available developing on a PC is often advantageous due to superior developer and debugging tools.
+<p>
+The emulator has five major features:
+<UL>
+<LI>Support of core OpenGL ES 2.0 / 3.0 functionality</LI>
+<LI>Support for many important OpenGL ES 2.0 extensions</LI>
+<LI>Support of core OpenGL ES 1.x functionality</LI>
+<LI>Support for many OpenGL ES 1.x extensions</LI>
+<LI>Support for EGL 1.3</LI>
+</UL>
+The OpenGL ES and EGL specifications are available at <a href="http://www.khronos.org/opengles">http://www.khronos.org/opengles</a>
+
+<h1>Prerequisites</h1>
+Check the following before running the emulator:
+<UL>
+<LI><B>Graphics Card - </B>Recommended hardware is ATI Radeon X1300 or higher.  ATI Radeon 9500 is the minimum required hardware.  Equivalent hardware from other vendors may work, but is not tested or supported.</LI>
+<LI><B>Drivers - </B>For AMD graphics card, download the latest Catalyst driver from AMD's web site : <a href="http://www.ati.com/">http://www.ati.com</a></LI>
+<LI><B>Development Environment - </B>To run the emulator, Visual Studio 2005 or the VS2005
+     redistribution pack from <a href="http://www.microsoft.com/downloads/details.aspx?familyid=32BC1BEE-A3F9-4C13-9C99-220B62A191EE&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?familyid=32BC1BEE-A3F9-4C13-9C99-220B62A191EE&amp;displaylang=en</a> needs to be installed.</LI>
+<LI><B>Operating System - </B>This version of the emulator runs on Windows XP or Windows Vista.</LI>
+</UL>
+
+<H1>Details</H1>
+The GLES 2.0 emulator works by running on top of the desktop OpenGL 2 driver or higher (note: 3.4 or higher is required for GLES 3.0 emulation).  Below is a diagram of the different components of the emulator, and interactions between these components.
+
+<br><br><br>
+<IMG src= Emulator.png>
+<br><br><br>
+
+<UL>
+<LI>All of the yellow highlighted sections are part of the OpenGL ES Unified Emulator</LI>
+<LI>egl.h and eglplatform.h are standard EGL header files from Khronos that allow your game to use EGL 1.3</LI>
+<LI>gl2.h and gl2ext.h are standard OpenGL ES 2.0 header files from Khronos that allow your game to use core OpenGL ES 2.0 and some standard extensions</LI>
+<LI>gl2extQCOM.h gives access to additional OpenGL ES 2.0 extensions</LI>
+<LI>Link your game against libEGL.lib and libGLESv2.lib (real hardware will have similarly named libraries to link your game against)</LI>
+<LI>libEGL.dll is the emulator for EGL 1.3 (real hardware equivalent will be the EGL driver)</LI>
+<LI>libGLESv2.dll is the emulator for OpenGL ES 2.0 (real hardware equivalent will be the OpenGL ES 2.0 driver)</LI>
+<LI>For GLES 3.0, a separate version of libEGL.dll and libGLESv3.dll is used for emulating for OpenGL ES 3.0. These are located in a sub-folder under the system directory, OGLES3, and are loaded up for the OGLES3 samples</LI>
+</UL>
+
+<H1>Extensions</H1>
+Here is a current list of extensions supported by both emulators.  This list includes non-ratified extensions whose support is dependent on ratification.
+<UL>
+<LI>GL_AMD_alpha_test</LI>
+<LI>GL_AMD_compressed_3DC_texture</LI>
+<LI>GL_AMD_compressed_ATC_texture</LI>
+<LI>GL_AMD_logic_op
+<LI>GL_AMD_shader_binary_Z400
+<LI>GL_EXT_texture_filter_anisotropic</LI>
+<LI>GL_OES_texture_type_2_10_10_10_REV
+<LI>GL_OES_compressed_ETC1_RGB8_texture</LI>
+<LI>GL_OES_depth24</LI>
+<LI>GL_OES_element_index_uint</LI>
+<LI>GL_OES_fragment_precision_high</LI>
+<LI>GL_OES_rgb8_rgba8</LI>
+<LI>GL_OES_texture_3D</LI>
+<LI>GL_OES_texture_float</LI>
+<LI>GL_OES_texture_float_linear</LI>
+<LI>GL_OES_texture_half_float</LI>
+<LI>GL_OES_texture_half_float_linear</LI>
+<LI>GL_OES_texture_npot</LI>
+<LI>GL_OES_vertex_half_float</LI>
+<LI>GL_OES_vertex_type_10_10_10_2</LI>
+<LI>GL_OES_depth_texture</LI>
+<LI>GL_OES_standard_derivatives</LI>
+</UL>
+
+For extension specifications of all ratified extensions, please visit the Khronos OpenGL ES Extension registry at <a href="http://www.khronos.org/registry/gles">http://www.khronos.org/registry/gles</a>.
+
+<H1>Caveats</H1>
+This is a list of emulator caveats.
+<UL>
+<LI>There are many cases where the emulator's software workload is different than will exist on real ES hardware.  Because of this don't use the emulator to judge software performance.
+<p></LI>
+<p></LI>
+<LI>All precision qualifiers in shaders are ignored and the default shader precision for your desktop graphics card is used instead.<p></LI>
+<LI>Full OpenGL ES 2.0 / 3.0 error checking is not supported, but it is pretty close.<p></LI>
+<LI>Shader invariance rules are ignored.<p></LI>
+<LI>Varying packing rules are not followed.<p></LI>
+<LI>Shader constant expressions are not evaluated.<p></LI>
+<LI>Since the emulator is built on top of desktop OpenGL, any bugs in your desktop OpenGL driver will affect the emulator.  As of writing this document, the FBO implementations in desktop OpenGL drivers are incomplete.<p></LI>
+<LI>Real devices may only support 16 bit or 32 bit display buffers (depending on the display technology chosen and amount of memory available).  The emulator supports both.  If you want to test 16 bit displays you should set your desktop to 16 bits.  If you want to test 32 bit displays you should set your desktop to 32 bits.  The emulator follows the EGL specification in regards to EGLconfigs sorting.  See the specification for more details.<p></LI>
+<LI>The max values for AMD's future GPU are used for constant states like MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, ..<p></LI>
+<LI>MAX_VERTEX_ATTRIBUTES is a special case where 15 is exported instead of 16 like future hardware supports.<p></LI>
+<LI>Vertex texture fetches are not supported.<p></LI>
+<LI>ATI desktop hardware does not support non-power of 2 textures with a wrap mode other than clamp.  These will punt to software and be unbearably slow on the emulator even though the real mobile hardware supports this.<p></LI>
+</UL>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+
+</BODY>
+</HTML>

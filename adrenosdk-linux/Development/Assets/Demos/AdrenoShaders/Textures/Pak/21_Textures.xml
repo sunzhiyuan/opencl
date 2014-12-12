@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "Plastic1"
+    SrcFileName = "..\Plastic1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "Plastic2"
+    SrcFileName = "..\Plastic2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+    GenMipMaps  = "TRUE"
+/>
+
+<Texture
+    ResourceID  = "PlasticBump1"
+    SrcFileName = "..\PlasticBump1.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "PlasticBump2"
+    SrcFileName = "..\PlasticBump2.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>

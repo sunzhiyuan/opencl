@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "Elephant1"
+    SrcFileName = "..\Elephant1.tga"
+    WrapMode    = "REPEAT"
+    GenMipMaps  = "TRUE"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "Elephant2"
+    SrcFileName = "..\Elephant2.tga"
+    WrapMode    = "REPEAT"
+    GenMipMaps  = "TRUE"
+    DstFormat   = "ATC"
+/>
+
+
+<Texture
+    ResourceID  = "ElephantBump1"
+    SrcFileName = "..\ElephantBump1.tga"
+    WrapMode    = "REPEAT"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "ElephantBump2"
+    SrcFileName = "..\ElephantBump2.tga"
+    WrapMode    = "REPEAT"
+    DstFormat   = "RGBA"
+/>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0D3CA51A-85F7-4D26-9305-3FDFD8576AB1}</ProjectGuid>
+    <RootNamespace>DotProduct</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Build\VS2010\Samples_Common_OpenCL.props" />
+    <Import Project="..\..\Build\VS2010\Samples_Release_OpenCL.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\Build\VS2010\Samples_Common_OpenCL.props" />
+    <Import Project="..\..\Build\VS2010\Samples_Debug_OpenCL.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>..\..\..\..\External\OpenCL</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>xcopy /y /i ..\..\..\..\Assets\Samples\Kernels\DotProduct.cl $(TargetDir)\Samples\Kernels\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4200;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>..\..\..\..\External\OpenCL</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>xcopy /y /i ..\..\..\..\Assets\Samples\Kernels\DotProduct.cl $(TargetDir)\Samples\Kernels\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Framework\FrmComputeApplication.h" />
+    <ClInclude Include="..\..\..\Framework\FrmFile.h" />
+    <ClInclude Include="..\..\..\Framework\FrmFont.h" />
+    <ClInclude Include="..\..\..\Framework\FrmInput.h" />
+    <ClInclude Include="..\..\..\Framework\FrmMath.h" />
+    <ClInclude Include="..\..\..\Framework\FrmNoise.h" />
+    <ClInclude Include="..\..\..\Framework\FrmPackedResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmResource.h" />
+    <ClInclude Include="..\..\..\Framework\FrmStdlib.h" />
+    <ClInclude Include="..\..\..\Framework\FrmUserInterface.h" />
+    <ClInclude Include="..\..\..\Framework\FrmUtils.h" />
+    <ClInclude Include="..\..\..\Framework\OpenCL\FrmKernel.h" />
+    <ClInclude Include="..\..\..\Framework\Win32\FrmPlatform.h" />
+    <ClInclude Include="..\Compute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Framework\FrmComputeApplication.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmFont.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmInput.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmPackedResource.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmUserInterface.cpp" />
+    <ClCompile Include="..\..\..\Framework\FrmUtils.cpp" />
+    <ClCompile Include="..\..\..\Framework\OpenCL\FrmKernel.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmComputeApplication_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmFile_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\win32\FrmNoise_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmPlatform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmStdlib_Platform.cpp" />
+    <ClCompile Include="..\..\..\Framework\Win32\FrmUtils_Platform.cpp" />
+    <ClCompile Include="..\Compute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\Assets\Samples\Kernels\DotProduct.cl">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Framework\Win32\FrmMath_Platform.inl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="..\..\BandwidthTest\Framework\Win32\Adreno.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

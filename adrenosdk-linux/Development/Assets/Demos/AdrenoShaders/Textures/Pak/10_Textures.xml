@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture
+    ResourceID  = "SinTan"
+    SrcFileName = "..\SinTan.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>
+
+<Texture
+    ResourceID  = "MoonMap"
+    SrcFileName = "..\MoonMap.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC"
+/>
+
+<Texture
+    ResourceID  = "MoonBumpMap"
+    SrcFileName = "..\MoonBumpMap.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "RGBA"
+/>

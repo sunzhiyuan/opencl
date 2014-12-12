@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>PointSprites</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+<H1>ParallaxMapping</H1>
+This sample demonstrates how to implement parallax mapping.
+<P>
+<IMG src=Parallaxmapping.bmp>
+
+<H1>Details</H1>
+Parallax mapping plays a key role in increasing both realism and visual appeal of 3D applications. This application shows how parallax mapping is done with OpenGLES 2.0. It can be used and extended in other applications.
+<P>
+Parallax mapping (also called offset mapping or virtual displacement mapping) is an enhancement of the bump mapping or normal mapping techniques applied to textures in 3D rendering applications such as video games. To the end user, this means that textures such as stone walls will have more apparent depth and thus greater realism with less of an influence on the performance of the simulation.
+<p>
+Parallax mapping is implemented by displacing the texture coordinates at a point on the rendered polygon by a function of the view angle in tangent space (the angle relative to the surface normal) and the value of the height map at that point. At steeper view-angles, the texture coordinates are displaced more, giving the illusion of depth due to parallax effects as the view changes.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Toggle texture set</TD></TR>
+<TR><TD><B>2</B></TD><TD>Toggle bump mapping</TD></TR>
+<TR><TD><B>3</B></TD><TD>Toggle parallax mapping</TD></TR>
+<TR><TD><B>4</B></TD><TD>Decrease parallax</TD></TR>
+<TR><TD><B>5</B></TD><TD>Increase parallax</TD></TR>
+<TR><TD><B>6</B></TD><TD>Decrease specular lighting</TD></TR>
+<TR><TD><B>7</B></TD><TD>Increase specular lighting</TD></TR>
+<TR><TD><B>8</B></TD><TD>Zoom in</TD></TR>
+<TR><TD><B>9</B></TD><TD>Zoom ouut</TD></TR>
+<TR><TD><B>Arrows</B></TD><TD>Decrease specular lighting</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

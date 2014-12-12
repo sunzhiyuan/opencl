@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>Resource Packer</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>Resource Packer</H1>
+The Resource Packer is used to preprocess image files that it stores in a single binary file. The image files are specified in an XML file format that is read by the Resource Packer tool to obtain all of the raw image data that is to be packed into the binary file. This makes loading of images at runtime faster and more convenient.
+
+<H1>Details</H1>
+Each sample program in the SDK has an XML file called Textures.xml that is a collection of all the images that this sample needs during runtime. The Resource Packer reads this XML file to output a binary file called Textures.pak containing the packed images. The sample program then reads this output file to get all of its runtime images that can then be loaded as textures. Depending on the sample’s complexity, it is possible to have multiple .pak files. 
+<P>
+The XML file format as shown below is very simple and can be edited by hand to add the necessary images.
+
+<P>
+<TABLE>
+<TR><TD>
+<PRE>
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+<P>
+&lt;Texture
+	ResourceID  = Brick Wall
+	SrcFileName = ..\..\Media\Textures\wall.bmp
+	DstFormat   = ATI_TC
+	DstWidth    = 256
+	DstHeight   = 256
+	GenMipMaps  = True
+/&gt;
+&lt;Texture
+	ResourceID  = Fieldstone Bump
+	SrcFileName = ..\..\Media\Textures\FieldstoneBump.bmp
+/&gt;
+</PRE>
+</TD></TR>
+</TABLE>
+<P>
+
+The above XML code shows two images, “Brick Wall” and “Fieldstone Bump” being used.
+<P>
+<B>ResourceID </B>is the ASCII name that the sample code references.<br>
+<B>SrcFileName </B>tells where to find the image file.<br>
+<P>
+The remaining parameters are optional and are used to control the destination data.
+<P>
+<B>DstFormat </B>specifies the format of the destination data, shown here as ATI_TC. A value of ATI_TC means to compress the destination data in ATI_TC format. In the absence of this tag, the destination data is a 32 bit RGBA image. In the future versions, the tool will support many other formats such as 5-6-5, 10-10-10-2, 8 bit Alpha only, HDR, etc. Currently, it only supports ATI_TC format. It is more advantageous to have a source TGA or BMP image compressed into ATI_TC format by this tool, than to load a pre compressed ATI_TC texture into the runtime. The reasons for this are flexibility, speed, convenience, and having the source images in easily editable formats (TGA, BMP, etc.).
+<P>
+<B>DstWidth </B>and <B>DstHeight </B>specify the width and height of the destination data respectively. These are useful when the source data needs to be resized to make it smaller or a power of two, for example.
+<P>
+<B>GenMipMaps </B>is either True or False and controls the generation of mipmaps.
+
+<H1>Usage</H1>
+The resource Packer tool can be invoked from the command line as:
+<p>
+<B><I>ResourcePacker.exe   &lt;sourceXMLfile&gt;  [destinationFile]</I></B>
+<UL>
+<LI><B><I>sourceXMLfile </I></B>is the XML file containing all images</LI>
+<LI><B><I>destinationFile </I></B>is an optional parameter to specify the output .pak file. The default file generated is called Textures.pak.</LI>
+</UL>
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

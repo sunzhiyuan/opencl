@@ -1,0 +1,38 @@
+A { color: #0000FF; font-weight: normal; }
+A:hover { color: #3366FF; }
+BODY { margin: 0px; padding: 0px; font-family: 'Calibri, Arial, Helvetica, sans-serif'; font-size: 100%; color: #000000; background-color: #FFFFFF; width: 100%; }
+DL, OL, UL { margin: 0px; }
+DT { margin-top: 7px; }
+H2, H3, H4 { margin: 0px; margin-left: -15px; margin-top: 10px; font-weight: bold; }
+H1 { font-size: 160%; }
+H2 { font-size: 140%; }
+H3 { font-size: 120%; }
+H4 { font-size: 100%; }
+LI { margin-left: 20pt; }
+P { margin: 0px; margin-top: 7px; }
+PRE { margin: 0px; padding: 0px; }
+TABLE.MemberList { border-style: solid; border-width: 1px, 1px, 0px, 0px; border-color: #888888; background-color: #888888; width: 100%; }
+TABLE.MemberList TD, TH { border-style: solid; border-width: 0px, 0px, 1px, 1px; vertical-align: top; }
+TABLE.MemberList TD { margin: 0px; padding: 3px; text-align: left; color: #000000; background-color: #FFFFFF; }
+TABLE.MemberList TD.Name { width: 40%; vertical-align: top; }
+TABLE.MemberList TD.Description { width: 60%; vertical-align: top; }
+TABLE.MemberList TH { margin: 0px; padding: 3px; text-align: left; color: #000000; background-color: #CCCCCC; }
+TABLE { font-size: 100%; }
+TD, TH { font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 100%; }
+.Code { font-family: 'Courier New, Courier, monospace'; color: #000066; }
+.CodeBlock { font-family: 'Courier New, Courier, monospace'; background-color: #CCCCCC; margin: 0px; margin-left: 15px; margin-right: 15px; padding: 8px; border-style: solid; border-width: 1px; border-color: #888888; }
+.Header { background-color: #173B65; }
+.Feedback { font-style: italic; font-size: 90%; }
+.Indent { margin-left: 15px; margin-right: 15px; width: 100%; }
+.Keyword { font-weight: bold; }
+.LanguageFilterName { font-family: 'Verdana, Arial, Helvetica, sans-serif'; font-weight: normal; font-size: 80%; color: #666666; }
+.LanguageFilterNameFixed { font-family: 'Verdana, Arial, Helvetica, sans-serif'; font-weight: normal; font-size: 80%; color: #666666; }
+.LanguageFilterTitle { font-weight: normal; font-size: 80%; }
+.Parameter { font-style: italic; font-weight: normal; }
+.Popup { visibility: hidden; position: absolute; z-index: 1; padding: 0px 30px 15px 26px; font-style: normal; border-style: solid; border-width: 1px; border-color: #999999; background-color: #ffffcc; }
+.TopicStatus { color: red; font-style: italic; font-size: 90%; }
+.Warning { color: red; }
+#Banner { margin: 0px; padding: 5px; border-color: #999999; border-width: 1px; border-bottom-style: solid; background-color: #88aaff; }
+#Content { margin: 0px; padding: 20px; width: 100%; }
+#TopicGroup { margin: 0px; padding: 2px; font-size: 100%; font-style: italic; }
+#TopicTitle { margin: 0px; padding: 2px; font-size: 125%; font-weight: bold; }

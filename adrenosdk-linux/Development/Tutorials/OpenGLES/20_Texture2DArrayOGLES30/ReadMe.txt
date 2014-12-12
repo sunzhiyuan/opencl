@@ -1,0 +1,1 @@
+1. two-dimensional layered texture targets (EXT_texture_array)

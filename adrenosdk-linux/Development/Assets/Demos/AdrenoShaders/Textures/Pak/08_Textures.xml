@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "Parq Base Texture"
+    SrcFileName = "..\ParqFloorBase.png"
+    DstFormat   = "ATI_TC" 
+/>
+
+<Texture 
+    ResourceID  = "Parq Bump Texture"
+    SrcFileName = "..\ParqFloor2Bump.tga"
+/>
+
+<Texture 
+    ResourceID  = "Rocky Base Texture"
+    SrcFileName = "..\LayingRock.bmp"
+    DstFormat   = "ATI_TC" 
+/>
+
+<Texture 
+    ResourceID  = "Rocky Bump Texture"
+    SrcFileName = "..\LayingRockBump.tga"
+/>
+
+<Texture 
+    ResourceID  = "Brick1 Base Texture"
+    SrcFileName = "..\Brick.bmp"
+    DstFormat   = "ATI_TC" 
+/>
+
+<Texture 
+    ResourceID  = "Brick1 Bump Texture"
+    SrcFileName = "..\BrickBump.tga"
+/>
+
+<Texture 
+    ResourceID  = "Brick2 Base Texture"
+    SrcFileName = "..\Brick2.bmp"
+    DstFormat   = "ATI_TC" 
+/>
+
+<Texture 
+    ResourceID  = "Brick2 Bump Texture"
+    SrcFileName = "..\Brick2Bump.tga"
+/>

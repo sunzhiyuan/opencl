@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+
+<LINK REL = "stylesheet"
+TYPE = "text/css"
+HREF = "SDKStyleSheet.css">
+
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<Title>ProceduralTexture</Title>
+</HEAD>
+<BODY>
+
+<IMG class="HeaderImage" SRC= SDK_HelpBanner_v5.png>
+
+
+<H1>ProceduralTexture</H1>
+This sample demonstrates how to create a procedural texture.
+<P>
+<IMG src=ProceduralTexture.bmp>
+
+<H1>Details</H1>
+Typically applications make use of texture mapping in order to increase the realism of a 3D scene.  On embedded devices resources are very limited, and as a result textures need to be small and heavily compressed in order to be useful.  An alternative approach to using texture mapping to create realism is to assign procedural textures which are created on the fly.
+<p>
+<IMG src =ProceduralTexture2.bmp >
+<p>
+This sample showcases a variety of different procedural textures.  The first of which is a checker pattern whose frequency can be manipulated to control the number of boxes that make up the pattern.  The second procedural texture uses a 3D noise texture to create a procedural wood texture whose frequency can also be manipulated.  The third procedural texture also makes use of a 3D texture to create a marble-like pattern whose turbulence scale factor can be controlled by the user.  Finally the fourth and final procedural texture once again uses a 3D texture, but this time to generate a cloudy texture whose brightness changes over time.
+
+<H1>Controls</H1>
+<TABLE>
+<TR><TD class="sampleControl">Key</TD><TD class="sampleControl">Action</TD></TR>
+<TR><TD><B>*</B></TD><TD>Change orientation</TD></TR>
+<TR><TD><B>0</B></TD><TD>Toggle help</TD></TR>
+<TR><TD><B>1</B></TD><TD>Decrease frequency</TD></TR>
+<TR><TD><B>2</B></TD><TD>Increase frequency</TD></TR>
+<TR><TD><B>3</B></TD><TD>Increment procedural texture type</TD></TR>
+<TR><TD><B>4</B></TD><TD>Toggle rotation</TD></TR>
+<TR><TD><B>PrtSc</B></TD><TD>Take screen snapshot</TD></TR>
+</TABLE>
+<P>
+
+
+<iframe src = "Footer.htm" width = "100%" height = "120" frameborder = "0" scrolling = "no">
+</iframe>
+
+</BODY>
+</HTML>

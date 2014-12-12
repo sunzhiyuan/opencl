@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-HKWD" content="ADRENO_PROFILER_ENABLE_BLOCKING">
+    <title>ADRENO_PROFILER_ENABLE_BLOCKING</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">ADRENO_PROFILER_ENABLE_BLOCKING Reference</div>
+    </div>
+    <div id="Content">
+		<p><h3><i><b>Summary:</b></i></h3></p>
+		<p>
+			Property used to enable blocking of the execution of an application on device while Adreno Profiler establishes a connection.
+		</p>
+		<p><h3><i><b>Usage:</b></i></h3></p>
+		<p>
+			To enable blocking:
+		</p>
+		<br>
+			<div align="center">
+				<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_BLOCKING_1.png"/>
+			</div>
+		<br>
+		<p>
+			To disable blocking:
+		</p>
+		<br>
+			<div align="center">
+				<img src="images/adb_shell_setprop_ADRENO_PROFILER_ENABLE_BLOCKING_0.png"/>
+			</div>
+		<br>
+		<p><h3><i><b>Description:</b></i></h3></p>
+		<p>
+			When OpenCL profiler is enabled through <a href="ADRENO_PROFILER_ENABLE_OPENCL.html">ADRENO_PROFILER_ENABLE_OPENCL</a>, non-blocking is enabled by default. If blocking of the execution is needed this property needs to be set.
+		</p>
+		<p>
+			It's important to note that blocking execution with this method can only be accomplished on command-line applications executed through an adb shell as attempting it on APK applications will have undefined behavior. If blocking of an APK based application is needed the user will need to instrument some kind of waiting mechanism.
+		</p>
+		<p>
+			Note: As explained on <a href="ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD.html">ADRENO_PROFILER_ENABLE_WAIT_THRESHOLD</a> in order for an application to attempt to connect to profiler there needs to be at least one API called to bootstrap the connection mechanism. This needs to be taken into account if a manual blocking instrumentation is needed in order to wait for Adreno Profiler to connect to an APK based application before starting the OpenCL code execution.
+		</p>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>

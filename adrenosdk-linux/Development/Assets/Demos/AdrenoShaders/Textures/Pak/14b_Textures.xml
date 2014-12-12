@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Texture 
+    ResourceID  = "ToonColorRamp"
+    SrcFileName = "..\ToonColorRamp.tga"
+    WrapMode    = "CLAMP_TO_EDGE"
+    DstFormat   = "ATC" 
+/>

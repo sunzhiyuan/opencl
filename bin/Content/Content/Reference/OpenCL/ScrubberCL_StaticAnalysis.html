@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="../../Style/style.css">
+    <meta name="MS-CLPM" content="CL Static Analysis">
+    <title>Metrics</title>
+  </head>
+  <body>
+    <div id="Banner">
+      <div id="TopicGroup">Adreno Profiler</div>
+      <div id="TopicTitle">OpenCL Profiling Metrics Available</div>
+    </div>
+    <div id="Content">
+		<p><h3>The following statistics are provided for any kernel that is compiled in the kernel analyzer:</h3></p>
+                <ul>
+                    <li><p><strong>All Instructions - </strong>Total number of assembly level instructions that the kernel got compiled into.</p></li>
+                    <li><p><strong>ALUs - </strong>Number of ALU instructions.</p></li>
+                    <li><p><strong>Half ALUs - </strong>Number of half ALU instructions.</p></li>
+                    <li><p><strong>NOPs - </strong>Number of No Operation instructions.
+		    These indicate the fillers used for providing synchronizations between the various ALU’s</p></li>
+                    <li><p><strong>EFU Instrs - </strong>Number of EFU instructions.</p></li>
+                    <li><p><strong>MOVs - </strong>Number of data move instructions.  </p></li>
+                    <li><p><strong>FP converts - </strong>Number of floating point conversions.</p></li>
+                    <li><p><strong>Loads/Stores - </strong>Number of global load store assembly instructions.
+		    The lesser these are in comparison to ALUs/Half ALU instructions the better.</p></li>
+                    <li><p><strong>Flow Instrs - </strong>Number of flow instructions.</p></li>
+                    <li><p><strong>Texture Instrs - </strong>Number of instructions using the texture pipeline.</p></li>
+                    <li><p><strong>Sync Instrs - </strong>Number of sync instructions.</p></li>
+                    <li><p><strong>Full Registers - </strong>Number of full registers used by the kernel</p></li>
+                    <li><p><strong>Half Registers - </strong>: Number of half registers used by the kernel.
+		    The number of full and half registers directly determine the number of waves that will be created for the kernel.
+		    The lesser the register usage, the higher the number of waves created.</p></li>
+                    <li><p><strong>Number of Threads - </strong>Number of threads or waves of the kernel.
+		    Indicates how many waves are created for the kernel. Higher the better. Max is 16 waves.
+		    The lesser the number of waves, the lesser the data latency can be hidden.</p></li>
+                </ul>
+    </div>
+    <div align="center">
+      <hr> Copyright © 2014 <a href="http://www.qualcomm.com/">Qualcomm
+        Technologies, Inc.</a> All rights reserved. </div>
+  </body>
+</html>
